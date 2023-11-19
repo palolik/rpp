@@ -1,6 +1,7 @@
 <!doctype html>
 <html style="
     height: -webkit-fill-available;">
+
 <head>
     <script src="../assets/js/color-modes.js"></script>
 
@@ -9,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl24.css">
+    <link rel="stylesheet" type="text/css" href="../styl25.css">
 
     <title>Sidebars · Bootstrap v5.3</title>
 
@@ -22,18 +23,19 @@
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-table thead .sorting:after,
-table thead .sorting:before,
-table thead .sorting_asc:after,
-table thead .sorting_asc:before,
-table thead .sorting_asc_disabled:after,
-table thead .sorting_asc_disabled:before,
-table thead .sorting_desc:after,
-table thead .sorting_desc:before,
-table thead .sorting_desc_disabled:after,
-table thead .sorting_desc_disabled:before {
-bottom: .5em;
-}
+    table thead .sorting:after,
+    table thead .sorting:before,
+    table thead .sorting_asc:after,
+    table thead .sorting_asc:before,
+    table thead .sorting_asc_disabled:after,
+    table thead .sorting_asc_disabled:before,
+    table thead .sorting_desc:after,
+    table thead .sorting_desc:before,
+    table thead .sorting_desc_disabled:after,
+    table thead .sorting_desc_disabled:before {
+        bottom: .5em;
+    }
+
     .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -208,101 +210,85 @@ bottom: .5em;
                 <img src="../images/logo.jpg" class="heder">
                 <p style="font-size: 32px;color: antiquewhite;margin-left: 29px;">Rural Power Company Limited</p>
             </div>
-     
-     
-     <form action="" method="GET">
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="search" required value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>" class="form-control" placeholder="Search data">
-                                        <button type="submit" class="btn btn-primary">Search</button>
-                                    </div>
-                                </form>   
-        <!-- <label for="fname">Employee Id:</label>
-        <input class="form-control " name="ds" type="text" placeholder="Enter 8-digit employee id here"
-            aria-label="default input example">
-        <input class="buts" type="submit" value="Search"> -->
- 
-    
-            <div style="height: auto;align-items: center;flex-direction: column;justify-content: flex-start;padding: 10px;">
-            <table  id="dtVerticalScrollExample" class="table table-striped table-bordered table-sm" cellspacing="0"
-  width="100%">
-            <thead>
-    <tr>
-      <th class="th-sm">id</th>
-      <th class="th-sm">employeecode</th>
-      <th class="th-sm">employeename</th>
-      <th class="th-sm">Designation</th>
-      <th class="th-sm">contact no</th> 
-      <th class="th-sm">email</th> 
-      <th class="th-sm">status</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php 
+
+
+            <form action="" method="GET">
+                <div class="box5">
+                    <input type="text" name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>"
+                        class="form-control" placeholder="Search data">
+                    <button type="submit" class="buts">Search</button>
+                </div>
+            </form>
+            <div
+                style="height: auto;align-items: center;flex-direction: column;justify-content: flex-start;padding: 10px;">
+                <table id="dtVerticalScrollExample" class="table table-striped table-bordered table-sm" cellspacing="0"
+                    width="100%">
+                    <thead>
+                        <tr>
+                            <th class="th-sm">id</th>
+                            <th class="th-sm">employeecode</th>
+                            <th class="th-sm">employeename</th>
+                            <th class="th-sm">Designation</th>
+                            <th class="th-sm">contact no</th>
+                            <th class="th-sm">email</th>
+                            <th class="th-sm">status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
   include '../config/database.php';
   if(isset($_GET['search']))
                                     {
                                         $filtervalues = $_GET['search'];
-                                        $query = "SELECT * FROM employees WHERE CONCAT(employeecode,status,employeename,contactno,email) LIKE '%$filtervalues%' ";
+                                        $query = "SELECT * FROM employees WHERE CONCAT(employeecode,status,employeename,contactno,email,designation) LIKE '%$filtervalues%' ";
                                         $query_run = mysqli_query($conn, $query);
 
                                         if(mysqli_num_rows($query_run) > 0)
                                         {
                                             foreach($query_run as $res)
-                                            {
+                                            {                                            
+                                                echo "<tr>";
+                                                echo "<td>".$res['id']."</td>";
+                                                echo "<td>".$res['employeecode']."</td>";
+                                                echo "<td>".$res['employeename']."</td>";
+                                                echo "<td>".$res['designation']."</td>";
+                                                echo "<td>".$res['contactno']."</td>";
+                                                echo "<td>".$res['email']."</td>";
+                                                echo "<td>".$res['status']."</td>";
+                                                echo "</tr>";
+                                            }
                                                 
-                                                    
-        echo "<tr>";
-        echo "<td>".$res['id']."</td>";
-        echo "<td>".$res['employeecode']."</td>";
-        echo "<td>".$res['employeename']."</td>";
-        echo "<td>".$res['designation']."</td>";
-        echo "<td>".$res['contactno']."</td>";
-        echo "<td>".$res['email']."</td>";
-        echo "<td>".$res['status']."</td>";
-        echo "</tr>";
-       }
-                                                
+                                            }else{
+                                                echo "<tr>
+                                                <td colspan='7'>No Record Found</td>
+                                            </tr>" ;
                                             }
                                         }
-                                        else 
+                                        else if(empty($_GET['search']))
                                         {
-                                            ?>
-                                                <tr>
-                                                    <td colspan="4">No Record Found</td>
-                                                </tr>
-                                            <?php
+                                            $result = mysqli_query($mysqli, "SELECT * FROM employees");
+                                            while ($res = mysqli_fetch_assoc($result))
+                                            {   
+                                                echo "<tr>";
+                                                echo "<td>".$res['id']."</td>";
+                                                echo "<td>".$res['employeecode']."</td>";
+                                                echo "<td>".$res['employeename']."</td>";
+                                                echo "<td>".$res['designation']."</td>";
+                                                echo "<td>".$res['contactno']."</td>";
+                                                echo "<td>".$res['email']."</td>";
+                                                echo "<td>".$res['status']."</td>";
+                                                echo "</tr>";
+                                               } 
+
+                                        } else {
+                                           
                                         }
                                     
                                 ?>
-           <?php 
-     
 
+                    </tbody>
 
-
-$result = mysqli_query($mysqli, "SELECT * FROM employees");
-
-
-
-    while ($res = mysqli_fetch_assoc($result))
-    
-    
-    {
-       
-        
-            
-        echo "<tr>";
-        echo "<td>".$res['id']."</td>";
-        echo "<td>".$res['employeecode']."</td>";
-        echo "<td>".$res['employeename']."</td>";
-        echo "<td>".$res['designation']."</td>";
-        echo "<td>".$res['contactno']."</td>";
-        echo "<td>".$res['email']."</td>";
-        echo "<td>".$res['status']."</td>";
-        echo "</tr>";
-       } ?>
-  </tbody>
-
-</table>
+                </table>
 
 
 
@@ -315,11 +301,14 @@ $result = mysqli_query($mysqli, "SELECT * FROM employees");
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="sidebars.js"></script>
-<script>$(document).ready(function () {
-  $('#dtVerticalScrollExample').DataTable({
-    "scrollY": "200px",
-    "scrollCollapse": true,
-  });
-  $('.dataTables_length').addClass('bs-select');
-}); </script>
+<script>
+$(document).ready(function() {
+    $('#dtVerticalScrollExample').DataTable({
+        "scrollY": "200px",
+        "scrollCollapse": true,
+    });
+    $('.dataTables_length').addClass('bs-select');
+});
+</script>
+
 </html>
