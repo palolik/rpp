@@ -237,18 +237,18 @@
                                
                                 <div class='f2'>
                                     <label for='fname'>Employee Name:</label>
-                                    <input class='form-control' type='text'  value=". $row['employeename'] ."
+                                    <input class='form-control' type='text'  value=' ".$row['employeename']." '
                                         >
 
                                 </div>
                                 <div class='f2'>
                                     <label for='fname'>Designation:</label>
-                                    <input class='form-control' type='text' value=". $row['designation'] ."
+                                    <input class='form-control' type='text' value=' ". $row['designation'] ." '
                                        >
                                 </div>
                                 <div class='f2'>
                                     <label for='fname'>Employee Code:</label>
-                                    <input class='form-control' type='text' value=". $row['employeecode'] ."
+                                    <input class='form-control' type='text' value=' ". $row['employeecode'] ." '
                                         aria-label='default input example'>
                                 </div>
 
@@ -258,22 +258,22 @@
 
                                 <div class='f2'>
                                     <label for='fname'>Office :</label>
-                                    <input class='form-control' type='text' value=". $row['officename'] ."
+                                    <input class='form-control' type='text' value=' ". $row['officename'] ." '
                                         aria-label='default input example'>
                                 </div>
                                 <div class='f2'>
                                     <label for='fname'>Email Address :</label>
-                                    <input class='form-control' type='text' value=". $row['email'] ."
+                                    <input class='form-control' type='text' value=' ". $row['email'] ." '
                                         aria-label='default input example'>
                                 </div>
                                 <div class='f2'>
                                     <label for='fname'>Status</label>
-                                    <input class='form-control' type='text' value=". $row['status'] ."
+                                    <input class='form-control' type='text' value='". $row['status'] ." '
                                         aria-label='default input example'>
                                 </div>
                                 <div class='f2'>
                                     <label for='fname'>Mobile Number :</label>
-                                    <input class='form-control' type='text' value=". $row['contactno'] ."
+                                    <input class='form-control' type='text' value=' ". $row['contactno'] ." '
                                         aria-label='default input example'>
                                 </div>
 
