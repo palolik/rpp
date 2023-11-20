@@ -11,7 +11,10 @@ body{
   text-align: center;
   margin-bottom: 30px;
 }
-
+.trm{
+  background-color:rgba(90, 35, 200, 0);
+  border: none;
+}
 .fits {
   margin-bottom: 20px;
   margin-right: 20px;

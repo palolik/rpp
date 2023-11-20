@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl25.css">
+    <link rel="stylesheet" type="text/css" href="../styl26.css">
 
     <title>Sidebars · Bootstrap v5.3</title>
 
@@ -202,15 +202,6 @@
     flex-direction: column;
     justify-content: flex-start;
 ">
-                <form action="query.php" method="post">
-                <div class="box5"> 
-               
-        <label for="fname">Employee Id:</label>
-        <input class="form-control " name="ds" type="text" placeholder="Enter 8-digit employee id here"
-            aria-label="default input example">
-        <input class="buts" type="submit" value="Search">
-
-    </form>
                                   
                                
 

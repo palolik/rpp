@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl25.css">
+    <link rel="stylesheet" type="text/css" href="../styl26.css">
 
     <title>Sidebars · Bootstrap v5.3</title>
 
@@ -23,6 +23,7 @@
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        
     table thead .sorting:after,
     table thead .sorting:before,
     table thead .sorting_asc:after,
@@ -250,7 +251,9 @@
                                                 echo "<tr>";
                                                 echo "<td>".$res['id']."</td>";
                                                 echo "<td>".$res['employeecode']."</td>";
-                                                echo "<td>".$res['employeename']."</td>";
+                                                echo "<td><form action='query.php' method='post'><input class='trm' type='submit' value=' ".$res['employeename']." ' >
+                                                <input type='hidden' name='ds' value=".$res['employeeid'].">                
+                                            </form></td>";
                                                 echo "<td>".$res['designation']."</td>";
                                                 echo "<td>".$res['contactno']."</td>";
                                                 echo "<td>".$res['email']."</td>";
@@ -272,7 +275,9 @@
                                                 echo "<tr>";
                                                 echo "<td>".$res['id']."</td>";
                                                 echo "<td>".$res['employeecode']."</td>";
-                                                echo "<td>".$res['employeename']."</td>";
+                                                echo "<td><form action='query.php' method='post'><input class='trm' type='submit' value=' ".$res['employeename']." ' >
+                                                <input type='hidden' name='ds' value=".$res['employeeid'].">                
+                                            </form></td>";
                                                 echo "<td>".$res['designation']."</td>";
                                                 echo "<td>".$res['contactno']."</td>";
                                                 echo "<td>".$res['email']."</td>";
