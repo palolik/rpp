@@ -107,7 +107,26 @@
 
 <body>
 
+<?php
+    require_once("../config/database.php");
+    if(isset($_POST['submit'])){
+        
+        $employeeid = mysqli_real_escape_string($mysqli, $_POST['employeeid']);
+        $employeecode = mysqli_real_escape_string($mysqli, $_POST['employeecode']);
+        $employeename = mysqli_real_escape_string($mysqli, $_POST['employeename']);
+        $officename = mysqli_real_escape_string($mysqli, $_POST['officename']);
+        $designation = mysqli_real_escape_string($mysqli, $_POST['designation']);
+        $contactno = mysqli_real_escape_string($mysqli, $_POST['contactno']);
+        $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+        $status = mysqli_real_escape_string($mysqli, $_POST['status']);
 
+        $result = mysqli_query($mysqli, "INSERT INTO employees (`employeeid`, `employeecode`, `employeename`, `officename`, `designation`, `contactno`, `email`, `status`)VALUES('$employeeid', '$employeecode', '$employeename', '$officename', '$designation', '$contactno', '$email', '$status')");
+
+        header("Location: employeelist"); exit;
+
+    }
+
+?>
 
     <div class="brk">
 
@@ -202,7 +221,7 @@
     flex-direction: column;
     justify-content: flex-start;
 ">
-                <form>
+                <form  method="POST" name="add">
                     <div class="box1">
                         <div class="bol">
                             <p>Create User</p>
@@ -210,20 +229,25 @@
                         <div class="box11">
                             <div class="box111">
                                 <div class="f2">
-                                    <label for="fname">Employee Id:</label>
-                                    <input class="form-control " type="text" placeholder="Default input"
+                                    <label >Employee Id:</label>
+                                    <input name="employeeid" class="form-control " type="text" placeholder="Default input"
                                         aria-label="default input example">
 
                                 </div>
                                 <div class="f2">
-                                    <label for="fname">Employee Name:</label>
-                                    <input class="form-control" type="text" placeholder="Default input"
+                                    <label >Employee Code:</label>
+                                    <input name="employeecode" class="form-control" type="text" placeholder="Default input"
                                         aria-label="default input example">
 
                                 </div>
                                 <div class="f2">
-                                    <label for="fname">Designation:</label>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <label >Employee Name:</label>
+                                    <input name="employeename" class="form-control" type="text" placeholder="Default input"
+                                        aria-label="default input example">
+                                </div>
+                                <div class="f2">
+                                    <label >Designation:</label>
+                                    <select name="designation" class="form-select" aria-label="Default select example">
                                         <option selected>Open this select menu</option>
                                         <option value="volvo">Volvo</option>
                                         <option value="saab">Saab</option>
@@ -231,23 +255,14 @@
                                         <option value="audi">Audi</option>
                                     </select>
                                 </div>
-                                <div class="f2">
-                                    <label for="fname">Role:</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Open this select menu</option>
-                                        <option value="volvo">Volvo</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="mercedes">Mercedes</option>
-                                        <option value="audi">Audi</option>
-                                    </select>
-                                </div>
+                                
+                                
 
 
                             </div>
                             <div class="box112">
-
-                                <div class="f2">
-                                    <label for="fname">Office :</label>
+                            <!-- <div class="f2">
+                                    <label >Role:</label>
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Open this select menu</option>
                                         <option value="volvo">Volvo</option>
@@ -255,21 +270,38 @@
                                         <option value="mercedes">Mercedes</option>
                                         <option value="audi">Audi</option>
                                     </select>
+                                </div> -->
+                            <div class="f2">
+                                    <label >Office :</label>
+                                    <select name="officename" class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
                                 </div>
+                              
                                 <div class="f2">
-                                    <label for="fname">Email Address :</label>
-                                    <input class="form-control" type="text" placeholder="Default input"
+                                    <label >Contact no :</label>
+                                    <input name="contactno" class="form-control" type="text" placeholder="Default input"
+                                        aria-label="default input example">
+                                </div>
+                               
+                                <div class="f2">
+                                    <label >Email :</label>
+                                    <input name="email" class="form-control" type="text" placeholder="Default input"
                                         aria-label="default input example">
                                 </div>
                                 <div class="f2">
-                                    <label for="fname">First name:</label>
-                                    <input class="form-control" type="text" placeholder="Default input"
-                                        aria-label="default input example">
-                                </div>
-                                <div class="f2">
-                                    <label for="fname">Mobile Number :</label>
-                                    <input class="form-control" type="text" placeholder="Default input"
-                                        aria-label="default input example">
+                                    <label >Status :</label>
+                                    <select name="status" class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
                                 </div>
 
                             </div>
@@ -279,8 +311,9 @@
     align-items: center;
     justify-content: center;
     padding: 7px;"
->
-                            <button class="buts">Add Employee</button>
+<!-- >
+                           
+                            <input type="submit" class="buts" name="submit" value="add">
                         </div>
 
                     </div>
