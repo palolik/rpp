@@ -209,19 +209,19 @@
                         </div>
                         <div class="box11">
                             <div class="box111">
-                                <div class="f1">
+                                <div class="f2">
                                     <label for="fname">Employee Id:</label>
                                     <input class="form-control " type="text" placeholder="Default input"
                                         aria-label="default input example">
 
                                 </div>
-                                <div class="f1">
+                                <div class="f2">
                                     <label for="fname">Employee Name:</label>
                                     <input class="form-control" type="text" placeholder="Default input"
                                         aria-label="default input example">
 
                                 </div>
-                                <div class="f1">
+                                <div class="f2">
                                     <label for="fname">Designation:</label>
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Open this select menu</option>
@@ -231,7 +231,7 @@
                                         <option value="audi">Audi</option>
                                     </select>
                                 </div>
-                                <div class="f1">
+                                <div class="f2">
                                     <label for="fname">Role:</label>
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Open this select menu</option>
@@ -246,7 +246,7 @@
                             </div>
                             <div class="box112">
 
-                                <div class="f1">
+                                <div class="f2">
                                     <label for="fname">Office :</label>
                                     <select class="form-select" aria-label="Default select example">
                                         <option selected>Open this select menu</option>
@@ -256,17 +256,17 @@
                                         <option value="audi">Audi</option>
                                     </select>
                                 </div>
-                                <div class="f1">
+                                <div class="f2">
                                     <label for="fname">Email Address :</label>
                                     <input class="form-control" type="text" placeholder="Default input"
                                         aria-label="default input example">
                                 </div>
-                                <div class="f1">
+                                <div class="f2">
                                     <label for="fname">First name:</label>
                                     <input class="form-control" type="text" placeholder="Default input"
                                         aria-label="default input example">
                                 </div>
-                                <div class="f1">
+                                <div class="f2">
                                     <label for="fname">Mobile Number :</label>
                                     <input class="form-control" type="text" placeholder="Default input"
                                         aria-label="default input example">
@@ -280,7 +280,7 @@
     justify-content: center;
     padding: 7px;"
 >
-                            <button class="buts">Sign up</button>
+                            <button class="buts">Add Employee</button>
                         </div>
 
                     </div>
