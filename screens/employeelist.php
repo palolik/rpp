@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl26.css">
+    <link rel="stylesheet" type="text/css" href="../styl28.css">
 
     <title>Sidebars · Bootstrap v5.3</title>
 
@@ -215,11 +215,19 @@
 
             <form action="" method="GET">
                 <div class="box5">
+               
                     <input type="text" name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>"
                         class="form-control" placeholder="Search data">
-                    <button type="submit" class="buts">Search</button>
+                        <button type="submit" class="buts">Search</button>
+                  
                 </div>
-            </form>
+               <div class="box8"> 
+                    <a class="buts3" href="home.php">Add Employee</a>
+                    <button type="submit" class="buts3">Export Excel</button>
+                    <button type="submit" class="buts3">Export CSV</button>
+                    <button type="submit" class="buts3">Import Excel</button></div>
+                 
+          
             <div
                 style="height: auto;align-items: center;flex-direction: column;justify-content: flex-start;padding: 10px;">
                 <table id="dtVerticalScrollExample" class="table table-striped table-bordered table-sm" cellspacing="0"
