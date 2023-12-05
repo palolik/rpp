@@ -149,7 +149,7 @@
                             <li><a href="#"
                                     class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Role
                                     Assign</a></li>
-                            <li><a href="#"
+                            <li><a href="addemployee.php"
                                     class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">User
                                     Creation</a></li>
                         </ul>
@@ -166,7 +166,7 @@
                             <li><a href="#"
                                     class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Category</a>
                             </li>
-                            <li><a href="#"
+                            <li><a href="itemlist.php"
                                     class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Item</a>
                             </li>
                             <li><a href="#"

@@ -221,10 +221,8 @@
 
                 </div>
                 <div class="box8">
-                    <a class="buts3" href="home.php">Add Employee</a>
-                    <button type="submit" class="buts3">Export Excel</button>
-                    <button type="submit" class="buts3">Export CSV</button>
-                    <button type="submit" class="buts3">Import Excel</button>
+                   <?php include("additem.php") ?>
+                   <!-- <a href="additem.php"> add items</a> -->
                 </div>
 
 
@@ -234,13 +232,10 @@
                         cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th class="th-sm">id</th>
-                                <th class="th-sm">employeecode</th>
-                                <th class="th-sm">employeename</th>
-                                <th class="th-sm">Designation</th>
-                                <th class="th-sm">contact no</th>
-                                <th class="th-sm">email</th>
-                                <th class="th-sm">status</th>
+                                <th class="th-sm">serial</th>
+                                <th class="th-sm">item name</th>
+                                <th class="th-sm">actions</th>
+                           
                             </tr>
                         </thead>
                         <tbody>
@@ -249,7 +244,7 @@
                                         if(isset($_GET['search']))
                                     {
                                         $filtervalues = $_GET['search'];
-                                        $query = "SELECT * FROM employees WHERE CONCAT(employeecode,status,employeename,contactno,email,designation) LIKE '%$filtervalues%' ";
+                                        $query = "SELECT * FROM itemlist WHERE CONCAT(items) LIKE '%$filtervalues%' ";
                                         $query_run = mysqli_query($conn, $query);
 
                                         if(mysqli_num_rows($query_run) > 0)
@@ -257,15 +252,12 @@
                                             foreach($query_run as $res)
                                             {                                            
                                                 echo "<tr>";
-                                                echo "<td>".$res['id']."</td>";
-                                                echo "<td>".$res['employeecode']."</td>";
-                                                echo "<td><form action='query.php' method='post'><input class='trm' type='submit' value=' ".$res['employeename']." ' >
-                                                <input type='hidden' name='ds' value=".$res['employeeid'].">                
-                                            </form></td>";
-                                                echo "<td>".$res['designation']."</td>";
-                                                echo "<td>".$res['contactno']."</td>";
-                                                echo "<td>".$res['email']."</td>";
-                                                echo "<td>".$res['status']."</td>";
+                                                echo "<td>".$res['serial']."</td>";
+                                                echo "<td>".$res['items']."</td>";
+                                                echo "<td><a href=\"deleteitem.php?serial=$res[serial]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
+                                                <a href=\"edit.php?serial=$res[serial]\">Edit</a></td>";
+                                       
+                                             
                                                 echo "</tr>";
                                             }
                                                 
@@ -277,19 +269,16 @@
                                         }
                                         else if(empty($_GET['search']))
                                         {
-                                            $result = mysqli_query($mysqli, "SELECT * FROM employees");
+                                            $result = mysqli_query($mysqli, "SELECT * FROM itemlist");
                                             while ($res = mysqli_fetch_assoc($result))
                                             {   
                                                 echo "<tr>";
-                                                echo "<td>".$res['id']."</td>";
-                                                echo "<td>".$res['employeecode']."</td>";
-                                                echo "<td><form action='query.php' method='post'><input class='trm' type='submit' value=' ".$res['employeename']." ' >
-                                                <input type='hidden' name='ds' value=".$res['employeeid'].">                
-                                            </form></td>";
-                                                echo "<td>".$res['designation']."</td>";
-                                                echo "<td>".$res['contactno']."</td>";
-                                                echo "<td>".$res['email']."</td>";
-                                                echo "<td>".$res['status']."</td>";
+                                                echo "<td>".$res['serial']."</td>";
+                                                echo "<td>".$res['items']."</td>";
+                                              
+                                                echo "<td><a href=\"deleteitem.php?serial=$res[serial]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
+                                                <a href=\"edit.php?serial=$res[serial]\">Edit</a></td>";
+                                             
                                                 echo "</tr>";
                                                } 
 

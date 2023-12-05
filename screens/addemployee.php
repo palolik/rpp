@@ -1,7 +1,6 @@
 <!doctype html>
 <html style="
     height: -webkit-fill-available;">
-
 <head>
     <script src="../assets/js/color-modes.js"></script>
 
@@ -23,19 +22,6 @@
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-    table thead .sorting:after,
-    table thead .sorting:before,
-    table thead .sorting_asc:after,
-    table thead .sorting_asc:before,
-    table thead .sorting_asc_disabled:after,
-    table thead .sorting_asc_disabled:before,
-    table thead .sorting_desc:after,
-    table thead .sorting_desc:before,
-    table thead .sorting_desc_disabled:after,
-    table thead .sorting_desc_disabled:before {
-        bottom: .5em;
-    }
-
     .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -121,7 +107,26 @@
 
 <body>
 
+<?php
+    require_once("../config/database.php");
+    if(isset($_POST['submit'])){
+        
+        $employeeid = mysqli_real_escape_string($mysqli, $_POST['employeeid']);
+        $employeecode = mysqli_real_escape_string($mysqli, $_POST['employeecode']);
+        $employeename = mysqli_real_escape_string($mysqli, $_POST['employeename']);
+        $officename = mysqli_real_escape_string($mysqli, $_POST['officename']);
+        $designation = mysqli_real_escape_string($mysqli, $_POST['designation']);
+        $contactno = mysqli_real_escape_string($mysqli, $_POST['contactno']);
+        $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+        $status = mysqli_real_escape_string($mysqli, $_POST['status']);
 
+        $result = mysqli_query($mysqli, "INSERT INTO employees (`employeeid`, `employeecode`, `employeename`, `officename`, `designation`, `contactno`, `email`, `status`)VALUES('$employeeid', '$employeecode', '$employeename', '$officename', '$designation', '$contactno', '$email', '$status')");
+
+        header("Location: employeelist"); exit;
+
+    }
+
+?>
 
     <div class="brk">
 
@@ -210,102 +215,112 @@
                 <img src="../images/logo.jpg" class="heder">
                 <p style="font-size: 32px;color: antiquewhite;margin-left: 29px;">Rural Power Company Limited</p>
             </div>
+            <div style="
+    height: auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+">
+                <form  method="POST" name="add">
+                    <div class="box1">
+                        <div class="bol">
+                            <p>Create User</p>
+                        </div>
+                        <div class="box11">
+                            <div class="box111">
+                                <div class="f2">
+                                    <label >Employee Id:</label>
+                                    <input name="employeeid" class="form-control " type="text" placeholder="Default input"
+                                        aria-label="default input example">
+
+                                </div>
+                                <div class="f2">
+                                    <label >Employee Code:</label>
+                                    <input name="employeecode" class="form-control" type="text" placeholder="Default input"
+                                        aria-label="default input example">
+
+                                </div>
+                                <div class="f2">
+                                    <label >Employee Name:</label>
+                                    <input name="employeename" class="form-control" type="text" placeholder="Default input"
+                                        aria-label="default input example">
+                                </div>
+                                <div class="f2">
+                                    <label >Designation:</label>
+                                    <select name="designation" class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div>
+                                
+                                
 
 
-            <form action="" method="GET">
-                <div class="box5">
+                            </div>
+                            <div class="box112">
+                            <!-- <div class="f2">
+                                    <label >Role:</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div> -->
+                            <div class="f2">
+                                    <label >Office :</label>
+                                    <select name="officename" class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div>
+                              
+                                <div class="f2">
+                                    <label >Contact no :</label>
+                                    <input name="contactno" class="form-control" type="text" placeholder="Default input"
+                                        aria-label="default input example">
+                                </div>
+                               
+                                <div class="f2">
+                                    <label >Email :</label>
+                                    <input name="email" class="form-control" type="text" placeholder="Default input"
+                                        aria-label="default input example">
+                                </div>
+                                <div class="f2">
+                                    <label >Status :</label>
+                                    <select name="status" class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div>
 
-                    <input type="text" name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>"
-                        class="form-control" placeholder="Search data">
-                    <button type="submit" class="buts">Search</button>
+                            </div>
+                        </div>
+                        <div style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;"
+<!-- >
+                           
+                            <input type="submit" class="buts" name="submit" value="add">
+                        </div>
 
-                </div>
-                <div class="box8">
-                    <a class="buts3" href="home.php">Add Employee</a>
-                    <button type="submit" class="buts3">Export Excel</button>
-                    <button type="submit" class="buts3">Export CSV</button>
-                    <button type="submit" class="buts3">Import Excel</button>
-                </div>
-
-
-                <div
-                    style="height: auto;align-items: center;flex-direction: column;justify-content: flex-start;padding: 10px;">
-                    <table id="dtVerticalScrollExample" class="table table-striped table-bordered table-sm"
-                        cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th class="th-sm">id</th>
-                                <th class="th-sm">employeecode</th>
-                                <th class="th-sm">employeename</th>
-                                <th class="th-sm">Designation</th>
-                                <th class="th-sm">contact no</th>
-                                <th class="th-sm">email</th>
-                                <th class="th-sm">status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php 
-                                      include '../config/database.php';
-                                        if(isset($_GET['search']))
-                                    {
-                                        $filtervalues = $_GET['search'];
-                                        $query = "SELECT * FROM employees WHERE CONCAT(employeecode,status,employeename,contactno,email,designation) LIKE '%$filtervalues%' ";
-                                        $query_run = mysqli_query($conn, $query);
-
-                                        if(mysqli_num_rows($query_run) > 0)
-                                        {
-                                            foreach($query_run as $res)
-                                            {                                            
-                                                echo "<tr>";
-                                                echo "<td>".$res['id']."</td>";
-                                                echo "<td>".$res['employeecode']."</td>";
-                                                echo "<td><form action='query.php' method='post'><input class='trm' type='submit' value=' ".$res['employeename']." ' >
-                                                <input type='hidden' name='ds' value=".$res['employeeid'].">                
-                                            </form></td>";
-                                                echo "<td>".$res['designation']."</td>";
-                                                echo "<td>".$res['contactno']."</td>";
-                                                echo "<td>".$res['email']."</td>";
-                                                echo "<td>".$res['status']."</td>";
-                                                echo "</tr>";
-                                            }
-                                                
-                                            }else{
-                                                echo "<tr>
-                                                <td colspan='7'>No Record Found</td>
-                                            </tr>" ;
-                                            }
-                                        }
-                                        else if(empty($_GET['search']))
-                                        {
-                                            $result = mysqli_query($mysqli, "SELECT * FROM employees");
-                                            while ($res = mysqli_fetch_assoc($result))
-                                            {   
-                                                echo "<tr>";
-                                                echo "<td>".$res['id']."</td>";
-                                                echo "<td>".$res['employeecode']."</td>";
-                                                echo "<td><form action='query.php' method='post'><input class='trm' type='submit' value=' ".$res['employeename']." ' >
-                                                <input type='hidden' name='ds' value=".$res['employeeid'].">                
-                                            </form></td>";
-                                                echo "<td>".$res['designation']."</td>";
-                                                echo "<td>".$res['contactno']."</td>";
-                                                echo "<td>".$res['email']."</td>";
-                                                echo "<td>".$res['status']."</td>";
-                                                echo "</tr>";
-                                               } 
-
-                                        } else {
-                                           
-                                        }
-                                    
-                                ?>
-
-                        </tbody>
-
-                    </table>
+                    </div>
+                </form>
 
 
-
-                </div>
+            </div>
         </div>
     </div>
 
@@ -314,14 +329,5 @@
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="sidebars.js"></script>
-<script>
-$(document).ready(function() {
-    $('#dtVerticalScrollExample').DataTable({
-        "scrollY": "200px",
-        "scrollCollapse": true,
-    });
-    $('.dataTables_length').addClass('bs-select');
-});
-</script>
 
 </html>
