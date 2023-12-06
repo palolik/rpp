@@ -1,41 +1,17 @@
 <?php
-require_once("ecom.php");
+       include '../config/database.php';
+    if(isset($_POST['update'])){
 
-$id = $_GET['id'];
- $result = mysqli_query($mysqli, "SELECT * FROM adminup WHERE id=$id");
+        $serialf = mysqli_real_escape_string($mysqli, $_POST['serial']);
+        $itemsf = mysqli_real_escape_string($mysqli, $_POST['items']);
 
- $resultData = mysqli_fetch_assoc($result);
+        // $result = mysqli_query($mysqli, "UPDATE itemlist SET `items`='$items' WHERE `serial`=$serial");
+        
+        $result = mysqli_query($mysqli, "UPDATE `itemlist` SET `items` = '$itemsf' WHERE `itemlist`.`serial` = $serialf");
+    }
 
-        $user_name = $resultData['user_name'];
-        $password = $resultData['password'];
-    
+    header("location:itemlist.php");
+
 
 
 ?>
-
-<html>
-    <head>
-        <body>
-        <form method="POST" name="edit" action="editsignup.php">
-
-<lable >Name:</lable>
-<input type="text" name="user_name" value="<?php echo $user_name; ?>" >
-
-<br>
-<br>
-
-<lebel>Password</lebel>
-<input type="text" name="password" value="<?php echo $password; ?>" >
-<br>
-<br>
-<br>
-<input type="hidden" name="id" value="<?php echo $id; ?>">
-<input type="submit" name="update" value="update">
-
-
-
-
-</form>
-        </body>
-    </head>
-</html>
