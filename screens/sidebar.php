@@ -11,15 +11,12 @@
                     </button>
                     <div class="collapse show" id="home-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#"
+                            <li><a href="addemployee.php"
                                     class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">User
-                                    Level Creation</a></li>
-                            <li><a href="#"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Role
-                                    Assign</a></li>
-                            <li><a href="#"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">User
-                                    Creation</a></li>
+                                     Creation</a></li>
+                            <li><a href="employeelist.php"
+                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Employee List</a></li>
+                          
                         </ul>
                     </div>
                 </li>
