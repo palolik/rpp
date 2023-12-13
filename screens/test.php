@@ -57,23 +57,8 @@
                             class="form-control" />
                     </div>
                 </div>
-           
-                <table id="dtVerticalScrollExample" class="table table-striped table-bordered table-sm"
-                        cellspacing="0" width="100%">
-                <thead>
-	<tr>
-		<th class="th-sm">id</th>
-		<th class="th-sm">employeecode</th>
-		<th class="th-sm">employeename</th>
-		<th class="th-sm">Designation</th>
-		<th class="th-sm">contact no</th>
-		<th class="th-sm">email</th>
-		<th class="th-sm">status</th>
-	</tr>
-</thead>
-<tbody>
+                <br />
                 <div id="ls_result"></div>
-</tbody>
             </div>
         </div>
     </div>

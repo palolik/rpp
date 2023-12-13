@@ -4,6 +4,7 @@
 
 <head>
     <script src="../assets/js/color-modes.js"></script>
+    <script src="livesearch/js/jquery-2.1.3.min.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,135 +23,45 @@
 
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-
-    </style>
-
-
+ 
     <!-- Custom styles for this template -->
     <link href="sidebars.css" rel="stylesheet">
 </head>
 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Live Search</title>
+
+    <!--leave these if you have already used jquery and bootstrap files in your website-->
+    <script src="livesearch/js/jquery-2.1.3.min.js"></script>
+    <script src="livesearch/js/bootstrap.min.js"></script>
+    <link href="livesearch/css/bootstrap.css" rel="stylesheet" />
+
+    <!--Include these lines for live search-->
+    <script src="livesearch/js/ls.js"></script>
+    <link href="livesearch/css/ls.css" rel="stylesheet" />
+    <!--End-->
+
+</head>
+
 <body>
-
-
-
     <div class="brk">
-
         <?php include("sidebar.php") ?>
         <div>
 
             <?php include("header.php") ?>
-            <form action="" method="GET">
-                <div class="box5">
-
-                    <input type="text" name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>"
-                        class="form-control" placeholder="Search data">
-                    <button type="submit" class="buts">Search</button>
-
+            <div class="container">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">Search</span>
+                        <input type="text" id="ls_search_text" placeholder="Type any keyword to search"
+                            class="form-control" />
+                    </div>
                 </div>
-                <div class="box8">
-                    <a class="buts3" href="home.php">Add Employee</a>
-                    <button type="submit" class="buts3">Export Excel</button>
-                    <button type="submit" class="buts3">Export CSV</button>
-                    <button type="submit" class="buts3">Import Excel</button>
-                </div>
-
-
-                <div
-                    style="height: auto;align-items: center;flex-direction: column;justify-content: flex-start;padding: 10px;">
-                    <table id="dtVerticalScrollExample" class="table table-striped table-bordered table-sm"
-                        cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th class="th-sm">id</th>
-                                <th class="th-sm">employeecode</th>
-                                <th class="th-sm">employeename</th>
-                                <th class="th-sm">Designation</th>
-                                <th class="th-sm">contact no</th>
-                                <th class="th-sm">email</th>
-                                <th class="th-sm">status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php 
-                                      include '../config/database.php';
-                                        if(isset($_GET['search']))
-                                    {
-                                        $filtervalues = $_GET['search'];
-                                        $query = "SELECT * FROM employees WHERE CONCAT(employeecode,status,employeename,contactno,email,designation) LIKE '%$filtervalues%' ";
-                                        $query_run = mysqli_query($conn, $query);
-
-                                        if(mysqli_num_rows($query_run) > 0)
-                                        {
-                                            foreach($query_run as $res)
-                                            {                                            
-                                                echo "<tr>";
-                                                echo "<td>".$res['id']."</td>";
-                                                echo "<td>".$res['employeecode']."</td>";
-                                                echo "<td><form action='query.php' method='post'><input class='trm' type='submit' value=' ".$res['employeename']." ' >
-                                                <input type='hidden' name='ds' value=".$res['employeeid'].">                
-                                            </form></td>";
-                                                echo "<td>".$res['designation']."</td>";
-                                                echo "<td>".$res['contactno']."</td>";
-                                                echo "<td>".$res['email']."</td>";
-                                                echo "<td>".$res['status']."</td>";
-                                                echo "</tr>";
-                                            }
-                                                
-                                            }else{
-                                                echo "<tr>
-                                                <td colspan='7'>No Record Found</td>
-                                            </tr>" ;
-                                            }
-                                        }
-                                        else if(empty($_GET['search']))
-                                        {
-                                            $result = mysqli_query($mysqli, "SELECT * FROM employees");
-                                            while ($res = mysqli_fetch_assoc($result))
-                                            {   
-                                                echo "<tr>";
-                                                echo "<td>".$res['id']."</td>";
-                                                echo "<td>".$res['employeecode']."</td>";
-                                                echo "<td><form action='query.php' method='post'><input class='trm' type='submit' value=' ".$res['employeename']." ' >
-                                                <input type='hidden' name='ds' value=".$res['employeeid'].">                
-                                            </form></td>";
-                                                echo "<td>".$res['designation']."</td>";
-                                                echo "<td>".$res['contactno']."</td>";
-                                                echo "<td>".$res['email']."</td>";
-                                                echo "<td>".$res['status']."</td>";
-                                                echo "</tr>";
-                                               } 
-
-                                        } else {
-                                           
-                                        }
-                                    
-                                ?>
-
-                        </tbody>
-
-                    </table>
-
-
-
-                </div>
+                <br />
+                <div id="ls_result"></div>
+            </div>
         </div>
     </div>
-
-
 </body>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="sidebars.js"></script>
-<script>
-$(document).ready(function() {
-    $('#dtVerticalScrollExample').DataTable({
-        "scrollY": "200px",
-        "scrollCollapse": true,
-    });
-    $('.dataTables_length').addClass('bs-select');
-});
-</script>
 
 </html>

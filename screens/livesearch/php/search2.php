@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 
 	include "../config.php";  
 
@@ -101,4 +101,4 @@
 	{
 		echo '<b>No Data Found</b>';
 	}
-?> -->
+?>

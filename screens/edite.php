@@ -78,7 +78,14 @@
             </div>
             <div class='box11'>
             <div class='box111'>
-                               
+                                   
+            <div class='f2'>
+                <label for='fname'>Employee is:</label>
+                <input class='form-control' type='text' name='employeeid'  value=' ".$row['employeeid']." '
+                aria-label='Disabled input example' disabled readonly >
+
+                  
+            </div>             
             <div class='f2'>
                 <label for='fname'>Employee Name:</label>
                 <input class='form-control' type='text' name='employeename'  value=' ".$row['employeename']." '
@@ -120,7 +127,7 @@
                     <input class='form-control' type='text' name='contactno' value=' ". $row['contactno'] ." '
                     >
                 </div>
-                <input class='form-control' type='text' name='id' value=' ". $row['id'] ." '>
+             
             </div> 
                        
                         <div>  
