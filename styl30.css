@@ -37,6 +37,7 @@ body{
   padding: 5px 20px;
   text-align: center;
   text-decoration: none;
+
   display: inline-block;
   font-size: 16px;
   background-color: rgb(5, 0, 39);
@@ -44,7 +45,47 @@ body{
   color: white;
   border-radius: 5px;
 
+
 }
+.inp{
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 40% 10% 50%;
+  align-items: center;
+}
+.asd{
+  transition-duration: 0.4s;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  background-color: rgb(5, 0, 39);
+  border: none;
+  color: white;
+  border-radius: 2px; 
+  margin: 2px;
+}
+.asdt{
+  transition-duration: 0.4s;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  background-color: rgb(5, 0, 39);
+  border: none;
+  color: white;
+  border-radius: 2px; 
+  margin: 2px;
+
+}
+.aew {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
 .buts3 {
   transition-duration: 0.4s;
   padding: 5px 20px;
@@ -58,6 +99,7 @@ body{
   border-radius: 5px;
   margin-left: 2px;
 }
+
 .butss {
   transition-duration: 0.4s;
   padding: 10px 30px;
@@ -69,7 +111,6 @@ body{
   border: none;
   color: white;
   border-radius: 5px;
-
 }
 .butss:hover {
   background-color: #04bf2f; /* Green */

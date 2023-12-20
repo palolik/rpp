@@ -1,6 +1,6 @@
 #ls_table table
 {
-	width:100%;
+	width:800px;
 }
 #ls_table td
 {
@@ -14,7 +14,7 @@
 #ls_result
 {
 	overflow-x:none;
-	overflow-y:scroll;
+	overflow-y:none;
 }
 #ls_table table,#ls_table td,#ls_table th
 {

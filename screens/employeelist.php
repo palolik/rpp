@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl29.css">
+    <link rel="stylesheet" type="text/css" href="../styl30.css">
 
     <title>Sidebars · Bootstrap v5.3</title>
 
@@ -38,7 +38,7 @@
 
     <!--Include these lines for live search-->
     <script src="livesearch/js/ls.js"></script>
-    <link href="livesearch/css/ls.css" rel="stylesheet" />
+    <link href="livesearch/css/ls1.css" rel="stylesheet" />
     <!--End-->
 
 </head>
@@ -51,8 +51,8 @@
             <?php include("header.php") ?>
             <div class="container">
                 <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">Search</span>
+                    <div class="inp">
+                       <div><a class="asdt" href="addemployee.php" >add employee</a><a class="asdt">import Excel</a><a class="asdt">Export Csv</a><a class="asdt">Export Excel</a></div> <div class="asd">Search</div>
                         <input type="text" id="ls_search_text" placeholder="Type any keyword to search"
                             class="form-control" />
                     </div>

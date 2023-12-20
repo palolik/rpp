@@ -53,8 +53,7 @@
 	if($row_cnt>0)  
 	{
 		$output.="
-		<div style='height: auto;align-items: center;flex-direction: column;justify-content: flex-start;padding: 10px;'><table id='ls_table' class='table table-striped table-bordered table-sm'
-		cellspacing='0' width='100%'><thead><tr>";
+		<div><table id='ls_table' class='tab3'><thead><tr>";
 		
 		
 		if(count($output_columns)!=0)
