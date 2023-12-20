@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <br />
-                <div id="ls_result"></div>
+                <div id="ls_result" style="overflow-x:scroll;border-top: 5px solid #ddd;overflow-y:scroll;height:600px"></div>
             </div>
         </div>
     </div>
