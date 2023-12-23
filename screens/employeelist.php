@@ -51,11 +51,11 @@
             <?php include("header.php") ?>
             <div class="wea">
 
-            <form method="post" action='exportdata.php' >
             <a class="asdt" href="addemployee.php" >add employee</a>
-    <button class="asdt"  type="submit" name="export">Export Excel</button>
-   <a class="asdt">import Excel</a><a class="asdt">Export Csv</a></div>
-</form>
+    <button class="asdt"  onclick="exportTableToExcel('ls_table', 'employees')">Export Excel</button>
+
+    <button class="asdt" onclick="exportTableToCSV()">Export CSV</button>
+
 <div>
             <div class="container">
                 
@@ -74,5 +74,7 @@
         </div>
     </div>
 </body>
+<script src="exportcsv.js"></script>
+<script src="exportxl.js"></script>
 
 </html>
