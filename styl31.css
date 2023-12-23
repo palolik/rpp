@@ -47,10 +47,12 @@ body{
 
 
 }
+.wea{
+  margin: 20px;
+}
 .inp{
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 40% 10% 50%;
   align-items: center;
 }
 .asd{

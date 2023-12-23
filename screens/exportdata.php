@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
 <?php
  if(isset($_POST['export'])){
 // Connect to the database
@@ -47,30 +37,8 @@ while ($row = $result->fetch_row()) {
     }
     echo $line . "\n";
 }
-
+header('location:employeelist.php');
 $conn->close();
  }
+
 ?>
-<?php
-// ... (database connection code remains the same)
-
-$table_name = "employees";
-
-if (isset($_POST['export'])) {  // Check if the button is clicked
-    // Fetch data and generate Excel file (same code as before)
-    $sql = "SELECT * FROM $table_name";
-    // ... (rest of the Excel generation code)
-} else {
-    // Display the button if not clicked
-?>
-
-<form method="post">
-    <button type="submit" name="export">Download Excel</button>
-</form>
-
-<?php
-}
-?>
-
-</body>
-</html>

@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl30.css">
+    <link rel="stylesheet" type="text/css" href="../styl31.css">
 
     <title>Sidebars · Bootstrap v5.3</title>
 
@@ -49,13 +49,24 @@
         <div>
 
             <?php include("header.php") ?>
+            <div class="wea">
+
+            <form method="post" action='exportdata.php' >
+            <a class="asdt" href="addemployee.php" >add employee</a>
+    <button class="asdt"  type="submit" name="export">Export Excel</button>
+   <a class="asdt">import Excel</a><a class="asdt">Export Csv</a></div>
+</form>
+<div>
             <div class="container">
+                
                 <div class="form-group">
                     <div class="inp">
-                       <div><a class="asdt" href="addemployee.php" >add employee</a><a class="asdt">import Excel</a><a class="asdt">Export Csv</a><a class="asdt">Export Excel</a></div> <div class="asd">Search</div>
+                     
+                     
+                      
                         <input type="text" id="ls_search_text" placeholder="Type any keyword to search"
                             class="form-control" />
-                    </div>
+                   
                 </div>
                 <br />
                 <div id="ls_result" style="overflow-x:scroll;border-top: 5px solid #ddd;overflow-y:scroll;height:600px"></div>
