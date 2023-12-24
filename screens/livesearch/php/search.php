@@ -62,25 +62,19 @@
 			{
 				if(in_array($col_name_row['COLUMN_NAME'],$output_columns))
 				{
-					if(count($output_columns_name)!=0 && count($output_columns_name)==count($output_columns))
-					{
-						$output .= "<th>".$output_columns_name[$k]."</th>";
-						$k=$k+1;
-					}
-					else
-						$output .= "<th>".$col_name_row['COLUMN_NAME']."</th>";
-					array_push($op,$col_name_row['COLUMN_NAME']);
+					
+						$output .= "<th>id</th><th>employeeid</th><th>employeecode</th><th>employeename</th><th>officename</th><th>designation</th><th>contact no.</th><th>email</th><th>status</th>";
+				
 				}
 			}
 			$output.="</thead><tbody>";
 		}
 		else
 		{
-			while($col_name_row = $col_name_query_result->fetch_assoc())
-			{
-				$output .= "<th>".$col_name_row['COLUMN_NAME']."</th>";
-				array_push($op,$col_name_row['COLUMN_NAME']);
-			}
+			
+				$output .= "<th>id</th><th>employeeid</th><th>employeecode</th><th>employeename</th><th>officename</th><th>designation</th><th>contact no.</th><th>email</th><th>status</th>";
+				
+		
 			$output.="</thead><tbody>";
 		}
 		while($row = $user_query_result->fetch_assoc())

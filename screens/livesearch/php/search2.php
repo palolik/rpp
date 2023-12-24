@@ -53,11 +53,9 @@
 	if($row_cnt>0)  
 	{
 		$output.="
-		<div style='height: auto;align-items: center;flex-direction: column;justify-content: flex-start;padding: 10px;'><table id='ls_table' class='table table-striped table-bordered table-sm'
-		cellspacing='0' width='100%'><thead><tr>";
+		<div><table id='ls_table' class='tab3'><thead><tr>";
 		
-		if($use_sno==true)
-			$output.="<th>S.No</th>";
+		
 		if(count($output_columns)!=0)
 		{
 			while($col_name_row = $col_name_query_result->fetch_assoc())
@@ -87,13 +85,18 @@
 		}
 		while($row = $user_query_result->fetch_assoc())
 		{
-			$j=$j+1;
-			$output.="<tr>";
-			if($use_sno==true)
-				$output.="<td>".$j."</td>";
 		
-			foreach ($op as $value) 
-				$output .="<td>".$row[$value]."</td>";
+				$output .= "<tr><td>".$row['id']."</td><td>".$row['employeeid']."</td><td>".$row['employeecode']."</td>
+				<td><form action='query.php' method='post'><input class='trm' type='submit' value=' ".$row['employeename']." ' >
+				<input type='hidden' name='ds' value=".$row['employeeid'].">                
+			</form></td>
+			
+			
+			<td>".$row['officename']."</td>
+				 <td>".$row['designation']."</td>
+				 <td>".$row['contactno']."</td>
+				 <td>".$row['email']."</td>
+				 <td>".$row['status']."</td></tr>";
 		}
 		echo $output;
 	}
