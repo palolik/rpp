@@ -53,6 +53,7 @@
 
             <a class="asdt" href="addemployee.php" >add employee</a>
     <button class="asdt"  onclick="exportTableToExcel('ls_table', 'employees')">Export Excel</button>
+    <button class="asdt" onclick="ImportTableToDb()">Import CSV</button>
 
     <button class="asdt" onclick="exportTableToCSV()">Export CSV</button>
 
