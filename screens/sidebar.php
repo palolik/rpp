@@ -1,76 +1,40 @@
 <div class="flex-shrink-0 p-3" style="height:100%;background-color:#0a0026;">
-            <a href="/"
-                class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-white text-decoration-none border-bottom">
-                <span class="fs-5 fw-semibold text-white">ADMIN</span>
-            </a>
-            <ul class="list-unstyled ps-0">
-                <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center text-white border-0 collapsed"
-                        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                        User Management
-                    </button>
-                    <div class="collapse show" id="home-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="addemployee.php"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">User
-                                     Creation</a></li>
-                            <li><a href="employeelist.php"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Employee List</a></li>
-                          
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button
-                        class="btn btn-toggle d-inline-flex align-items-center text-white rounded border-0 collapsed"
-                        data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                        Setup Page
-                    </button>
-                    <div class="collapse" id="dashboard-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Category</a>
-                            </li>
-                            <li><a href="#"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Item</a>
-                            </li>
-                            <li><a href="#"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Store</a>
-                            </li>
-                            <li><a href="#"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Cinsignee</a>
-                            </li>
-                            <li><a href="#"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Office
-                                    Wise Store Mapping</a></li>
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+    <svg class="bi pe-none me-2" width="40" height="32">
+      <use xlink:href="#bootstrap" />
+    </svg>
+    <span class="fs-4">ADMIN</span>
+  </a>
+  <hr>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">      <a href="#" class="nav-link text-white"> 
 
-                        </ul>
-                    </div>
-                </li>
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="employeelist.php" class="nav-link text-white"> 
+        Employee List
+      </a>
+    </li>
+    <li>
+      <a href="devicelist.php" class="nav-link text-white">
+       Devices List
+      </a>
+    </li>
+    <li>
+      <a href="itemlist.php" class="nav-link text-white">
+       Items List                    
+      </a>
+    </li>
+    <li>
+      <a href="addemployee.php" class="nav-link text-white">
+        Add Employee
+      </a>
+    </li>
+  </ul>
+                 
 
-                <li class="border-top my-3"></li>
-                <li class="mb-1">
-                    <button
-                        class="btn btn-toggle d-inline-flex align-items-center text-white rounded border-0 collapsed"
-                        data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                        Account
-                    </button>
-                    <div class="collapse" id="account-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">New...</a>
-                            </li>
-                            <li><a href="#"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Profile</a>
-                            </li>
-                            <li><a href="#"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Settings</a>
-                            </li>
-                            <li><a href="#"
-                                    class="link-body-emphasis d-inline-flex text-white text-decoration-none rounded">Sign
-                                    out</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
+
+
+</div>

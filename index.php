@@ -4,7 +4,7 @@
 <head>
 
     <title>SIGN IN</title>
-    <link rel="stylesheet" type="text/css" href="styl31.css">
+    <link rel="stylesheet" type="text/css" href="styl32.css">
 </head>
 
 <body class="backim">
