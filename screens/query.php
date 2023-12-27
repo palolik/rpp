@@ -10,8 +10,32 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl34.css">
+    <link rel="stylesheet" type="text/css" href="../styl37.css">
+    <style>
 
+.form-popup {
+  display: none;
+ 
+}
+.form-container {
+  background-color: white;
+}
+
+.form-container .btn {
+  border: none;
+  cursor: pointer;
+
+
+
+}
+
+.form-container .cancel {
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
     <title>Sidebars · Bootstrap v5.3</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
@@ -170,7 +194,7 @@
   <div class='bol' style="margin-bottom:25px;">
                 <p>Extra Device Details</p>
             </div>
-                <table  style='width: -webkit-fill-available;'>
+                <table  class="aer">
                <tr style='text-align: center;'>
                 <th>Item</th> <th>Quantity</th> <th>Price</th> <th>Specifications</th> <th>Purchase_Date</th> <th>Warrenty_Info</th> <th>Status</th> <th>Comments</th> <th>Delate</th> <th>Custom</th><th>Log</th>
                 </tr>
@@ -186,27 +210,90 @@
                 while ($row = $result->fetch_assoc()) {
                     echo 
                     "
-                    <tr style='text-align: center; border: 1px solid;'><td style=' border: 1px solid;'>". $row['device'] ."</td> <td>". $row['Q'] ."</td> <td>". $row['price'] ."</td> <td>". $row['Model/specification'] ."</td> <td>". $row['purchase_date'] ."</td> <td>". $row['Warranty Info'] ."</td> <td>". $row['Status'] ."</td> <td>". $row['Comments'] ."</td> <td><a class='asd' href=\"deleteemployee.php?id=$row[sid]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td> <td>  <a class='asd' href=\"edite.php?ds=$row[sid]\">custom</a></td><td>   <a class='asd' href=\"edite.php?ds=$row[sid]\">view</a></td>
+                    <tr><td><div class='adt'>". $row['device'] ."</div></td> <td><div class='adt'>". $row['Q'] ."</div></td> <td><div class='adt'>". $row['price'] ."</div></td> <td><div class='adt'>". $row['Model/specification'] ."</div></td> <td><div class='adt'>". $row['purchase_date'] ."</div></td> <td><div class='adt'>". $row['Warranty Info'] ."</div></td> <td><div class='adt'>". $row['Status'] ."</div></td> <td><div class='adt'>". $row['Comments'] ."</div></td> <td><a class='asd' href=\"deleteemployee.php?id=$row[sid]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td> <td>  <a class='asd' href=\"edite.php?ds=$row[sid]\">custom</a></td><td>   <a class='asd' href=\"edite.php?ds=$row[sid]\">view</a></td>
                 </tr>
-               ";   
+                ";
               }
             }
-            
-            ?>
-    
-           
+        
+  
+ ?>
+
+
+
+        
+   <tr><td colspan='11'><button class='nm1' onclick="openForm()">Add new item</button></td>
+<tr>
+
     </table>
 
-                </div>
-                </div>
+               
+    <div class="tamo" id="myForm">
+    <p>add new device</p><button type="button"  onclick="closeForm()">Close</button> 
+    <form  action="/action_page.php">
+    <div class='st'>
 
-            </div>
-        </div>
+ 
+                      
+                           <div style='margin:10px'>
+                         <div class="mb-3">
+                          <label class="form-label">Item:</label>
+                          <input  name="employeeid" class="form-control " type="text">
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">Quantity:</label>
+                            <input name="employeecode" class="form-control" type="text">
+                           </div>    
+                           <div class="mb-3">
+                            <label class="form-label">Price:</label>
+                            <input name="employeename" class="form-control" type="text" >
+                            </div>    
+                             <div class="mb-3">
+                            <label class="form-label">Specifications:</label>
+                            <input name="employeename" class="form-control" type="text" >
+                             </div> 
+                        </div>
+      <div  style='margin:10px'>
+                             <div class="mb-3">
+                            <label class="form-label">Purchase_Date:</label>
+                            <input name="employeename" class="form-control" type="text" >
+                             </div>  
+                             <div class="mb-3">
+                            <label class="form-label">Warrenty_Date:</label>
+                            <input name="employeename" class="form-control" type="text" >
+                             </div> 
+                             <div class="mb-3">
+                            <label class="form-label">Status:</label>
+                            <input name="employeename" class="form-control" type="text" >
+                             </div>  
+                             <div class="mb-3">
+                            <label class="form-label">Comments:</label>
+                            <input name="employeename" class="form-control" type="text" >
+                             </div>    
+                  
+        </div>                                        
+                        </div>
+
+                    
+        
+    <button type="submit" class='nm2' >Add</button>
+     
+    </form>
+  
+
+
     </div>
-
 </body>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="sidebars.js"></script>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
 
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
 </html>
