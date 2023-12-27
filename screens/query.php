@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl32.css">
+    <link rel="stylesheet" type="text/css" href="../styl34.css">
 
     <title>Sidebars · Bootstrap v5.3</title>
 
@@ -55,16 +55,10 @@
             include '../config/database.php';
 
             $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $databaseName);
-
-
-
-            $id = $_POST['ds'];
-
-            $sql = "SELECT * FROM employees where employeeid=$id";
+    $id = $_POST['ds'];
+        $sql = "SELECT * FROM employees where employeeid=$id";
             $result = $conn->query($sql);
-
             if ($result->num_rows > 0) {
-
                 while ($row = $result->fetch_assoc()) {
                     echo 
                     "
@@ -135,16 +129,80 @@
 
                     </div>
                 </form>
+                ";
+            }
+            }
+            
+            ?>
+            
 
+
+                <div class='box9'>
+                <div class='bol' style="margin-bottom:25px;">
+                <p>Device Details</p>
+            </div>
+                <div>
+                <div>
+            <?php   
+              include '../config/database.php';
+
+              $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+            $id = $_POST['ds'];
+        $sql = "SELECT * FROM devices where employeeid=$id";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo 
+                    "
+                <table style='margin:10px'>
+                <tr><th style='text-align: left;width:200px'>Ip Address</th><td>". $row['ip'] ."</td></tr>
+                <tr><th style='text-align: left;'>PC/Laptop</th><td>". $row['pc/laptop'] ."</td></tr>
+                <tr><th style='text-align: left;'>Processor</th><td>". $row['processor'] ."</td></tr>
+                <tr><th style='text-align: left;'>RAM</th><td>". $row['ram'] ."</td></tr>
+                <tr><th style='text-align: left;'>HDD</th><td>". $row['hdd'] ."</td></tr>
+                <tr><th style='text-align: left;'>SSD</th><td>". $row['ssd'] ."</td></tr>
+        </table>
+                </div>";
+            }
+        }
+        
+        ?>
+  <div class='bol' style="margin-bottom:25px;">
+                <p>Extra Device Details</p>
+            </div>
+                <table  style='width: -webkit-fill-available;'>
+               <tr style='text-align: center;'>
+                <th>Item</th> <th>Quantity</th> <th>Price</th> <th>Specifications</th> <th>Purchase_Date</th> <th>Warrenty_Info</th> <th>Status</th> <th>Comments</th> <th>Delate</th> <th>Custom</th><th>Log</th>
+                </tr>
+               
+                <?php   
+              include '../config/database.php';
+
+              $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+            $id = $_POST['ds'];
+        $sql = "SELECT * FROM extradevices where employeeid=$id";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo 
+                    "
+                    <tr style='text-align: center; border: 1px solid;'><td style=' border: 1px solid;'>". $row['device'] ."</td> <td>". $row['Q'] ."</td> <td>". $row['price'] ."</td> <td>". $row['Model/specification'] ."</td> <td>". $row['purchase_date'] ."</td> <td>". $row['Warranty Info'] ."</td> <td>". $row['Status'] ."</td> <td>". $row['Comments'] ."</td> <td><a class='asd' href=\"deleteemployee.php?id=$row[sid]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td> <td>  <a class='asd' href=\"edite.php?ds=$row[sid]\">custom</a></td><td>   <a class='asd' href=\"edite.php?ds=$row[sid]\">view</a></td>
+                </tr>
+               ";   
+              }
+            }
+            
+            ?>
+    
+           
+    </table>
+
+                </div>
+                </div>
 
             </div>
         </div>
     </div>
-    ";
-}
-}
-
-?>
 
 </body>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

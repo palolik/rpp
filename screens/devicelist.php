@@ -11,7 +11,7 @@
     <meta name="generator" content="Hugo 0.118.2">
     <link rel="stylesheet" type="text/css" href="../styl34.css">
 
-    <title>Sidebars · Bootstrap v5.3</title>
+    <title>Device List</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
 
@@ -64,53 +64,7 @@
     justify-content: flex-start;
 ">
               
-                <form  method="POST" name="add">
-                    <div class="box1">
-                     
-                        <div >
-                        <div class="mb-3">
-    <label class="form-label">Employee Id:</label>
-    <input  name="employeeid" class="form-control " type="text">
-  </div>
-  <div class="mb-3">
-  <label class="form-label">Employee Code:</label>
-                                    <input name="employeecode" class="form-control" type="text">
-  </div>    
-   <div class="mb-3">
-   <label class="form-label">Employee Name:</label>
-                                    <input name="employeename" class="form-control" type="text" >
-    </div>     <div class="mb-3">
-
-    <label class="form-label">Office :</label>
-                                    <select name="officename"class="form-select form-select mb-3" aria-label="Large select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-</div>     <div class="mb-3">
-<label class="form-label">Status :</label>
- <select name="status" class="form-select" aria-label="Default select example">
-                                 
-  <option selected></option>
-  <option value="Working">Working</option>
-  <option value="On Leave">On Leave</option>
-  <option value="Fired">Fired</option>
-</select>
-</div>     <div class="mb-3">
-
-<label class="form-label">Contact no :</label>
-                                    <input name="contactno" class="form-control" type="text" >
-  </div>     <div class="mb-3">
-  <label class="form-label">Email address</label>
-  <label >Email :</label>
-                                    <input name="email" class="form-control" type="text">
-  </div>
-                      
-                        </div>
-
-                    </div>
-                </form>
+     
 
             </div>
         </div>
