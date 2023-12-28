@@ -32,7 +32,7 @@
 
 <?php
     require_once("../config/database.php");
-    if(isset($_POST['submit'])){
+    if(isset($_POST['submo'])){
         
         $employeeid = mysqli_real_escape_string($mysqli, $_POST['employeeid']);
         $employeecode = mysqli_real_escape_string($mysqli, $_POST['employeecode']);
@@ -68,45 +68,51 @@
                     <div class="box1">
                      
                     <div >
-                         <div class="mb-3">
-                                                    <label class="form-label">Employee Id:</label>
-                                                    <input  name="employeeid" class="form-control " type="text">
-                                                </div>
-                                                <div class="mb-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Employee Id:</label>
+                                                <input  name="employeeid" class="form-control " type="text">
+                                            </div>
+                                            <div class="mb-3">
                                                 <label class="form-label">Employee Code:</label>
-                                                                                    <input name="employeecode" class="form-control" type="text">
-                                                </div>    
-                                                <div class="mb-3">
+                                                <input name="employeecode" class="form-control" type="text">
+                                            </div>    
+                                            <div class="mb-3">
                                                 <label class="form-label">Employee Name:</label>
-                                                                                    <input name="employeename" class="form-control" type="text" >
-                                                    </div>     <div class="mb-3">
-
-                                                    <label class="form-label">Office :</label>
-                                                                                    <select name="officename"class="form-select form-select mb-3" aria-label="Large select example">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <input name="employeename" class="form-control" type="text" >
+                                            </div>     
+                                            <div class="mb-3">
+                                                <label class="form-label">Office :</label>
+                                                <select name="officename"class="form-select form-select mb-3" aria-label="Large select example">
+                                                <option selected></option>
+                                                <option value="one">one</option>
+                                                <option value="two">Two</option>
+                                                <option value="three">Three</option>
                                                 </select>
-                                                </div>     <div class="mb-3">
+                                            </div>  
+                                            <div class="mb-3">
+                                                <label class="form-label">Designation:</label>
+                                                <input name="designation" class="form-control" type="text" >
+                                            </div>     
+                                            <div class="mb-3">
                                                 <label class="form-label">Status :</label>
-                                                <select name="status" class="form-select" aria-label="Default select example">
-                                                                                
+                                                <select name="status" class="form-select" aria-label="Default select example">                                                                             
                                                 <option selected></option>
                                                 <option value="Working">Working</option>
                                                 <option value="On Leave">On Leave</option>
                                                 <option value="Fired">Fired</option>
                                                 </select>
-                                                </div>     <div class="mb-3">
-
+                                            </div>     
+                                            <div class="mb-3">
                                                 <label class="form-label">Contact no :</label>
-                                                                                    <input name="contactno" class="form-control" type="text" >
-                                                </div>     <div class="mb-3">
+                                                <input name="contactno" class="form-control" type="text" >
+                                            </div>     
+                                            <div class="mb-3">
                                                 <label class="form-label">Email address</label>
-                                                <label >Email :</label>
-                                                                                    <input name="email" class="form-control" type="text">
-                                                </div>
-                                                                    
+                                                <input name="email" class="form-control" type="text">
+                                            </div>
+                                        
+                                            <input type="submit" class="buts" name="submo" value="add">
+
                         </div>
 
                     </div>
