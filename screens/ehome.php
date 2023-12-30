@@ -63,7 +63,7 @@ $eid=$_SESSION['eid'] ;
 
     <div class="brk">
 
-    <?php include("sidebar.php") ?>
+    <?php include("sidebar2.php") ?>
 <div>
 
     <?php include("header.php") ?>

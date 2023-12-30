@@ -13,8 +13,7 @@
    
 ?>
 <form action="additem.php" method="POST">
-<input name="items" class="form-control" type="text" placeholder="Default input"
-                       >
+<input name="items" class="form-control" type="text" placeholder="Default input">
 <input type="submit" class="buts" name="subm" value="add">
 </form>
 
