@@ -39,18 +39,8 @@
     <?php include("header.php") ?>
 
 
-            <form action="" method="GET">
-                <div class="box5">
-
-                    <input type="text" name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>"
-                        class="form-control" placeholder="Search data">
-                    <button type="submit" class="buts">Search</button>
-
-                </div>
-                <div class="box8">
-                   <!-- <?php include("additem.php") ?> -->
-                   <a href="additem.php"> add items</a>
-                </div>
+       
+             
 
 
                 <div
@@ -59,19 +49,17 @@
                         cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th class="th-sm">serial</th>
-                                <th class="th-sm">item name</th>
-                                <th class="th-sm">actions</th>
+                                <th class="th-sm">Mainteinence</th>
+                                <th class="th-sm">Cost</th>
+                                <th class="th-sm">Feedback</th>
                            
                             </tr>
                         </thead>
                         <tbody>
                             <?php 
-                                      include '../config/database.php';
-                                        if(isset($_GET['search']))
-                                    {
-                                        $filtervalues = $_GET['search'];
-                                        $query = "SELECT * FROM itemlist WHERE CONCAT(items) LIKE '%$filtervalues%' ";
+                                       include '../config/database.php';
+                                       $serial = $_GET['sid'];
+                                        $query = "SELECT * FROM log WHERE did=$serial";
                                         $query_run = mysqli_query($conn, $query);
 
                                         if(mysqli_num_rows($query_run) > 0)
@@ -79,10 +67,10 @@
                                             foreach($query_run as $res)
                                             {                                            
                                                 echo "<tr>";
-                                                echo "<td>".$res['serial']."</td>";
-                                                echo "<td>".$res['items']."</td>";
-                                                echo "<td><a href=\"deleteitem.php?serial=$res[serial]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
-                                                <a href=\"edit.php?serial=$res[serial]\">Edit</a></td>";
+                                                echo "<td>".$res['mainteinence']."</td>";
+                                                echo "<td>".$res['cost']."</td>";
+                                                echo "<td>".$res['feedback']."</td>";
+                                              
                                        
                                              
                                                 echo "</tr>";
@@ -93,25 +81,8 @@
                                                 <td colspan='7'>No Record Found</td>
                                             </tr>" ;
                                             }
-                                        }
-                                        else if(empty($_GET['search']))
-                                        {
-                                            $result = mysqli_query($mysqli, "SELECT * FROM itemlist");
-                                            while ($res = mysqli_fetch_assoc($result))
-                                            {   
-                                                echo "<tr>";
-                                                echo "<td>".$res['serial']."</td>";
-                                                echo "<td>".$res['items']."</td>";
-                                              
-                                                echo "<td><a href=\"deleteitem.php?serial=$res[serial]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
-                                                <a href=\"edit.php?serial=$res[serial]\">Edit</a></td>";
-                                             
-                                                echo "</tr>";
-                                               } 
-
-                                        } else {
-                                           
-                                        }
+                                        
+                               
                                     
                                 ?>
 

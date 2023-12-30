@@ -1,3 +1,7 @@
+<?php  
+session_start(); 
+$eid=$_SESSION['eid'] ;
+?>
 <!doctype html>
 <html style="
     height: -webkit-fill-available;">
@@ -75,12 +79,13 @@
 
             </div>
 
-            <?php
+    <?php
             include '../config/database.php';
 
             $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $databaseName);
-    $id = $_POST['ds'];
-        $sql = "SELECT * FROM employees where employeeid=$id";
+     
+
+        $sql = "SELECT * FROM employees where employeeid=$eid";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -92,7 +97,7 @@
             <form>
                     <div class='box1'>
                         <div class='bol'>
-                            <p>Existing Employee Details</p>
+                            <p>Profile</p>
                         </div>
                         <div class='box11'>
                             <div class='box111'>
@@ -147,10 +152,7 @@
                  
                             
                         </div>
-                        <div class='aew'> <a class='asd' href=\"deleteemployee.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
-                        <a class='asd' href=\"edite.php?ds=$row[id]\">Edit</a>
-                        </div>
-
+                       
                     </div>
                 </form>
                 ";
@@ -171,15 +173,15 @@
               include '../config/database.php';
 
               $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $databaseName);
-            $id = $_POST['ds'];
-        $sql = "SELECT * FROM devices where employeeid=$id";
+           
+        $sql = "SELECT * FROM devices where employeeid=$eid";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo 
                     "
                 <table style='margin:10px'>
-                <tr><th style='text-align: left;width:200px'>Ip Address</th><td>". $row['ip'] ."</td></tr>
+                <tr><th style='text-align: left;width:200px'>Ip Address</th><td>". $row['pcip'] ."</td></tr>
                 <tr><th style='text-align: left;'>PC/Laptop</th><td>". $row['pc/laptop'] ."</td></tr>
                 <tr><th style='text-align: left;'>Processor</th><td>". $row['processor'] ."</td></tr>
                 <tr><th style='text-align: left;'>RAM</th><td>". $row['ram'] ."</td></tr>
@@ -196,15 +198,15 @@
             </div>
                 <table  class="aer">
                <tr style='text-align: center;'>
-                <th>Item</th> <th>Quantity</th> <th>Price</th> <th>Specifications</th> <th>Purchase_Date</th> <th>Warrenty_Info</th> <th>Status</th> <th>Comments</th> <th>Delate</th> <th>Custom</th><th>Log</th>
+                <th>Item</th> <th>Quantity</th> <th>Price</th> <th>Specifications</th> <th>Purchase_Date</th> <th>Warrenty_Info</th> <th>Status</th> <th>Comments</th><th>Log</th>
                 </tr>
                
                 <?php   
               include '../config/database.php';
 
               $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $databaseName);
-            $id = $_POST['ds'];
-        $sql = "SELECT * FROM extradevices where employeeid=$id";
+            
+        $sql = "SELECT * FROM extradevices where employeeid=$eid";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -212,15 +214,13 @@
                     "
                     <tr>
                     <td><div class='adt'>". $row['device'] ."</div></td>
-                    <td><div class='adt'>". $row['Q'] ."</div></td>
+                     <td><div class='adt'>". $row['Q'] ."</div></td>
                     <td><div class='adt'>". $row['price'] ."</div></td>
                     <td><div class='adt'>". $row['Model/specification'] ."</div></td>
-                    <td><div class='adt'>". $row['purchase_date'] ."</div></td> 
+                    <td><div class='adt'>". $row['purchase_date'] ."</div></td>
                     <td><div class='adt'>". $row['Warranty Info'] ."</div></td>
                     <td><div class='adt'>". $row['Status'] ."</div></td>
                     <td><div class='adt'>". $row['Comments'] ."</div></td>
-                    <td><a class='asd' href=\"deleteemployee.php?id=$row[sid]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>
-                    <td><a class='asd' href=\"edite.php?ds=$row[sid]\">custom</a></td>
                     <td><a class='asd' href=\"log.php?sid=$row[sid]\">view</a></td>
                 </tr>
                 ";
@@ -233,63 +233,12 @@
 
 
         
-   <tr><td colspan='11'><button class='nm1' onclick="openForm()">Add new item</button></td>
-<tr>
+
 
     </table>
 
                
-    <div class="tamo" id="myForm">
-    <p>add new device</p><button type="button"  onclick="closeForm()">Close</button> 
-    <form  action="/action_page.php">
-    <div class='st'>
-
- 
-                      
-                           <div style='margin:10px'>
-                         <div class="mb-3">
-                          <label class="form-label">Item:</label>
-                          <input  name="employeeid" class="form-control " type="text">
-                          </div>
-                          <div class="mb-3">
-                            <label class="form-label">Quantity:</label>
-                            <input name="employeecode" class="form-control" type="text">
-                           </div>    
-                           <div class="mb-3">
-                            <label class="form-label">Price:</label>
-                            <input name="employeename" class="form-control" type="text" >
-                            </div>    
-                             <div class="mb-3">
-                            <label class="form-label">Specifications:</label>
-                            <input name="employeename" class="form-control" type="text" >
-                             </div> 
-                        </div>
-      <div  style='margin:10px'>
-                             <div class="mb-3">
-                            <label class="form-label">Purchase_Date:</label>
-                            <input name="employeename" class="form-control" type="text" >
-                             </div>  
-                             <div class="mb-3">
-                            <label class="form-label">Warrenty_Date:</label>
-                            <input name="employeename" class="form-control" type="text" >
-                             </div> 
-                             <div class="mb-3">
-                            <label class="form-label">Status:</label>
-                            <input name="employeename" class="form-control" type="text" >
-                             </div>  
-                             <div class="mb-3">
-                            <label class="form-label">Comments:</label>
-                            <input name="employeename" class="form-control" type="text" >
-                             </div>    
-                  
-        </div>                                        
-                        </div>
-
-                    
-        
-    <button type="submit" class='nm2' >Add</button>
-     
-    </form>
+   
   
 
 

@@ -108,11 +108,11 @@ body{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
-  background-color: #00d00e;
+  font-size: 25px;
+  background-color: #0c002e;
   border: none;
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .butss:hover {
   background-color: #04bf2f; /* Green */
@@ -378,6 +378,16 @@ body{
   width: -webkit-fill-available;
   color:black;
   border:none;
+}
+.ere{
+  font-size:25px;
+  width:500px;
+  height:40px;
+  background-color:rgba(22, 19, 19, 0.8);
+  margin-top: 5px;
+  border-radius: 10px;
+
+
 }
 .nm2{
   background-color: #03002b;

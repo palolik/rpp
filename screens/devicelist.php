@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl37.css">
+    <link rel="stylesheet" type="text/css" href="../styl38.css">
     <title>Device List</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -35,11 +35,11 @@
             <div class="container"> 
                 <div class="form-group">
                     <div class="inp">
-  <input type="text" id="ls_search_text2" placeholder="Type any keyword to search"
+  <input type="text" id="ls_search_text" placeholder="Type any keyword to search"
     class="form-control" />  
                 </div>
                 <br />
-                <div id="ls_result2" style="overflow-x:scroll;border-top: 5px solid #ddd;overflow-y:scroll;height:550px"></div>
+                <div id="ls_result" style="overflow-x:scroll;border-top: 5px solid #ddd;overflow-y:scroll;height:550px"></div>
             </div>
         </div>
     </div>

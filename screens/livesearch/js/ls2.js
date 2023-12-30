@@ -3,22 +3,22 @@ $(document).ready(function(){
 	function load_data(query)
 	{
 		$.ajax({
-			url:"livesearch/php/search3.php",
+			url:"livesearch/php/search2.php",
 			method:"post",
 			data:{query:query},
 			success:function(data)
 			{
-				$('#ls_result2').html(data);
+				$('#ls_result').html(data);
 			}
 		});
 	}
 	
-	$('#ls_search_text2').keyup(function(){
-		var search2 = $(this).val();
+	$('#ls_search_text').keyup(function(){
+		var search = $(this).val();
 		
-		if(search2 != '')
+		if(search != '')
 		{
-			load_data(search2);
+			load_data(search);
 		}
 		else
 		{
