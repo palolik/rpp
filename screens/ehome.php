@@ -14,7 +14,7 @@ $eid=$_SESSION['eid'] ;
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl38.css">
+    <link rel="stylesheet" type="text/css" href="../styl39.css">
     <style>
 
 .form-popup {
@@ -95,13 +95,15 @@ $eid=$_SESSION['eid'] ;
      
                     
             <form>
-                    <div class='box1'>
-                        <div class='bol'>
-                            <p>Profile</p>
-                        </div>
+                    <div class='box31'>
+                       
                         <div class='box11'>
                             <div class='box111'>
-                               
+                            <div class='f2'>
+                            <label for='fname'>Office :</label>
+                            <input class='form-control' type='text' name='officename' value=' ". $row['officename'] ." '
+                            aria-label='Disabled input example' disabled readonly>
+                        </div>
                                 <div class='f2'>
                                     <label for='fname'>Employee Name:</label>
                                     <input class='form-control' type='text' name='employeename'  value=' ".$row['employeename']." '
@@ -123,11 +125,7 @@ $eid=$_SESSION['eid'] ;
                             </div>
                             <div class='box112'>
 
-                                <div class='f2'>
-                                    <label for='fname'>Office :</label>
-                                    <input class='form-control' type='text' name='officename' value=' ". $row['officename'] ." '
-                                    aria-label='Disabled input example' disabled readonly>
-                                </div>
+                             
                                 <div class='f2'>
                                     <label for='fname'>Email Address :</label>
                                     <input class='form-control' type='text' name='email' value=' ". $row['email'] ." '
@@ -165,7 +163,7 @@ $eid=$_SESSION['eid'] ;
 
                 <div class='box9'>
                 <div class='bol' style="margin-bottom:25px;">
-                <p>Device Details</p>
+                <p>PC Configurations</p>
             </div>
                 <div>
                 <div>
@@ -198,7 +196,7 @@ $eid=$_SESSION['eid'] ;
             </div>
                 <table  class="aer">
                <tr style='text-align: center;'>
-                <th>Item</th> <th>Quantity</th> <th>Price</th> <th>Specifications</th> <th>Purchase_Date</th> <th>Warrenty_Info</th> <th>Status</th> <th>Comments</th><th>Log</th>
+                <th>Item</th>  <th>Specifications</th> <th>Purchase_Date</th> <th>Warrenty_Info</th> <th>Status</th> <th>Comments</th><th>Log</th>
                 </tr>
                
                 <?php   
@@ -214,8 +212,7 @@ $eid=$_SESSION['eid'] ;
                     "
                     <tr>
                     <td><div class='adt'>". $row['device'] ."</div></td>
-                     <td><div class='adt'>". $row['Q'] ."</div></td>
-                    <td><div class='adt'>". $row['price'] ."</div></td>
+             
                     <td><div class='adt'>". $row['Model/specification'] ."</div></td>
                     <td><div class='adt'>". $row['purchase_date'] ."</div></td>
                     <td><div class='adt'>". $row['Warranty Info'] ."</div></td>

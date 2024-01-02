@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl38.css">
+    <link rel="stylesheet" type="text/css" href="../styl39.css">
     <title>Device List</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
