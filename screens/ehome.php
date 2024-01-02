@@ -1,7 +1,12 @@
 <?php  
 session_start(); 
+if (!isset($_SESSION['eid'])) {
+    header('Location:../index.php');
+    exit();
+}
 $eid=$_SESSION['eid'] ;
 ?>
+
 <!doctype html>
 <html style="
     height: -webkit-fill-available;">

@@ -11,9 +11,11 @@
                 </div>      
 
                     <div style="border:1px solid white;resize:none;color:white;font-size:15px;width:-webkit-fill-available;height:500px;background-color:rgba(22, 19, 19, 0.3);">
-                     <div class="no1" >tomorrow hg gfd try will be a national holiday</div>
-                     <div class="no1" >tomorrow hg gfd try will be a national holiday</div>
-                     <div class="no1">tomorrow hg gfd try will be a national holiday</div>
+                     <div class="no1" >
+                    <p style="color:red;">tomorrow hg gfd try will be a national holiday dfsds dsf sdf sde </p>
+                     <p>date</p>
+                    </div>
+    
 
 </div>
 
@@ -21,7 +23,8 @@
 <div>
                     <div style=" margin-top: 200px;">
                       <button class='nm4' onclick="openForm()">Request Maintenance</button>
-                      <button class='nm4' onclick="openForm()">Logout</button>
+                  
+                      <a  href="logout.php"> <input class='nm4' type="submit" name="" value="Logout" ></a>
 </div>
            
                  
