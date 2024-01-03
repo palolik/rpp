@@ -434,6 +434,37 @@ body{
   text-decoration: none;
   cursor: pointer;
 }
+.ho1{
+  background-color: white;
+  border: 1px solid rgb(44, 43, 43);
+  border-radius: 5px;
+  height: 220px;
+  width: 160px;
+  margin: 5px;
+  padding: 5px;
+}
+.mr1{
+  height:fit-content;
+  background-color:#d7d5ff;
+  margin: 5px;
+  padding: 3px;
+  border-radius: 5px;
+}
+.ht1{
+  margin: 10px;
+}
+.ho2{
+  font-size: 15px;
+}
+.ho3{
+  font-size: 25px;
+  text-align-last: center;
+
+}
+.hh1 {
+  height: 250px;
+  display: flex;
+}
 .box31 {
   height: 100%;
   background-color: #ffffff;

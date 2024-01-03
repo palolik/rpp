@@ -55,14 +55,14 @@ function closeForm() {
     font-size: 30px;
     margin: 10px;">
     <div>Maintenance Request</div>       
-<div>
-<button style=" background-color:white;border: none;padding:1px;cursor: pointer;"  onclick="closeForm()"><img style="height:20px" src="../clo.png"></button> 
-</div> 
-</div>
+    <div>
+    <button style=" background-color:white;border: none;padding:1px;cursor: pointer;"  onclick="closeForm()"><img style="height:20px" src="../clo.png"></button> 
+    </div> 
+    </div>
          <div>
          <form  action="mreq.php" method="POST">
                          <input style="display:none" value="<?php echo $eid ?>" name="employeeid">
-<input style="display:none" name="date"  value="<?php echo $eid ?>" >
+      <input style="display:none" name="date"  value="<?php echo $eid ?>" >
                       <textarea name="request" style="margin:20px;padding:10px;resize:none;color:black;font-size:20px;width:-webkit-fill-available;height:300px;background-color:white;"
                       placeholder="Please add Device name and the problem you are facing in brief"></textarea>
 
@@ -82,7 +82,7 @@ function closeForm() {
   
 
 
-    </div>
+</div>
 
 
  
