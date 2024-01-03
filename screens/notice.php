@@ -7,7 +7,7 @@
         $date = mysqli_real_escape_string($mysqli, $_POST['date']);
         $result = mysqli_query($mysqli, "INSERT INTO notice (`getters`, `notice`, `date`) VALUES ('$getters', '$notice', '$date') ");
 
-        header("location:home.php");
+        header("location:ehome.php");
 
     }
    

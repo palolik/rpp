@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl43.css">
+    <link rel="stylesheet" type="text/css" href="../styl44.css">
     <title>Admin home</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -35,7 +35,9 @@
 
 <div style="height:400px;width:1200px;display:flex;">
     <div style="height:-webkit-fill-available;width:450px;">
+    <div style="display:flex">
         <p style="font-size: 25px; margin: 10px;">Maintaintence Box</p>
+</div>
             <div class="ht1">
             
             <?php 
@@ -45,7 +47,10 @@
             while($res = mysqli_fetch_assoc($result))
 
             {
+                
                 echo "<div class='mr1'>";
+                echo "<a style='margin-left:400px;' href=\"dmreq.php?si=$res[si]\" onClick=\"return confirm('Are you sure you want to delete?')\"><img style='height:10px' src='../clo.png'></a>";
+
                 echo "<div>".$res['employeeid'] . $res['email'] ."</div >";
                 echo "<p>".$res['request']."</p>";
                 echo "<div>"  . $res['date']  , "</div>";
@@ -59,8 +64,9 @@
 
     </div>
     <div style="height:-webkit-fill-available;width:450px;">
-    <div style="display: flex;
-    justify-content: space-between;"><p style="font-size: 25px; margin: 10px;">NOTICE BOARD</p><button style=" background-color:white;border: none;padding:1px;cursor: pointer;"  onclick="openForm()"><img style="height:20px" src="../add.png"></button> 
+    <div style="display: flex;justify-content: space-between;">
+    <p style="font-size: 25px; margin: 10px;">NOTICE BOARD</p>
+    <button style=" background-color:white;border: none;padding:1px;cursor: pointer;"  onclick="openForm()"><img style="height:20px" src="../add.png"></button> 
         </div>
     <div class="ht1">
             
@@ -72,6 +78,8 @@
 
             {
                 echo "<div class='mr1'>";
+                echo "<a style='margin-left:400px;' href=\"dnot.php?si=$res[si]\" onClick=\"return confirm('Are you sure you want to delete?')\"><img style='height:10px' src='../clo.png'></a>";
+
                 echo "<div>". $res['getters'] ."</div >";
                 echo "<p>".$res['notice']."</p>";
                 echo "<div>"  . $res['date']  . "</div>";

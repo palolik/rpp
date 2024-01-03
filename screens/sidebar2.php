@@ -5,23 +5,34 @@
   </a>
   <hr>
 
+
   <div>
                   <div  style="margin-bottom:20px;color:white;font-size:20px;width:270px;height:20px;background-color:rgba(22, 19, 19, 0.3);">
                       Notice Board
                 </div>      
+<div class="scr">
+                 
+                    <?php 
+            require_once("../config/database.php");
 
-                    <div style="border:1px solid white;resize:none;color:white;font-size:15px;width:-webkit-fill-available;height:500px;background-color:rgba(22, 19, 19, 0.3);">
-                     <div class="no1" >
-                    <p style="color:red;">tomorrow hg gfd try will be a national holiday dfsds dsf sdf sde </p>
-                     <p>date</p>
-                    </div>
-    
+            $result = mysqli_query($mysqli, "SELECT * FROM notice ORDER BY si DESC");
+            while($res = mysqli_fetch_assoc($result))
+
+            {
+                echo "<div class='no1'>";
+                echo "<p style='color:red;'>". $res['notice'] ."</p>";
+                echo "<p>"  . $res['date']  . "</p>";
+
+                
+                echo "</div>";
+            }
+            ?>
 
 </div>
 
 </div>
 <div>
-                    <div style=" margin-top: 200px;">
+                    <div style=" margin-top: 50px;">
                       <button class='nm4' onclick="openForm()">Request Maintenance</button>
                   
                       <a  href="logout.php"> <input class='nm4' type="submit" name="" value="Logout" ></a>

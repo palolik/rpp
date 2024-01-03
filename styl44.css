@@ -307,14 +307,14 @@ body{
 .box111 {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 260px;
   justify-content: space-evenly;
 
 }
 .box112 {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 260px;
   justify-content: space-evenly;
 
 }
@@ -434,6 +434,29 @@ body{
   text-decoration: none;
   cursor: pointer;
 }
+/* scrollbar setting goes here  */
+.scr{
+  overflow: scroll;
+  height: 500px;
+  -ms-overflow-style: none; 
+scrollbar-width: none; 
+}
+.scr::-webkit-scrollbar {
+  display: none;
+}
+.ht1::-webkit-scrollbar {
+  display: none;
+}
+.ht1{
+  margin: 10px;
+  overflow: scroll;
+  height: 325px;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+
+
 .ho1{
   background-color: white;
   border: 1px solid rgb(44, 43, 43);
@@ -450,9 +473,7 @@ body{
   padding: 3px;
   border-radius: 5px;
 }
-.ht1{
-  margin: 10px;
-}
+
 .ho2{
   font-size: 15px;
 }
