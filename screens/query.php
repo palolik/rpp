@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl44.css">
+    <link rel="stylesheet" type="text/css" href="../styl45.css">
     <style>
 
 .form-popup {
@@ -162,7 +162,7 @@
 
 
                 <div class='box9'>
-                <div class='bol' style="margin-bottom:25px;">
+                <div class='bol' style="margin-bottom:5px;">
                 <p>Device Details</p>
             </div>
                 <div>
@@ -179,7 +179,7 @@
                     echo 
                     "
                 <table style='margin:10px'>
-                <tr><th style='text-align: left;width:200px'>Ip Address</th><td>". $row['ip'] ."</td></tr>
+                <tr><th style='text-align: left;width:200px'>Ip Address</th><td>". $row['pcip'] ."</td></tr>
                 <tr><th style='text-align: left;'>PC/Laptop</th><td>". $row['pc/laptop'] ."</td></tr>
                 <tr><th style='text-align: left;'>Processor</th><td>". $row['processor'] ."</td></tr>
                 <tr><th style='text-align: left;'>RAM</th><td>". $row['ram'] ."</td></tr>
@@ -191,7 +191,7 @@
         }
         
         ?>
-  <div class='bol' style="margin-bottom:25px;">
+  <div class='bol' style="margin-bottom:5px;">
                 <p>Extra Device Details</p>
             </div>
                 <table  class="aer">
@@ -240,46 +240,54 @@
 
                
     <div class="tamo" id="myForm">
-    <p>add new device</p><button type="button"  onclick="closeForm()">Close</button> 
+    <div style="margin:5px;display: flex;justify-content: space-between;">
+    <p style="font-size:20px;margin-left:20px;">ADD NEW DEVICE</p><button style="align-self: baseline;background-color: white;border: none;padding: 3px;cursor: pointer;"  onclick="closeForm()"><img style="height:15px" src="../clo.png"></button> 
+    </div> 
     <form  action="/action_page.php">
     <div class='st'>
 
  
                       
                            <div style='margin:10px'>
-                         <div class="mb-3">
-                          <label class="form-label">Item:</label>
-                          <input  name="employeeid" class="form-control " type="text">
-                          </div>
+                        
+                          <div class="mb-3">
+                                                <label class="form-label">Device :</label>
+                                                <select name=""class="form-control" >
+                                                <option selected></option>
+                                                <option value="one">one</option>
+                                                <option value="two">Two</option>
+                                                <option value="three">Three</option>
+                                                </select>
+                                            </div> 
                           <div class="mb-3">
                             <label class="form-label">Quantity:</label>
-                            <input name="employeecode" class="form-control" type="text">
+                            <input name="Q" class="form-control" type="text">
                            </div>    
                            <div class="mb-3">
                             <label class="form-label">Price:</label>
-                            <input name="employeename" class="form-control" type="text" >
+                            <input name="price" class="form-control" type="text" >
                             </div>    
                              <div class="mb-3">
                             <label class="form-label">Specifications:</label>
-                            <input name="employeename" class="form-control" type="text" >
+                            <input name="Model/specification" class="form-control" type="text" >
                              </div> 
                         </div>
       <div  style='margin:10px'>
                              <div class="mb-3">
                             <label class="form-label">Purchase_Date:</label>
-                            <input name="employeename" class="form-control" type="text" >
+                            <input name="purchase_date" class="form-control" type="date" >
                              </div>  
                              <div class="mb-3">
                             <label class="form-label">Warrenty_Date:</label>
-                            <input name="employeename" class="form-control" type="text" >
+                            <input name="Warrenty Info" class="form-control" type="date" >
                              </div> 
                              <div class="mb-3">
                             <label class="form-label">Status:</label>
-                            <input name="employeename" class="form-control" type="text" >
+                            <input name="Status" class="form-control" type="text" >
                              </div>  
                              <div class="mb-3">
                             <label class="form-label">Comments:</label>
-                            <input name="employeename" class="form-control" type="text" >
+                            <input name="Comments" class="form-control" type="text" >
                              </div>    
                   
         </div>                                        
@@ -287,7 +295,7 @@
 
                     
         
-    <button type="submit" class='nm2' >Add</button>
+    <div style="display:flex;justify-content:center"><button type="submit" class='nm2' >Add Item</button></div>
      
     </form>
   
