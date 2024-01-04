@@ -39,18 +39,8 @@
     <?php include("header.php") ?>
 
 
-            <form action="" method="GET">
-                <div class="box5">
-
-                    <input type="text" name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>"
-                        class="form-control" placeholder="Search data">
-                    <button type="submit" class="buts">Search</button>
-
-                </div>
-                <div class="box8">
-                   <!-- <?php include("additem.php") ?> -->
-                   <a href="additem.php"> add items</a>
-                </div>
+       
+             
 
 
                 <div
@@ -59,19 +49,17 @@
                         cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th class="th-sm">serial</th>
-                                <th class="th-sm">item name</th>
-                                <th class="th-sm">actions</th>
+                                <th class="th-sm">Mainteinence</th>
+                                <th class="th-sm">Cost</th>
+                                <th class="th-sm">Feedback</th>
                            
                             </tr>
                         </thead>
                         <tbody>
                             <?php 
-                                      include '../config/database.php';
-                                        if(isset($_GET['search']))
-                                    {
-                                        $filtervalues = $_GET['search'];
-                                        $query = "SELECT * FROM itemlist WHERE CONCAT(items) LIKE '%$filtervalues%' ";
+                                       include '../config/database.php';
+                                       $serial = $_GET['sid'];
+                                        $query = "SELECT * FROM log WHERE did=$serial";
                                         $query_run = mysqli_query($conn, $query);
 
                                         if(mysqli_num_rows($query_run) > 0)
@@ -79,10 +67,10 @@
                                             foreach($query_run as $res)
                                             {                                            
                                                 echo "<tr>";
-                                                echo "<td>".$res['serial']."</td>";
-                                                echo "<td>".$res['items']."</td>";
-                                                echo "<td><a href=\"deleteitem.php?serial=$res[serial]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
-                                                <a href=\"edit.php?serial=$res[serial]\">Edit</a></td>";
+                                                echo "<td>".$res['mainteinence']."</td>";
+                                                echo "<td>".$res['cost']."</td>";
+                                                echo "<td>".$res['feedback']."</td>";
+                                              
                                        
                                              
                                                 echo "</tr>";
@@ -93,28 +81,12 @@
                                                 <td colspan='7'>No Record Found</td>
                                             </tr>" ;
                                             }
-                                        }
-                                        else if(empty($_GET['search']))
-                                        {
-                                            $result = mysqli_query($mysqli, "SELECT * FROM itemlist");
-                                            while ($res = mysqli_fetch_assoc($result))
-                                            {   
-                                                echo "<tr>";
-                                                echo "<td>".$res['serial']."</td>";
-                                                echo "<td>".$res['items']."</td>";
-                                              
-                                                echo "<td><a href=\"deleteitem.php?serial=$res[serial]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
-                                                <a href=\"edit.php?serial=$res[serial]\">Edit</a></td>";
-                                             
-                                                echo "</tr>";
-                                               } 
-
-                                        } else {
-                                           
-                                        }
+                                        
+                               
                                     
                                 ?>
-
+  <tr><td colspan='3'><button class='nm1' onclick="openForm4()">mainteinence</button></td>
+<tr>
                         </tbody>
 
                     </table>
@@ -140,4 +112,55 @@ $(document).ready(function() {
 });
 </script>
 
+
+
+
+<script>
+    function openForm4() {
+  document.getElementById("myForms4").style.display = "block";
+}
+
+function closeForm4() {
+  document.getElementById("myForms4").style.display = "none";
+}
+
+</script>
+
+
+
+
+
 </html>
+
+
+<div id="myForms4" class="tamoro2">
+    <div style=" margin:10px;display: flex;justify-content: flex-start;flex-direction: column;align-items: center;;">
+        <div class="top">
+            <p style="font-size:20px;">ADD NEW DEVICE</p>
+            <button style="align-self: baseline;background-color: white;border: none;padding: 3px;cursor: pointer;"  onclick="closeForm4()"><img style="height:15px" src="../clo.png"></button> 
+        </div>
+        <form action="addm.php" method="POST">
+        <div style="margin:10px;width: -webkit-fill-available;">
+            
+        <input name="did" style="display:none" type="text" value="<?php echo $serial ?>">
+        <input name="date" style="display:none" type="text" value="<?php echo date("l, F jS, Y, h:i A"); ?>" >
+                <div class="mb-3">
+                <label class="form-label">COST:</label>
+                <input name="cost" class="form-control" type="text" >
+                </div> 
+                <div class="mb-3">
+                <label class="form-label">Mainteinence:</label>
+                <input name="mainteinence" class="form-control" type="text" >
+                </div> 
+                <div class="mb-3">
+                <label class="form-label">feedback:</label>
+                <input name="feedback" class="form-control" type="text" >
+                </div> 
+             
+</div>
+        </div>
+                <div style="display:flex;justify-content:center"><button type="submit" name="meq" class='nm2' >Add Device</button></div>
+            </form>
+    </div>
+
+</div>

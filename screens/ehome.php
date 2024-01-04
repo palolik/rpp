@@ -19,7 +19,7 @@ $eid=$_SESSION['eid'] ;
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl45.css">
+    <link rel="stylesheet" type="text/css" href="../styl48.css">
     <style>
 
 .form-popup {
@@ -185,7 +185,7 @@ $eid=$_SESSION['eid'] ;
                     "
                 <table style='margin:10px'>
                 <tr><th style='text-align: left;width:200px'>Ip Address</th><td>". $row['pcip'] ."</td></tr>
-                <tr><th style='text-align: left;'>PC/Laptop</th><td>". $row['pc/laptop'] ."</td></tr>
+                <tr><th style='text-align: left;'>PC/Laptop</th><td>". $row['pclap'] ."</td></tr>
                 <tr><th style='text-align: left;'>Processor</th><td>". $row['processor'] ."</td></tr>
                 <tr><th style='text-align: left;'>RAM</th><td>". $row['ram'] ."</td></tr>
                 <tr><th style='text-align: left;'>HDD</th><td>". $row['hdd'] ."</td></tr>
@@ -201,7 +201,7 @@ $eid=$_SESSION['eid'] ;
             </div>
                 <table  class="aer">
                <tr style='text-align: center;'>
-                <th>Item</th>  <th>Specifications</th> <th>Purchase_Date</th> <th>Warrenty_Info</th> <th>Status</th> <th>Comments</th><th>Log</th>
+                <th>Device</th><th>Item code</th>  <th>Specifications</th> <th>Purchase_Date</th> <th>Warrenty_Info</th><th>Comments</th><th>Log</th>
                 </tr>
                
                 <?php   
@@ -217,12 +217,12 @@ $eid=$_SESSION['eid'] ;
                     "
                     <tr>
                     <td><div class='adt'>". $row['device'] ."</div></td>
-             
-                    <td><div class='adt'>". $row['Model/specification'] ."</div></td>
-                    <td><div class='adt'>". $row['purchase_date'] ."</div></td>
-                    <td><div class='adt'>". $row['Warranty Info'] ."</div></td>
-                    <td><div class='adt'>". $row['Status'] ."</div></td>
-                    <td><div class='adt'>". $row['Comments'] ."</div></td>
+                    <td><div class='adt'>". $row['itemcode'] ."</div></td>
+
+                    <td><div class='adt'>". $row['modspec'] ."</div></td>
+                    <td><div class='adt'>". $row['pdate'] ."</div></td>
+                    <td><div class='adt'>". $row['warranty'] ."</div></td>
+                    <td><div class='adt'>". $row['comments'] ."</div></td>
                     <td><a class='asd' href=\"log.php?sid=$row[sid]\">view</a></td>
                 </tr>
                 ";

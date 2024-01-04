@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 30, 2023 at 08:11 PM
+-- Generation Time: Jan 04, 2024 at 09:41 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `devices` (
   `si` int NOT NULL AUTO_INCREMENT,
   `employeeid` int NOT NULL,
   `pcname` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `pc/laptop` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `pclap` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `processor` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `motherboard` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `ram` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
@@ -62,87 +62,93 @@ CREATE TABLE IF NOT EXISTS `devices` (
   `cdrom` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `os` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `pcip` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `pdate` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `warrenty` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `pdate` date DEFAULT NULL,
+  `warrenty` date DEFAULT NULL,
   PRIMARY KEY (`si`)
-) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=79 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `devices`
 --
 
-INSERT INTO `devices` (`si`, `employeeid`, `pcname`, `pc/laptop`, `processor`, `motherboard`, `ram`, `hdd`, `ssd`, `cdrom`, `os`, `pcip`, `pdate`, `warrenty`) VALUES
-(2, 0, '', 'Dell Optiplex 4590 AIO', 'Intel Core i5 11500@1.50', '', '8 GB DDR4 3200', '1 TB WD', '256 GB Dahua', 'No', 'Win 10 64 Pro', '', '08.02.2022', '3 Years'),
-(3, 0, 'EDEngg-PC', 'Dell Optiplex 4590 AIO', 'Intel Core i5 11500@1.50', '', '8 GB DDR4 3200', '1 TB WD', '256 GB Dahua', 'No', 'Win 10 64 Pro', '192.168.1.36', '08.02.2022', '3 Years'),
-(4, 0, 'ED_Finance', 'HP Prodesk 400 G7', 'Intel Core i5 10500', '', '8 GB DDR4 3200', '1TB', '512 GB', 'Yes', 'Win 10 64', '192.168.1.122', '12.08.2021', '3 Years'),
-(5, 0, 'Praloy-PC', '', 'Intel Core i5 6400', 'Unkown', '8 GB DDR4 2133', '1 TB Toshiba', 'No', 'ASUS DRW', 'Win 7 64 Ultimate', '192.168.1.53', '', ''),
-(6, 0, 'GMHR-PC', '', 'Intel Core 2 Quad 8200@2.33', 'Intel ECG3510M', '2 GB DDR2 800', '256 GB Samsung', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.19', '', ''),
-(7, 0, 'CEOnM-PC', '', 'Intel Core i5 4590', 'MSI 7817', '4 GB DDR3 1600', '500 GB WD', 'No', 'Yes', 'Win 7 32', '', '', ''),
-(8, 0, 'CEPnD-PC', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB', '512 GB', 'Yes', 'Win 10 64 Pro', 'dhcp with NAT from Wifi Router', '21.12.2021', '1 Year'),
-(9, 0, 'GMFA-PC', 'HP ProDesk 400 G7 Microtower PC', 'Intel Core i5 10500', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.51', '13.09.2022', '1 Year Full PC'),
-(10, 0, 'MANAGERHR', '', 'Intel Core i5 4590@3.30', 'MSI 7817', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.55', '', ''),
-(11, 0, 'CS-PC', '', 'Intel Core i3 4130', 'MSI 7817', '2 GB DDR3 1333', '500 GB WD', 'No', 'Yes', 'Win 7 32', '192.168.1.58', '', ''),
-(12, 0, '	ManagerAudit-PC', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', 'dhcp with NAT from Wifi Router', '21.12.2021', '1 Year'),
-(13, 0, '	\nWIN-BI6I2E42R06', '', 'Intel Core i5 4590@3.30', 'MSI 7817', '4 GB DDR3 1600', '500 GB WD', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.59', '', ''),
-(14, 0, 'Asad-EXEN', '', 'Intel Core i5 9400@2.90', 'AsRock H310M', '8 GB DDR4 2400', '1 TB Toshiba', '120 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.64', '', ''),
-(15, 0, 'MirzaShofiq-PC', '', 'Intel Core i5 6402', 'MSI 7996', '4 GB DDR4 2133', '1 TB WD', 'No', 'Yes', 'Win 7 64', '192.168.1.73', '', ''),
-(16, 0, 'Humayon-PC', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.24', '', ''),
-(17, 0, 'rpcl-Sharif', '', 'Intel Core i3 4150@3.5', '', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 7 32 Ultimate', '', '', ''),
-(18, 0, 'Mahmud-PC', '', 'Intel Core i3 4130@3.40', 'MSI 7817', '4 GB DDR3 1333', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.62', '', ''),
-(19, 0, 'ASHIKUR-TRAININ', '', 'Intel Core  i5 7400@3.0', 'Gigabyte H110M-S2PH', '4 GB DDR4 2400', '1 TB', 'No', 'Yes', 'Win 10 64', '192.168.1.56', '', ''),
-(20, 0, 'DESKTOP-ST5KGIP', '', 'Intel Core  i5 7400@3.0', 'Gigabyte H110M-S2PH', '8 GB DDR4 2400', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.18', '', ''),
-(21, 0, 'Shahid-PC', '', 'Intel Core i5 2400@3.10', 'Intel BEH6110H', '6 GB DDR3 1333', '500 GB WD', '240 GB Transcend', 'Yes', 'Win 10 64 Pro', '', '', ''),
-(22, 0, '', '', '', '', '', '', '', '', '', '', '', ''),
-(23, 0, 'Saleh-PC', '', 'Intel Core i5 7400@3.00', 'Asus', '8 GB DDR4 2400', '1 TB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.76', '', ''),
-(24, 0, 'Raihan-PC', '', 'Intel Dual Core 5400@2.70', 'Gigabyte G41 Combo', '3 GB DDR2 800', '320 GB Samsung', 'No', 'No', 'Win 7 32 Ultimate', '192.168.1.42', '', ''),
-(25, 0, 'Accounts1-PC', '', 'Intel Core i3 2130@3.40', 'Intel DH61', '2 GB DDR3 1333', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.14', '', ''),
-(26, 0, 'Natasha-PC', 'HP ProDesk 400 G7 Microtower PC', 'Intel Core i5 10500', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.12', '13.09.2022', '1 Year Full PC'),
-(27, 0, 'Nahil-Admin', '', 'Intel Dual Core 5400@2.70', 'Gigabyte G31 M', '3 GB DDR2 800', '256 GB Hitachi', 'No', 'No', 'Win 7 32 Ultimate', '192.168.1.80', '', ''),
-(28, 0, 'Zoynal-PC', '', 'Intel Core i5 4460', 'MSI 7817', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 7 32', '', '', ''),
-(29, 0, 'Subroto-PC', '', 'Intel Core i5 6400@2.70', 'MSI 7A15', '4 GB DDR4 2133', '1 TB Toshiba', '240 GB Transcend', 'ASUS DRW', 'Win 10 64 Pro', '192.168.1.44', '', ''),
-(30, 0, 'KAMAL-HR', '', 'Intel Core i3 4150@3.5', 'Gigabyte H110M-S2PH', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.23', '', ''),
-(31, 0, 'Rumana-PC', '', 'Intel Core i5 7400@3.0', 'MSI 7A15', '12 GB DDR4 2400', '1 TB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', '', '', ''),
-(32, 0, 'Shafiq-PC', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.20', '21.12.2021', '1 Year'),
-(33, 0, 'BATEN-ICT', '', 'Intel Core i3 4150@3.5', '	Gigabyte H81M-DS2V', '12 GB DDR3 1600', '500 GB', '240 GB', 'No', 'Win 10 64', '192.168.1.11', '', ''),
-(34, 0, 'Shamir-PC', '', 'Intel Core i3 4150@3.5', '	Gigabyte H81M-DS2V', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'CD Rom', 'Win 7 32 Ultimate', '192.168.1.31', '', ''),
-(35, 0, 'Moazzam-PC', '', 'Intel Core i5 6400@2.70', 'MSI 7996', '4 GB DDR4 2133', '320 GB Hitachi', 'No', 'ASUS DRW', 'Win 10 64 Pro', '192.168.1.75', '', ''),
-(36, 0, 'Kimiya-PC', '', 'Intel Core i3 4150', '	Gigabyte H81M-DS2V', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.43', '', ''),
-(37, 0, 'Prasanta-PC', '', 'Intel Core i3 4130@3.40', 'MSI 7817', '4 GB DDR3 1333', '500 GB WD', '240 Transcend', 'Yes', 'Win 10 64 Pro', '192.168.1.64', '', ''),
-(38, 0, 'DESKTOP-M46S788', '', 'Intel Core i5 4590@3.30', 'MSI 7817', '4 GB DDR3 1600', '500 GB WD', 'No', 'Yes', 'Win 10 64 Enterprise', '192.168.1.3', '', ''),
-(39, 0, 'Sarowar-pc', '', 'Intel Core i5 6400@2.70', 'Asus', '8 GB DDR4 2133', '1 TB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.82', '', ''),
-(40, 0, 'Nazrul-PC', '', 'Intel Core i5 6400@2.70', 'MSI 7996', '8 GB DDR4 2133', '1 TB Toshiba', 'No', 'ASUS DRW', 'Win 10 64 Pro', '192.168.1.123', '', ''),
-(41, 0, 'Mamun-PC', 'HP ProDesk 600 G6', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', 'No', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.38', '15.09.2021', '3 Years'),
-(42, 0, 'Sharafi-PC', '', 'Intel Core i5 7400', 'MSI 7A15', '4 GB DDR4 2133', '500 GB WD', 'No', 'ASUS DRW', 'Win 7 64', '192.168.1.83', '', ''),
-(43, 0, 'Mehedi-PC', '', 'Intel Core 2 Duo@3.0', '', '2 GB DDR2 800', '256GB  ', '', 'No', 'Win 7 32 Ultimate', '192.168.1.60', '', ''),
-(44, 0, 'DESKTOP-06NLRIB', '', 'Intel Core i5 4590@3.30', 'MSI 7817', '4 GB DDR3 1600', '500 GB WD', 'No', 'Yes', 'Win 10 64 Enterprise', '192.168.1.29', '', ''),
-(45, 0, 'Salma-PC', '', 'Intel Dual Core E5400@2.70', 'Gigabyte G41 Combo', '3 GB DDR2 800', '500 GB', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.34', '', ''),
-(46, 0, 'ARUP-PC', '', 'Intel Dual Core E5700@3.0', 'Gigabyte G41 Combo', '2 GB DDR3 1333', '500 GB Samsung', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.229', '', ''),
-(47, 0, 'fazlu-pc', 'HP ProDesk 400 G7 Microtower PC', 'Intel Core i5 10500', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.12', '13.09.2022', '1 Year Full PC'),
-(48, 0, 'SUMAYA1-PC', '', 'Intel Core  i5 6400', '	MSI 7996', '4 GB DDR4 2133', '500 GB', 'No', 'Yes', 'Win 10 64', '192.168.1.22', '', ''),
-(49, 0, 'Bazlu-PC', '', 'Intel Core i3 4130', 'Gigabyte H81M-S2PV', '2 GB DDR3 1333', '1 TB WD', 'No', 'Yes', 'Win 7 32', '192.168.1.50', '', ''),
-(50, 0, 'Saddam-PC', '', 'Intel Core i5 7400@3.00', 'Gigabyte H110M-S2PH', '8 GB DDR4 2400', '1 TB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.30', '', ''),
-(51, 0, 'Shakil', '', 'Intel Core i5 4590@3.30', 'MSI 7817', '4 GB DDR3 1600', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.48', '', ''),
-(52, 0, 'Sharmin_Sultana-PC', '', 'Intel Dual Core E5700@3.0', 'Gigabyte G41 Combo', '2 GB DDR3 1333', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.66', '', ''),
-(53, 0, 'Tareq-PC', '', 'Intel Core i5 6400@2.70', 'Asus H110M-K', '4 GB DDR4 2133', '1 TB Toshiba', '240 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.74', '', ''),
-(54, 0, 'Borhan-PC', '', 'Intel Core i3 4130', 'MSI 7817', '2 GB DDR3 1333\n4 GB DDR3 1600', '500 GB', 'No', 'Yes', 'Win 10 64', '192.168.1.69', '', ''),
-(55, 0, 'EVA-PC', '', 'Intel Core i5 7400', 'Gigabyte H110M-DS2', '8 GB DDR4 2400', '1 TB WD', 'No', 'Yes', 'Win 10 64', '192.168.1.40', '', ''),
-(56, 0, 'Lighthouse', '', 'Intel Core i5 6400', 'Asus', '4 GB DDR4 2133', '1 TB', 'No', 'Yes', 'Win Server 2012', '192.168.1.4', '', ''),
-(57, 0, 'Tania-PC', '', 'Intel Core i5 6400@2.70', 'MSI 7A15', '8 GB DDR4 2133', '1 TB WD', 'No', 'ASUS DRW', 'Win 10 64 Enterprize', '192.168.1.156', '', ''),
-(58, 0, 'Ehsan-PC', '', 'Intel Core i3@2120', 'Unknown', '2 GB DDR3 1333', '1 TB WD', 'No', 'CD Rom', 'Win 7 32 Ultimate', '192.168.1.63', '', ''),
-(59, 0, 'Mukta-PC', '', 'Intel Core i5 6400@2.70', 'MSI 7996', '4 GB DDR4 2133', '500 GB WD', 'No', 'ASUS DRW', 'Win 10 64 Pro', '192.168.1.121', '', ''),
-(60, 0, 'Moushumi-PC', '', 'Intel Core i5 7400@3.0', 'Gigabyte H110M-S2PH', '8 GB DDR4 2400', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.26', '', ''),
-(61, 0, 'Mostakim-PC', '', 'Intel Core i7 2600@3.40', 'Intel BLH6710H', '2 GB DDR3 1333', '1 TB WD', 'No', 'Yes', 'Win 7 64 Ultimate', '192.168.1.197', '', ''),
-(62, 0, 'Marufa-PC', '', 'Intel Core i3 4150@3.50', 'Gigabyte H81M-S2PV', '4 GB DDR3 1600', '1 TB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.54', '', ''),
-(63, 0, 'Mamun-PC', '', 'Intel Core2Duo 7500@2.93', 'Intel G4110H', '4 GB DDR2 800', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.118', '', ''),
-(64, 0, 'Mahbub-PC', '', 'Intel Core i5 7400@3.0', 'Gigabyte H110M-S2PH', '8 GB DDR4 2400', '1 TB WD', 'No', 'Yes', 'Win 10 64 Enterprise', '192.168.1.49', '', ''),
-(65, 0, 'AMRAN-PC', '', 'Intel Core i3 4150@3.50', 'Gigabyte H81M-S2PV', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'No', 'Win 7 32 Ultimate', '192.168.1.81', '', ''),
-(66, 0, 'saddam_acct-pc', '', 'Intel Core i3 4130@3.40', 'MSI 7817', '8 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', 'Dhcp', '', ''),
-(67, 0, '', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '', '21.12.2021', '1 Year'),
-(68, 0, 'finance_common-pc', '', 'Intel Core2Duo 7500@2.93', 'Intel G4110H', '4 GB DDR2 800', '500 GB WD', 'No', 'Yes', 'Win 10 64 Pro', 'Dhcp', '', ''),
-(69, 0, 'Razzak-PC', '', 'Intel Core i3 2130@3.40', 'Unknown', '2 GB DDR3 1333', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', 'Dhcp', '', ''),
-(70, 0, 'CS-JAM', '', 'Intel Core i5 8400@2.80', 'Gigabyte H310M', '8 GB DDR4 2400', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.117', '', ''),
-(71, 0, '', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '', '21.12.2021', '1 Year'),
-(72, 180011265, 'dell', 'laptop', 'core i 5', 'rizon', '16gb', '2TB', '1TB', 'no', 'no', 'no', '12/12/2021', '12/122023');
+INSERT INTO `devices` (`si`, `employeeid`, `pcname`, `pclap`, `processor`, `motherboard`, `ram`, `hdd`, `ssd`, `cdrom`, `os`, `pcip`, `pdate`, `warrenty`) VALUES
+(2, 0, '', 'Dell Optiplex 4590 AIO', 'Intel Core i5 11500@1.50', '', '8 GB DDR4 3200', '1 TB WD', '256 GB Dahua', 'No', 'Win 10 64 Pro', '', '2008-02-20', '0000-00-00'),
+(3, 0, 'EDEngg-PC', 'Dell Optiplex 4590 AIO', 'Intel Core i5 11500@1.50', '', '8 GB DDR4 3200', '1 TB WD', '256 GB Dahua', 'No', 'Win 10 64 Pro', '192.168.1.36', '2008-02-20', '0000-00-00'),
+(4, 0, 'ED_Finance', 'HP Prodesk 400 G7', 'Intel Core i5 10500', '', '8 GB DDR4 3200', '1TB', '512 GB', 'Yes', 'Win 10 64', '192.168.1.122', '2012-08-20', '0000-00-00'),
+(5, 0, 'Praloy-PC', '', 'Intel Core i5 6400', 'Unkown', '8 GB DDR4 2133', '1 TB Toshiba', 'No', 'ASUS DRW', 'Win 7 64 Ultimate', '192.168.1.53', '0000-00-00', '0000-00-00'),
+(6, 0, 'GMHR-PC', '', 'Intel Core 2 Quad 8200@2.33', 'Intel ECG3510M', '2 GB DDR2 800', '256 GB Samsung', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.19', '0000-00-00', '0000-00-00'),
+(7, 0, 'CEOnM-PC', '', 'Intel Core i5 4590', 'MSI 7817', '4 GB DDR3 1600', '500 GB WD', 'No', 'Yes', 'Win 7 32', '', '0000-00-00', '0000-00-00'),
+(8, 0, 'CEPnD-PC', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB', '512 GB', 'Yes', 'Win 10 64 Pro', 'dhcp with NAT from Wifi Router', '2021-12-20', '0000-00-00'),
+(9, 0, 'GMFA-PC', 'HP ProDesk 400 G7 Microtower PC', 'Intel Core i5 10500', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.51', '2013-09-20', '0000-00-00'),
+(10, 0, 'MANAGERHR', '', 'Intel Core i5 4590@3.30', 'MSI 7817', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.55', '0000-00-00', '0000-00-00'),
+(11, 0, 'CS-PC', '', 'Intel Core i3 4130', 'MSI 7817', '2 GB DDR3 1333', '500 GB WD', 'No', 'Yes', 'Win 7 32', '192.168.1.58', '0000-00-00', '0000-00-00'),
+(12, 0, '	ManagerAudit-PC', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', 'dhcp with NAT from Wifi Router', '2021-12-20', '0000-00-00'),
+(13, 0, '	\nWIN-BI6I2E42R06', '', 'Intel Core i5 4590@3.30', 'MSI 7817', '4 GB DDR3 1600', '500 GB WD', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.59', '0000-00-00', '0000-00-00'),
+(14, 0, 'Asad-EXEN', '', 'Intel Core i5 9400@2.90', 'AsRock H310M', '8 GB DDR4 2400', '1 TB Toshiba', '120 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.64', '0000-00-00', '0000-00-00'),
+(15, 0, 'MirzaShofiq-PC', '', 'Intel Core i5 6402', 'MSI 7996', '4 GB DDR4 2133', '1 TB WD', 'No', 'Yes', 'Win 7 64', '192.168.1.73', '0000-00-00', '0000-00-00'),
+(16, 0, 'Humayon-PC', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.24', '0000-00-00', '0000-00-00'),
+(17, 0, 'rpcl-Sharif', '', 'Intel Core i3 4150@3.5', '', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 7 32 Ultimate', '', '0000-00-00', '0000-00-00'),
+(18, 0, 'Mahmud-PC', '', 'Intel Core i3 4130@3.40', 'MSI 7817', '4 GB DDR3 1333', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.62', '0000-00-00', '0000-00-00'),
+(19, 0, 'ASHIKUR-TRAININ', '', 'Intel Core  i5 7400@3.0', 'Gigabyte H110M-S2PH', '4 GB DDR4 2400', '1 TB', 'No', 'Yes', 'Win 10 64', '192.168.1.56', '0000-00-00', '0000-00-00'),
+(20, 0, 'DESKTOP-ST5KGIP', '', 'Intel Core  i5 7400@3.0', 'Gigabyte H110M-S2PH', '8 GB DDR4 2400', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.18', '0000-00-00', '0000-00-00'),
+(21, 0, 'Shahid-PC', '', 'Intel Core i5 2400@3.10', 'Intel BEH6110H', '6 GB DDR3 1333', '500 GB WD', '240 GB Transcend', 'Yes', 'Win 10 64 Pro', '', '0000-00-00', '0000-00-00'),
+(22, 0, '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00'),
+(23, 0, 'Saleh-PC', '', 'Intel Core i5 7400@3.00', 'Asus', '8 GB DDR4 2400', '1 TB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.76', '0000-00-00', '0000-00-00'),
+(24, 0, 'Raihan-PC', '', 'Intel Dual Core 5400@2.70', 'Gigabyte G41 Combo', '3 GB DDR2 800', '320 GB Samsung', 'No', 'No', 'Win 7 32 Ultimate', '192.168.1.42', '0000-00-00', '0000-00-00'),
+(25, 0, 'Accounts1-PC', '', 'Intel Core i3 2130@3.40', 'Intel DH61', '2 GB DDR3 1333', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.14', '0000-00-00', '0000-00-00'),
+(26, 0, 'Natasha-PC', 'HP ProDesk 400 G7 Microtower PC', 'Intel Core i5 10500', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.12', '2013-09-20', '0000-00-00'),
+(27, 0, 'Nahil-Admin', '', 'Intel Dual Core 5400@2.70', 'Gigabyte G31 M', '3 GB DDR2 800', '256 GB Hitachi', 'No', 'No', 'Win 7 32 Ultimate', '192.168.1.80', '0000-00-00', '0000-00-00'),
+(28, 0, 'Zoynal-PC', '', 'Intel Core i5 4460', 'MSI 7817', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 7 32', '', '0000-00-00', '0000-00-00'),
+(29, 0, 'Subroto-PC', '', 'Intel Core i5 6400@2.70', 'MSI 7A15', '4 GB DDR4 2133', '1 TB Toshiba', '240 GB Transcend', 'ASUS DRW', 'Win 10 64 Pro', '192.168.1.44', '0000-00-00', '0000-00-00'),
+(30, 0, 'KAMAL-HR', '', 'Intel Core i3 4150@3.5', 'Gigabyte H110M-S2PH', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.23', '0000-00-00', '0000-00-00'),
+(31, 0, 'Rumana-PC', '', 'Intel Core i5 7400@3.0', 'MSI 7A15', '12 GB DDR4 2400', '1 TB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', '', '0000-00-00', '0000-00-00'),
+(32, 0, 'Shafiq-PC', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.20', '2021-12-20', '0000-00-00'),
+(33, 0, 'BATEN-ICT', '', 'Intel Core i3 4150@3.5', '	Gigabyte H81M-DS2V', '12 GB DDR3 1600', '500 GB', '240 GB', 'No', 'Win 10 64', '192.168.1.11', '0000-00-00', '0000-00-00'),
+(34, 0, 'Shamir-PC', '', 'Intel Core i3 4150@3.5', '	Gigabyte H81M-DS2V', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'CD Rom', 'Win 7 32 Ultimate', '192.168.1.31', '0000-00-00', '0000-00-00'),
+(35, 0, 'Moazzam-PC', '', 'Intel Core i5 6400@2.70', 'MSI 7996', '4 GB DDR4 2133', '320 GB Hitachi', 'No', 'ASUS DRW', 'Win 10 64 Pro', '192.168.1.75', '0000-00-00', '0000-00-00'),
+(36, 0, 'Kimiya-PC', '', 'Intel Core i3 4150', '	Gigabyte H81M-DS2V', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.43', '0000-00-00', '0000-00-00'),
+(37, 0, 'Prasanta-PC', '', 'Intel Core i3 4130@3.40', 'MSI 7817', '4 GB DDR3 1333', '500 GB WD', '240 Transcend', 'Yes', 'Win 10 64 Pro', '192.168.1.64', '0000-00-00', '0000-00-00'),
+(38, 0, 'DESKTOP-M46S788', '', 'Intel Core i5 4590@3.30', 'MSI 7817', '4 GB DDR3 1600', '500 GB WD', 'No', 'Yes', 'Win 10 64 Enterprise', '192.168.1.3', '0000-00-00', '0000-00-00'),
+(39, 0, 'Sarowar-pc', '', 'Intel Core i5 6400@2.70', 'Asus', '8 GB DDR4 2133', '1 TB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.82', '0000-00-00', '0000-00-00'),
+(40, 0, 'Nazrul-PC', '', 'Intel Core i5 6400@2.70', 'MSI 7996', '8 GB DDR4 2133', '1 TB Toshiba', 'No', 'ASUS DRW', 'Win 10 64 Pro', '192.168.1.123', '0000-00-00', '0000-00-00'),
+(41, 0, 'Mamun-PC', 'HP ProDesk 600 G6', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', 'No', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.38', '2015-09-20', '0000-00-00'),
+(42, 0, 'Sharafi-PC', '', 'Intel Core i5 7400', 'MSI 7A15', '4 GB DDR4 2133', '500 GB WD', 'No', 'ASUS DRW', 'Win 7 64', '192.168.1.83', '0000-00-00', '0000-00-00'),
+(43, 0, 'Mehedi-PC', '', 'Intel Core 2 Duo@3.0', '', '2 GB DDR2 800', '256GB  ', '', 'No', 'Win 7 32 Ultimate', '192.168.1.60', '0000-00-00', '0000-00-00'),
+(44, 0, 'DESKTOP-06NLRIB', '', 'Intel Core i5 4590@3.30', 'MSI 7817', '4 GB DDR3 1600', '500 GB WD', 'No', 'Yes', 'Win 10 64 Enterprise', '192.168.1.29', '0000-00-00', '0000-00-00'),
+(45, 0, 'Salma-PC', '', 'Intel Dual Core E5400@2.70', 'Gigabyte G41 Combo', '3 GB DDR2 800', '500 GB', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.34', '0000-00-00', '0000-00-00'),
+(46, 0, 'ARUP-PC', '', 'Intel Dual Core E5700@3.0', 'Gigabyte G41 Combo', '2 GB DDR3 1333', '500 GB Samsung', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.229', '0000-00-00', '0000-00-00'),
+(47, 0, 'fazlu-pc', 'HP ProDesk 400 G7 Microtower PC', 'Intel Core i5 10500', '', '8 GB DDR4 3200', '1 TB WD', '512 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.12', '2013-09-20', '0000-00-00'),
+(48, 0, 'SUMAYA1-PC', '', 'Intel Core  i5 6400', '	MSI 7996', '4 GB DDR4 2133', '500 GB', 'No', 'Yes', 'Win 10 64', '192.168.1.22', '0000-00-00', '0000-00-00'),
+(49, 0, 'Bazlu-PC', '', 'Intel Core i3 4130', 'Gigabyte H81M-S2PV', '2 GB DDR3 1333', '1 TB WD', 'No', 'Yes', 'Win 7 32', '192.168.1.50', '0000-00-00', '0000-00-00'),
+(50, 0, 'Saddam-PC', '', 'Intel Core i5 7400@3.00', 'Gigabyte H110M-S2PH', '8 GB DDR4 2400', '1 TB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.30', '0000-00-00', '0000-00-00'),
+(51, 0, 'Shakil', '', 'Intel Core i5 4590@3.30', 'MSI 7817', '4 GB DDR3 1600', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.48', '0000-00-00', '0000-00-00'),
+(52, 0, 'Sharmin_Sultana-PC', '', 'Intel Dual Core E5700@3.0', 'Gigabyte G41 Combo', '2 GB DDR3 1333', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.66', '0000-00-00', '0000-00-00'),
+(53, 0, 'Tareq-PC', '', 'Intel Core i5 6400@2.70', 'Asus H110M-K', '4 GB DDR4 2133', '1 TB Toshiba', '240 GB', 'Yes', 'Win 10 64 Pro', '192.168.1.74', '0000-00-00', '0000-00-00'),
+(54, 0, 'Borhan-PC', '', 'Intel Core i3 4130', 'MSI 7817', '2 GB DDR3 1333\n4 GB DDR3 1600', '500 GB', 'No', 'Yes', 'Win 10 64', '192.168.1.69', '0000-00-00', '0000-00-00'),
+(55, 0, 'EVA-PC', '', 'Intel Core i5 7400', 'Gigabyte H110M-DS2', '8 GB DDR4 2400', '1 TB WD', 'No', 'Yes', 'Win 10 64', '192.168.1.40', '0000-00-00', '0000-00-00'),
+(56, 0, 'Lighthouse', '', 'Intel Core i5 6400', 'Asus', '4 GB DDR4 2133', '1 TB', 'No', 'Yes', 'Win Server 2012', '192.168.1.4', '0000-00-00', '0000-00-00'),
+(57, 0, 'Tania-PC', '', 'Intel Core i5 6400@2.70', 'MSI 7A15', '8 GB DDR4 2133', '1 TB WD', 'No', 'ASUS DRW', 'Win 10 64 Enterprize', '192.168.1.156', '0000-00-00', '0000-00-00'),
+(58, 0, 'Ehsan-PC', '', 'Intel Core i3@2120', 'Unknown', '2 GB DDR3 1333', '1 TB WD', 'No', 'CD Rom', 'Win 7 32 Ultimate', '192.168.1.63', '0000-00-00', '0000-00-00'),
+(59, 0, 'Mukta-PC', '', 'Intel Core i5 6400@2.70', 'MSI 7996', '4 GB DDR4 2133', '500 GB WD', 'No', 'ASUS DRW', 'Win 10 64 Pro', '192.168.1.121', '0000-00-00', '0000-00-00'),
+(60, 0, 'Moushumi-PC', '', 'Intel Core i5 7400@3.0', 'Gigabyte H110M-S2PH', '8 GB DDR4 2400', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.26', '0000-00-00', '0000-00-00'),
+(61, 0, 'Mostakim-PC', '', 'Intel Core i7 2600@3.40', 'Intel BLH6710H', '2 GB DDR3 1333', '1 TB WD', 'No', 'Yes', 'Win 7 64 Ultimate', '192.168.1.197', '0000-00-00', '0000-00-00'),
+(62, 0, 'Marufa-PC', '', 'Intel Core i3 4150@3.50', 'Gigabyte H81M-S2PV', '4 GB DDR3 1600', '1 TB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.54', '0000-00-00', '0000-00-00'),
+(63, 0, 'Mamun-PC', '', 'Intel Core2Duo 7500@2.93', 'Intel G4110H', '4 GB DDR2 800', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', '192.168.1.118', '0000-00-00', '0000-00-00'),
+(64, 0, 'Mahbub-PC', '', 'Intel Core i5 7400@3.0', 'Gigabyte H110M-S2PH', '8 GB DDR4 2400', '1 TB WD', 'No', 'Yes', 'Win 10 64 Enterprise', '192.168.1.49', '0000-00-00', '0000-00-00'),
+(65, 0, 'AMRAN-PC', '', 'Intel Core i3 4150@3.50', 'Gigabyte H81M-S2PV', '4 GB DDR3 1600', '500 GB Toshiba', 'No', 'No', 'Win 7 32 Ultimate', '192.168.1.81', '0000-00-00', '0000-00-00'),
+(66, 0, 'saddam_acct-pc', '', 'Intel Core i3 4130@3.40', 'MSI 7817', '8 GB DDR3 1600', '500 GB Toshiba', 'No', 'Yes', 'Win 10 64 Pro', 'Dhcp', '0000-00-00', '0000-00-00'),
+(67, 0, '', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '', '2021-12-20', '0000-00-00'),
+(68, 0, 'finance_common-pc', '', 'Intel Core2Duo 7500@2.93', 'Intel G4110H', '4 GB DDR2 800', '500 GB WD', 'No', 'Yes', 'Win 10 64 Pro', 'Dhcp', '0000-00-00', '0000-00-00'),
+(69, 0, 'Razzak-PC', '', 'Intel Core i3 2130@3.40', 'Unknown', '2 GB DDR3 1333', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', 'Dhcp', '0000-00-00', '0000-00-00'),
+(70, 0, 'CS-JAM', '', 'Intel Core i5 8400@2.80', 'Gigabyte H310M', '8 GB DDR4 2400', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.117', '0000-00-00', '0000-00-00'),
+(71, 0, '', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '', '2021-12-20', '0000-00-00'),
+(72, 180011265, 'dell', 'laptop', 'core i 5', 'rizon', '16gb', '2TB', '1TB', 'no', 'no', 'no', '0000-00-00', '0000-00-00'),
+(73, 180011263, 'asd', 'PC', 'asd', 'ads', 'sad', 'sad', 'ads', 'sad', 'we', 'sda', '2024-01-05', '2024-01-05'),
+(74, 180011010, 'asd', 'PC', 'asd', 'ads', 'sad', 'sad', 'ads', 'sad', '', 'sda', '2024-01-05', '2024-01-05'),
+(75, 180011016, 'asd', 'PC', 'asd', 'ads', 'sad', 'sad', 'ads', 'sad', 'we', 'sda', '2024-01-05', '2024-01-05'),
+(76, 180011008, 'yy', 'PC', 'yy', 'yy', 'yy', 'yy', 'yy', 'yy', 'yy', 'yy', '2024-01-05', '2024-01-05'),
+(77, 180018001, 'nn', 'PC', 'nn', 'nn', 'nn', 'nn', 'nn', 'nn', 'nn', 'nn', '2024-01-05', '2024-01-05'),
+(78, 180011058, 'tt', 'PC', 'tt', 'tt', 'tt', 'tt', 'tt', 'tt', 'tt', 'tt', '2024-01-05', '2024-01-05');
 
 -- --------------------------------------------------------
 
@@ -523,23 +529,26 @@ CREATE TABLE IF NOT EXISTS `extradevices` (
   `employeeid` int NOT NULL,
   `device` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `itemcode` varchar(100) COLLATE utf8mb4_bin NOT NULL,
-  `Q` varchar(100) COLLATE utf8mb4_bin NOT NULL,
+  `q` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `price` varchar(100) COLLATE utf8mb4_bin NOT NULL,
-  `Model/specification` varchar(100) COLLATE utf8mb4_bin NOT NULL,
-  `purchase_date` varchar(100) COLLATE utf8mb4_bin NOT NULL,
-  `Warranty Info` varchar(100) COLLATE utf8mb4_bin NOT NULL,
-  `Status` varchar(100) COLLATE utf8mb4_bin NOT NULL,
-  `Comments` varchar(100) COLLATE utf8mb4_bin NOT NULL,
+  `modspec` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `pdate` date NOT NULL,
+  `warranty` date NOT NULL,
+  `comments` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`sid`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `extradevices`
 --
 
-INSERT INTO `extradevices` (`sid`, `employeeid`, `device`, `itemcode`, `Q`, `price`, `Model/specification`, `purchase_date`, `Warranty Info`, `Status`, `Comments`) VALUES
-(1, 180011265, 'monitor', 's451', '', '', 'Dell 14inch', '10/12/20', '10/12/22', 'active', 'no problems found'),
-(2, 180011265, 'scanner', '', '', '', 'coral', '', '', '', '');
+INSERT INTO `extradevices` (`sid`, `employeeid`, `device`, `itemcode`, `q`, `price`, `modspec`, `pdate`, `warranty`, `comments`) VALUES
+(1, 180011265, 'monitor', 's451', '', '', 'Dell 14inch', '2010-12-20', '2010-12-22', 'no problems found'),
+(2, 180011265, 'scanner', '', '', '', 'coral', '0000-00-00', '0000-00-00', ''),
+(3, 0, 'one', '', '3', '3', '3', '2024-01-05', '2024-01-05', '3'),
+(4, 0, 'two', 'k', '3', '3', '3', '2024-01-05', '2024-01-05', 'k'),
+(5, 180011058, 'two', 'tt', '3', 't', '3', '2024-01-05', '2024-01-05', 'tt'),
+(6, 180011059, 'one', 'e', 'e', 'e', 'e', '2024-01-19', '2026-06-26', 'e');
 
 -- --------------------------------------------------------
 
@@ -559,7 +568,6 @@ CREATE TABLE IF NOT EXISTS `itemlist` (
 --
 
 INSERT INTO `itemlist` (`serial`, `items`) VALUES
-(5, 'iuyggg'),
 (7, 'adsbb'),
 (8, 'sss'),
 (10, 'test1nnn'),
@@ -575,19 +583,22 @@ DROP TABLE IF EXISTS `log`;
 CREATE TABLE IF NOT EXISTS `log` (
   `id` int NOT NULL AUTO_INCREMENT,
   `did` int NOT NULL,
+  `date` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `mainteinence` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `cost` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `feedback` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `log`
 --
 
-INSERT INTO `log` (`id`, `did`, `mainteinence`, `cost`, `feedback`) VALUES
-(1, 2, 'retert retert', '10', 'sad erww wt dsf sfd'),
-(2, 2, 'sadtyu', '40', 'fgdfgdffdgg');
+INSERT INTO `log` (`id`, `did`, `date`, `mainteinence`, `cost`, `feedback`) VALUES
+(1, 2, '0000-00-00', 'retert retert', '10', 'sad erww wt dsf sfd'),
+(2, 2, '0000-00-00', 'sadtyu', '40', 'fgdfgdffdgg'),
+(3, 6, 'Thursday, January 4th, 2024, 09:39 PM', 'sdfds', '50', 'dfsfds'),
+(4, 6, 'Thursday, January 4th, 2024, 09:39 PM', 'sdfds', '50', 'dfsfds');
 
 -- --------------------------------------------------------
 
@@ -600,17 +611,18 @@ CREATE TABLE IF NOT EXISTS `mreq` (
   `si` int NOT NULL AUTO_INCREMENT,
   `request` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `employeeid` varchar(100) COLLATE utf8mb4_bin NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `date` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`si`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `mreq`
 --
 
-INSERT INTO `mreq` (`si`, `request`, `employeeid`, `date`) VALUES
-(1, 'dfsfds', 'sdsd', 'fdfd'),
-(2, '2nd test', '180011265', '180011265');
+INSERT INTO `mreq` (`si`, `request`, `employeeid`, `email`, `date`) VALUES
+(2, '2nd test', '180011265', 'samia@gmail.com', '180011265'),
+(4, 'i need my scanner to be fixed', '180011265', 'riyad@gmail.com', '180011265');
 
 -- --------------------------------------------------------
 
@@ -625,7 +637,15 @@ CREATE TABLE IF NOT EXISTS `notice` (
   `date` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `getters` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`si`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `notice`
+--
+
+INSERT INTO `notice` (`si`, `notice`, `date`, `getters`) VALUES
+(3, 'the office will be closed on 7th Jan for national election ceremony', '4th Jan,2024', 'ALL'),
+(4, 'adser', 're', 'ds');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
