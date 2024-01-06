@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 04, 2024 at 09:41 PM
+-- Generation Time: Jan 06, 2024 at 07:01 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -41,6 +41,153 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 INSERT INTO `admin` (`id`, `user_name`, `password`) VALUES
 (1, 'o', 'o');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alldevice`
+--
+
+DROP TABLE IF EXISTS `alldevice`;
+CREATE TABLE IF NOT EXISTS `alldevice` (
+  `si` int NOT NULL AUTO_INCREMENT,
+  `devicen` varchar(100) COLLATE utf8mb4_bin NOT NULL,
+  `q` int NOT NULL,
+  `adddate` date NOT NULL,
+  PRIMARY KEY (`si`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `alldevice`
+--
+
+INSERT INTO `alldevice` (`si`, `devicen`, `q`, `adddate`) VALUES
+(1, 'scanner', 100, '2024-01-17'),
+(2, 'PBX', 100, '2024-01-18'),
+(3, 'Camera', 100, '2024-01-18'),
+(4, 'Processor', 100, '2023-01-04'),
+(5, 'Motherboard', 100, '2024-01-16'),
+(6, 'RAM', 122, '2020-01-15'),
+(7, 'Mouse', 100, '2024-01-09'),
+(8, 'Keyboard', 100, '2023-02-09'),
+(9, 'Printer', 500, '2024-01-10'),
+(10, 'Speaker', 100, '2021-03-10'),
+(11, 'Webcam', 50, '2021-01-21'),
+(12, 'UPS', 100, '2027-01-14');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `designations`
+--
+
+DROP TABLE IF EXISTS `designations`;
+CREATE TABLE IF NOT EXISTS `designations` (
+  `si` int NOT NULL,
+  `designations` varchar(100) COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`si`)
+) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `designations`
+--
+
+INSERT INTO `designations` (`si`, `designations`) VALUES
+(2, 'Superintending Engineer (O &M)'),
+(3, ' Deputy General Manager (HR & Admin) '),
+(4, 'Manager (Audit)'),
+(5, 'Manager (Admin)'),
+(6, 'Manager (HR)'),
+(7, 'Manager (Training)'),
+(8, 'Executive Engineer (Electrical,I&C)'),
+(9, ' CEO '),
+(10, 'Executive Engineer(P&C)'),
+(11, 'Executive Engineer(D&D)'),
+(12, 'Executive Engineer(O&M)'),
+(13, 'Executive Engineer (Operation)'),
+(14, 'Executive Engineer (P&P&EHS)'),
+(15, 'Manager (A/F)'),
+(16, 'Sub-Divisional Engineer(O&M)'),
+(17, 'Sub-Divisional Engineer(P&D)'),
+(18, 'Deputy Manager (Company Secretariat)'),
+(19, 'Deputy Manager (HR)'),
+(20, 'Staff Officer to MD (Sub-Divisional Engineer)'),
+(21, 'Sub-Divisional Engineer (Store & Inventory)'),
+(22, 'Sub-Divisional Engineer(Electrical, I&C)'),
+(23, 'Sub-Divisional Engineer(Maintenance)'),
+(24, 'Deputy Manager (Chemical)'),
+(25, 'Deputy Manager (ICT)'),
+(26, 'Deputy Manager (Audit)'),
+(27, 'Deputy Manager (A/F)'),
+(28, 'Deputy Manager (HR/Admin)'),
+(29, 'Sub-Divisional Engineer(Operation)'),
+(30, 'Deputy Manager (Training)'),
+(31, 'Assistant Engineer'),
+(32, 'Assistant Engineer (Electrical, I&C)'),
+(33, 'Assistant Engineer (Mechanical Maintenance)'),
+(34, 'Assistant Engineer(O&M)'),
+(35, 'Assistant Engineer (Operation)'),
+(36, 'Assistant Engineer (P&D)'),
+(37, 'Assistant Manager (Admin), SG'),
+(38, 'Assistant Manager (Chemical)'),
+(39, 'Assistant Manager (A/F)'),
+(40, 'Assistant Engineer(P&C)'),
+(41, 'Assistant Manager (ICT)'),
+(42, 'Assistant Manager (HR/Admin)'),
+(43, 'Sub_Assistant Engineer(Store & Inventroy)'),
+(44, 'Sub-Assistant Engineer(Electrical, I&C)'),
+(45, 'Junior Assistant Manager (Admin)'),
+(46, 'Sub-Assistant Engineer (Operation)'),
+(47, 'Sub-Assistant Engineer (Maintenance)'),
+(48, 'Sub-Assistant Engineer'),
+(49, 'Junior Assistant Manager (HR/Admin)'),
+(50, 'Junior Assistant Manager (Training)'),
+(51, 'Junior Assistant Manager (A/F)'),
+(52, 'Junior Assistant Manager (Chemical)'),
+(53, 'Sub-Assistant Engineer (Fuel Bunkering)'),
+(54, 'Accountant'),
+(55, 'Auditor'),
+(56, 'Office Secretary'),
+(57, 'Store Keeper'),
+(58, 'Fitter Gr.-1'),
+(59, 'Electrician Gr.-1'),
+(60, 'Assistant Accountant'),
+(61, 'Store Assistant'),
+(62, 'Office Assistant'),
+(63, 'Receptionist Cum Telephone Operator'),
+(64, 'Painter Gr.-2'),
+(65, 'Electrician Gr.-2'),
+(66, 'Fitter Gr.-2'),
+(67, 'Junior Office Assistant'),
+(68, 'Driver (Heavy)'),
+(69, 'Security Supervisor'),
+(70, 'Senior Driver'),
+(71, 'Welder Gr.-3'),
+(72, 'Electrician Gr.-3'),
+(73, 'Work Assistant Gr.-1'),
+(74, 'Driver (Light)'),
+(75, 'Messenger'),
+(76, 'Work Assistant Gr.-2'),
+(77, 'Caretaker'),
+(78, 'Senior Office Attendant'),
+(79, 'Head Cook'),
+(80, 'Work Assistant Gr.-3'),
+(81, 'Work Assistant Gr.-4'),
+(82, 'Cook'),
+(83, 'Head Cleaner'),
+(84, 'Office Attendant'),
+(85, 'Senior Gardener'),
+(86, 'Senior Cleaner'),
+(87, 'Assistant Cook'),
+(88, 'Junior Office Attendant'),
+(89, 'Helper'),
+(90, 'Cleaner'),
+(91, ' Helper '),
+(92, 'Junior Gardener'),
+(93, 'Rest House Caretaker'),
+(94, 'Welder Gr.-1 (Selection Grade)'),
+(95, 'Junior Assistant Manager (Mecha-Paint)'),
+(96, 'volvo');
 
 -- --------------------------------------------------------
 
@@ -142,7 +289,7 @@ INSERT INTO `devices` (`si`, `employeeid`, `pcname`, `pclap`, `processor`, `moth
 (69, 0, 'Razzak-PC', '', 'Intel Core i3 2130@3.40', 'Unknown', '2 GB DDR3 1333', '500 GB WD', 'No', 'Yes', 'Win 7 32 Ultimate', 'Dhcp', '0000-00-00', '0000-00-00'),
 (70, 0, 'CS-JAM', '', 'Intel Core i5 8400@2.80', 'Gigabyte H310M', '8 GB DDR4 2400', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '192.168.1.117', '0000-00-00', '0000-00-00'),
 (71, 0, '', 'Dell Optiplex 3080', 'Intel Core i5 10500@3.10', '', '8 GB DDR4 3200', '1 TB WD', 'No', 'Yes', 'Win 10 64 Pro', '', '2021-12-20', '0000-00-00'),
-(72, 180011265, 'dell', 'laptop', 'core i 5', 'rizon', '16gb', '2TB', '1TB', 'no', 'no', 'no', '0000-00-00', '0000-00-00'),
+(72, 180011265, 'dell', 'laptop', 'core i 5', 'rizon', '16gb', '2TB', '1TB', 'no', 'no', '192.210.14.0', '0000-00-00', '0000-00-00'),
 (73, 180011263, 'asd', 'PC', 'asd', 'ads', 'sad', 'sad', 'ads', 'sad', 'we', 'sda', '2024-01-05', '2024-01-05'),
 (74, 180011010, 'asd', 'PC', 'asd', 'ads', 'sad', 'sad', 'ads', 'sad', '', 'sda', '2024-01-05', '2024-01-05'),
 (75, 180011016, 'asd', 'PC', 'asd', 'ads', 'sad', 'sad', 'ads', 'sad', 'we', 'sda', '2024-01-05', '2024-01-05'),
@@ -178,15 +325,13 @@ CREATE TABLE IF NOT EXISTS `employees` (
 INSERT INTO `employees` (`id`, `employeeid`, `employeecode`, `employeename`, `officename`, `designation`, `contactno`, `email`, `password`, `status`) VALUES
 (2, '180011001s', '0001s', 'Md. Abdus Saburs', 'Corporate Offices', 'Managing Directors', '01741330172s', 'md@rpcl.gov.bda', '12', 'Workinga'),
 (13, '180011265', '0288', 'Md. Amirul Islam', 'Corporate Office', 'Superintending Engineer (O &M)', '01726321445', 'smirty.amin@gmail.com', '12', 'Working'),
-(14, '180011010', '0267', 'Kamal Hossain', 'Corporate Office', 'Deputy General Manager (HR & Admin)', '01711-944767', 'kamaltradecom@gmail.com', '12', 'Working'),
-(15, '180011263', '0298', 'Md. Iqbal  Karim', 'Corporate Office', 'Superintending Engineer (O &M)', '01788111333', 'qblkarim@yahoo.com', '12', 'Working'),
-(16, '185011056', '0413', 'Prantush Chandra Shaha', 'Corporate Office', 'Company Secretary', '01717349526', 'shahaprantush@yahoo.com', '', 'Working'),
+(14, '', ' 0267 ', ' Kamal Hossainn', ' Corporate Office ', ' Deputy General Manager (HR & Admin) ', ' 01711-944767 ', ' kamaltradecom@gmail.com ', '', 'Working '),
 (17, '180011008', '0017', 'A. K. M.  Mahmudul Alam', 'Corporate Office', 'Manager (Audit)', '01914753405', 'mahmud65@gmail.com', '', 'Working'),
 (18, '180011015', '0036', 'Khandokar Shariful Islam', 'Corporate Office', 'Manager (Admin)', '01715622641', 'sharifulislam75@ymail.com', '', 'Working'),
 (19, '180011016', '0037', 'Mahmud  Hossain', 'Corporate Office', 'Manager (HR)', '01673640240', 'kmahmud13@yahoo.com', '', 'Working'),
 (20, '180011059', '0038', 'Mohammad Ashikur Rahman', 'Corporate Office', 'Manager (Training)', '01716-767391', 'ashikur_112@yahoo.com', '', 'Working'),
 (21, '181011018', '0305', 'Sad Md.  Saber', 'Mymensingh Power Station', 'Executive Engineer (Electrical,I&C)', '01716-359626', 'saber0024@gmail.com', '', 'Working'),
-(351, '180018001', '8001', 'nafis tanjom', 'two', 'CEO', '01658256921', 'azizulalamprottoy@gmail.com', '', 'On Leave'),
+(351, '180018001', ' 8001 ', ' nafis tanjim ', ' two ', ' CEO ', ' 01658256921 ', ' azizulalamprottoy@gmail.com ', ' 45 ', 'On Leave '),
 (23, '181011027', '0297', 'Mohammad  Asaduzzaman', 'Corporate Office', 'Executive Engineer(P&C)', '01726788645', 'shohag.buet@gmail.com', '', 'Working'),
 (24, '185011017', '0285', 'Md. Ferdaws Rahman', 'Corporate Office', 'Executive Engineer(D&D)', '01714261586', 'ferdaws00131@gmail.com', '', 'Working'),
 (25, '180011058', '0023', 'Mirza  Safiqul Islam', 'Corporate Office', 'Executive Engineer(O&M)', '01827580078', 'imirzasafiqul@yahoo.com', '', 'Working'),
@@ -504,17 +649,17 @@ INSERT INTO `employees` (`id`, `employeeid`, `employeecode`, `employeename`, `of
 (337, '185011089', '0461', 'Md. Ruman Khandokar', 'Gazipur 100MW HFO Fired Power Plant', 'Helper', '01738960495', '', '', 'Working'),
 (338, '185011093', '0462', 'Md. Kamrul Hasan', 'Gazipur 100MW HFO Fired Power Plant', 'Helper', '01851-881776', '', '', 'Working'),
 (339, '185011099', '1021', 'Paritosh Biswas', 'Raozan Power Plant', 'Helper', '01882827001', '', '', 'Working'),
-(340, '183011188', '0275', 'Md. Amin', 'Gazipur Power Plant', 'Helper', '01716-639701', '', '', 'Working'),
+(340, '183011188', ' 0275 ', ' Md. Amin ', ' Gazipur Power Plant ', ' Helper ', ' 01716-639701 ', 'uuuu', 'uuuu', 'Working '),
 (341, '180011182', '0260', 'Md. Samsul   Haque', 'Gazipur Power Plant', 'Junior Gardener', '01843-799171', '', '', 'Working'),
 (342, '183011190', '0273', 'Rafiqul Islam', 'Gazipur Power Plant', 'Helper', '01723-322112', '', '', 'Working'),
 (343, '183011202', '0263', 'Md Tazul Islam', 'Raozan Power Plant', 'Helper', '01626-738353', '', '', 'Working'),
 (344, '183011205', '0336', 'Abul  Kasem', 'Gazipur 100MW HFO Fired Power Plant', 'Helper', '01721-694735', '', '', 'Working'),
 (345, '183011206', '0334', 'Md. Borhan  ', 'Raozan Power Plant', 'Helper', '01920-981088', '', '', 'Working'),
 (346, '183011208', '0335', 'Shaikhul Islam', 'Raozan Power Plant', 'Helper', '01915-901476', '', '', 'Working'),
-(347, '180011176', '0217', 'Md. Ashik Sarker Suruj', 'Gazipur Power Plant', 'Rest House Caretaker', '01714641122', '', '', 'Working');
-INSERT INTO `employees` (`id`, `employeeid`, `employeecode`, `employeename`, `officename`, `designation`, `contactno`, `email`, `password`, `status`) VALUES
+(347, '180011176', '0217', 'Md. Ashik Sarker Suruj', 'Gazipur Power Plant', 'Rest House Caretaker', '01714641122', '', '', 'Working'),
 (348, '180011210', '0136', 'Md.  Anowar  Hossain', 'Mymensingh Power Station', 'Welder Gr.-1 (Selection Grade)', '01718192780', '', '', 'Working'),
-(349, '180011126', '0116', 'Malek  Masud Ul  Hasan', 'Mymensingh Power Station', 'Junior Assistant Manager (Mecha-Paint)', '01717346823', 'hshuvro@yahoo.com', '', 'Working'),
+(349, '180011126', '0116', 'Malek  Masud Ul  Hasan', 'Mymensingh Power Station', 'Junior Assistant Manager (Mecha-Paint)', '01717346823', 'hshuvro@yahoo.com', '', 'Working');
+INSERT INTO `employees` (`id`, `employeeid`, `employeecode`, `employeename`, `officename`, `designation`, `contactno`, `email`, `password`, `status`) VALUES
 (350, '5454', '5445', 'fhdg dfg', 'saab', 'volvo', '54546872123', 'shahabuddin00180@gmail.com', '', 'mercedes');
 
 -- --------------------------------------------------------
@@ -536,42 +681,20 @@ CREATE TABLE IF NOT EXISTS `extradevices` (
   `warranty` date NOT NULL,
   `comments` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`sid`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `extradevices`
 --
 
 INSERT INTO `extradevices` (`sid`, `employeeid`, `device`, `itemcode`, `q`, `price`, `modspec`, `pdate`, `warranty`, `comments`) VALUES
-(1, 180011265, 'monitor', 's451', '', '', 'Dell 14inch', '2010-12-20', '2010-12-22', 'no problems found'),
-(2, 180011265, 'scanner', '', '', '', 'coral', '0000-00-00', '0000-00-00', ''),
-(3, 0, 'one', '', '3', '3', '3', '2024-01-05', '2024-01-05', '3'),
+(1, 180011265, 'monitor', 's451', '', '500', 'Dell 14inch', '2010-12-20', '2010-12-22', 'no problems found'),
+(2, 180011265, 'scanner', 'jh', '1', '500', 'coral', '0000-00-00', '0000-00-00', ''),
+(3, 0, 'one', 'fgf45', '3', '3', '3', '2024-01-05', '2024-01-05', '3'),
 (4, 0, 'two', 'k', '3', '3', '3', '2024-01-05', '2024-01-05', 'k'),
 (5, 180011058, 'two', 'tt', '3', 't', '3', '2024-01-05', '2024-01-05', 'tt'),
-(6, 180011059, 'one', 'e', 'e', 'e', 'e', '2024-01-19', '2026-06-26', 'e');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `itemlist`
---
-
-DROP TABLE IF EXISTS `itemlist`;
-CREATE TABLE IF NOT EXISTS `itemlist` (
-  `serial` int NOT NULL AUTO_INCREMENT,
-  `items` varchar(255) COLLATE utf8mb4_bin NOT NULL,
-  PRIMARY KEY (`serial`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Dumping data for table `itemlist`
---
-
-INSERT INTO `itemlist` (`serial`, `items`) VALUES
-(7, 'adsbb'),
-(8, 'sss'),
-(10, 'test1nnn'),
-(11, 'test1');
+(6, 180011059, 'one', 'e', 'e', 'e', 'e', '2024-01-19', '2026-06-26', 'e'),
+(7, 180011008, 'scannerssss', 'k', 'e', 't', '3', '2024-01-23', '2024-01-12', '3');
 
 -- --------------------------------------------------------
 
@@ -588,7 +711,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `cost` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `feedback` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `log`
@@ -598,7 +721,8 @@ INSERT INTO `log` (`id`, `did`, `date`, `mainteinence`, `cost`, `feedback`) VALU
 (1, 2, '0000-00-00', 'retert retert', '10', 'sad erww wt dsf sfd'),
 (2, 2, '0000-00-00', 'sadtyu', '40', 'fgdfgdffdgg'),
 (3, 6, 'Thursday, January 4th, 2024, 09:39 PM', 'sdfds', '50', 'dfsfds'),
-(4, 6, 'Thursday, January 4th, 2024, 09:39 PM', 'sdfds', '50', 'dfsfds');
+(4, 6, 'Thursday, January 4th, 2024, 09:39 PM', 'sdfds', '50', 'dfsfds'),
+(5, 7, 'Saturday, January 6th, 2024, 05:27 PM', 'matha noshto', '40', 'fixed');
 
 -- --------------------------------------------------------
 
@@ -612,17 +736,10 @@ CREATE TABLE IF NOT EXISTS `mreq` (
   `request` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `employeeid` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `email` varchar(100) COLLATE utf8mb4_bin NOT NULL,
+  `status` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `date` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`si`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Dumping data for table `mreq`
---
-
-INSERT INTO `mreq` (`si`, `request`, `employeeid`, `email`, `date`) VALUES
-(2, '2nd test', '180011265', 'samia@gmail.com', '180011265'),
-(4, 'i need my scanner to be fixed', '180011265', 'riyad@gmail.com', '180011265');
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- --------------------------------------------------------
 
@@ -646,6 +763,29 @@ CREATE TABLE IF NOT EXISTS `notice` (
 INSERT INTO `notice` (`si`, `notice`, `date`, `getters`) VALUES
 (3, 'the office will be closed on 7th Jan for national election ceremony', '4th Jan,2024', 'ALL'),
 (4, 'adser', 're', 'ds');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `offices`
+--
+
+DROP TABLE IF EXISTS `offices`;
+CREATE TABLE IF NOT EXISTS `offices` (
+  `si` int NOT NULL AUTO_INCREMENT,
+  `office` varchar(100) COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`si`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `offices`
+--
+
+INSERT INTO `offices` (`si`, `office`) VALUES
+(1, 'Head Office'),
+(2, 'Mymensingh Power Plant'),
+(3, 'Gazipur Power Plant'),
+(4, 'Raozan Powerplant');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
