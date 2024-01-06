@@ -1,58 +1,41 @@
-<form  action="addexde.php" method="POST">
-    <div class='st'>
-
- 
-                      
-                           <div style='margin:10px'>
-                        
-                          <div class="mb-3">
-                          <input name="employeeid" style="display:none;" value="<?php echo $id; ?>" type="text">
-
-                                             <label class="form-label">Device :</label>
-                                            <select name="device"class="form-control" >
-                                                <option selected></option>
-                                                <option value="one">one</option>
-                                                <option value="two">Two</option>
-                                                <option value="three">Three</option>
-                                            </select>
-                          </div> 
-                          <div class="mb-3">
-                            <label class="form-label">Quantity:</label>
-                            <input name="q" class="form-control" type="text">
-                           </div>    
-                           <div class="mb-3">
-                            <label class="form-label">Price:</label>
-                            <input name="price" class="form-control" type="text" >
-                            </div>    
-                             <div class="mb-3">
-                            <label class="form-label">Specifications:</label>
-                            <input name="modspec" class="form-control" type="text" >
-                             </div> 
-                        </div>
-      <div  style='margin:10px'>
-                             <div class="mb-3">
-                            <label class="form-label">Purchase_Date:</label>
-                            <input name="pdate" class="form-control" type="date" >
-                             </div>  
-                             <div class="mb-3">
-                            <label class="form-label">Warrenty_Date:</label>
-                            <input name="warranty" class="form-control" type="date" >
-                             </div> 
-                             <div class="mb-3">
-                            <label class="form-label">Item code:</label>
-                            <input name="itemcode" class="form-control" type="text" >
-                             </div>  
-                             <div class="mb-3">
-                            <label class="form-label">Comments:</label>
-                            <input name="comments" class="form-control" type="text" >
-                             </div>    
-                  
-        </div>                                        
-                        </div>
-
-                    
-        
-    <div style="display:flex;justify-content:center"><button type="submit" name="submission" class='nm2' >Add Item</button></div>
-     
-    </form>
-  
+<!doctype html>
+<html style="height: -webkit-fill-available;">
+<head>
+    <script src="../assets/js/color-modes.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../styl50.css">
+    <title>PC distributions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="sidebars.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="livesearch/js1/jquery-2.1.3.min.js"></script>
+    <script src="livesearch/js1/ss.js"></script>
+    <link href="livesearch/css/ls2.css" rel="stylesheet" />
+</head>
+<body>
+<div class="brk">
+        <?php include("sidebar.php") ?>
+        <div>
+            <?php include("header.php") ?>
+            <div class="wea">
+            <a class="asdt" href="addemployee.php" >add employee</a>
+    <button class="asdt"  onclick="exportTableToExcel('ls_table', 'employees')">Export Excel</button>
+    <!-- <button class="asdt" onclick="ImportTableToDb()">Import CSV</button> -->
+    <button class="asdt" onclick="exportTableToCSV()">Export CSV</button>
+<div>
+            <div class="container"> 
+                <div class="form-group">
+                    <div class="inp">
+  <input type="text" id="ls_search_text" placeholder="Type any keyword to search"
+    class="form-control" />  
+                </div>
+                <br />
+                <div id="ls_result" style="overflow-x:scroll;border-top: 5px solid #ddd;overflow-y:scroll;height:550px"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="sidebars.js"></script>
+</html>

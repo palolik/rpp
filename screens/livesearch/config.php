@@ -5,7 +5,6 @@ $username="root";
 $password="";				
 $db_name="rpp";             
 $table_name="employees"; 
-$table_nam="devices"; 
 
 
 $search_columns=array(); 

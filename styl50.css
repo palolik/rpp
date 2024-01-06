@@ -24,7 +24,19 @@ body{
   display: block;
   margin-bottom: 5px;
 }
+.itemtable{
+  width: -webkit-fill-available;
+}
+.itemtable a{
+text-decoration: none;
+color: rgb(0, 22, 68);
+background-color: #e6ddff;
+padding: 5px 10px;
 
+}
+.itemtable td,th{
+  padding: 5px;
+}
 .lals {
   width: 320px;
   padding: 10px;
@@ -471,10 +483,17 @@ body{
   text-decoration: none;
   cursor: pointer;
 }
+.ht2{
+  margin: 10px;
+    overflow: scroll;
+    height: 105px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 /* scrollbar setting goes here  */
 .scr{
   overflow: scroll;
-  height: 500px;
+  height: 330px;
   -ms-overflow-style: none; 
 scrollbar-width: none; 
 }
@@ -491,9 +510,17 @@ scrollbar-width: none;
   -ms-overflow-style: none; 
   scrollbar-width: none; 
 }
+.ht2{
+  margin: 10px;
+    overflow: scroll;
+    height: 105px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 
-
-
+.ht2::-webkit-scrollbar {
+  display: none;
+}
 .ho1{
   background-color: white;
   border: 1px solid rgb(44, 43, 43);
@@ -507,6 +534,15 @@ scrollbar-width: none;
   height:fit-content;
   background-color:#d7d5ff;
   margin: 5px;
+  padding: 3px;
+  border-radius: 5px;
+}
+.mr2{
+  height:fit-content;
+  border: 1px solid rgb(255, 255, 255);
+  background-color:#0d00ff11;
+  color:white;
+  margin-bottom: 5px;
   padding: 3px;
   border-radius: 5px;
 }

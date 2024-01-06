@@ -32,6 +32,37 @@
 
 </div>
 <div>
+<div style="display:flex">
+<div  style="margin-bottom: 0px; color: white; font-size: 20px;width: 270px;height: 25px;background-color: rgba(22, 19, 19, 0.3);">
+                     Maintaintence Box
+                </div>  </div>
+            <div class="ht2">
+            
+            <?php 
+            require_once("../config/database.php");
+
+            $result = mysqli_query($mysqli, "SELECT * FROM mreq where employeeid=$eid ORDER BY si DESC");
+            while($res = mysqli_fetch_assoc($result))
+
+            {
+                
+                echo "<div class='mr2'>";
+
+                echo "<p>".$res['request']."</p>";
+                echo "<div>"  . $res['status']  , "</div>";
+
+                
+                echo "</div>";
+            }
+            ?> 
+        
+        </div>
+
+    </div>
+
+
+
+<div>
                     <div style=" margin-top: 50px;">
                       <button class='nm4' onclick="openForm()">Request Maintenance</button>
                   
@@ -57,6 +88,14 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForms").style.display = "none";
 }
+
+function openForm8() {
+  document.getElementById("myForms8").style.display = "block";
+}
+
+function closeForm8() {
+  document.getElementById("myForms8").style.display = "none";
+}
 </script>
 
 
@@ -73,7 +112,10 @@ function closeForm() {
          <div>
          <form  action="mreq.php" method="POST">
                          <input style="display:none" value="<?php echo $eid ?>" name="employeeid">
-      <input style="display:none" name="date"  value="<?php echo $eid ?>" >
+                         <input style="display:block" value="<?php require_once("../config/database.php");$resultw = mysqli_query($mysqli, "SELECT * FROM employees where employeeid=$eid"); while($res = mysqli_fetch_assoc($resultw)) { echo $res['email'] ;} ?>" name="email">
+
+
+      <input style="display:none" name="date"  value="<?php echo date("F jS, Y, h:i A");  ?>" >
                       <textarea name="request" style="margin:20px;padding:10px;resize:none;color:black;font-size:20px;width:-webkit-fill-available;height:300px;background-color:white;"
                       placeholder="Please add Device name and the problem you are facing in brief"></textarea>
 

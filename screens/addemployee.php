@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl48.css">
+    <link rel="stylesheet" type="text/css" href="../styl50.css">
 
     <title>Sidebars · Bootstrap v5.3</title>
 
@@ -83,15 +83,31 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Office :</label>
                                                 <select name="officename"class="form-select form-select mb-3" aria-label="Large select example">
-                                                <option selected></option>
-                                                <option value="one">one</option>
-                                                <option value="two">Two</option>
-                                                <option value="three">Three</option>
+                                                <?php 
+                                             $sql = "SELECT * FROM offices";
+                                             $result = $conn->query($sql);
+                                             if ($result->num_rows > 0) {
+                                                 while ($row = $result->fetch_assoc()) {
+                                                     echo  "<option value=" .$row['office']. ">" .$row['office']. "</option>";
+                                                 }
+                                                }
+                                            ?>  
                                                 </select>
                                             </div>  
                                             <div class="mb-3">
                                                 <label class="form-label">Designation:</label>
-                                                <input name="designation" class="form-control" type="text" >
+                                                <select name="designation" class="form-select form-select mb-3" aria-label="Large select example">
+                                                <option selected></option>
+                                                <?php 
+                                             $sql = "SELECT * FROM designations";
+                                             $result = $conn->query($sql);
+                                             if ($result->num_rows > 0) {
+                                                 while ($row = $result->fetch_assoc()) {
+                                                     echo  "<option value=" .$row['designations']. ">" .$row['designations']. "</option>";
+                                                 }
+                                                }
+                                            ?>  
+                                            </select>
                                             </div>     
                                             <div class="mb-3">
                                                 <label class="form-label">Status :</label>

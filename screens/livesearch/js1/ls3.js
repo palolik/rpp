@@ -3,12 +3,12 @@ $(document).ready(function(){
 	function load_data(query)
 	{
 		$.ajax({
-			url:"livesearch/php/search2.php",
+			url:"livesearch/php/search3.php",
 			method:"post",
 			data:{query:query},
 			success:function(data)
 			{
-				$('#ls_result').html(data);
+				$('#ls_result3').html(data);
 			}
 		});
 	}

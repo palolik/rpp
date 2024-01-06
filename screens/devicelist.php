@@ -2,24 +2,16 @@
 <html style="height: -webkit-fill-available;">
 <head>
     <script src="../assets/js/color-modes.js"></script>
-    <script src="livesearch/js/jquery-2.1.3.min.js"></script>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl48.css">
-    <title>Device List</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
+    <link rel="stylesheet" type="text/css" href="../styl50.css">
+    <title>PC distributions</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="sidebars.css" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script src="livesearch/js/jquery-2.1.3.min.js"></script>
-    <script src="livesearch/js/bootstrap.min.js"></script>
-    <link href="livesearch/css/bootstrap.css" rel="stylesheet" />
-    <script src="livesearch/js/ls2.js"></script>
-    <link href="livesearch/css/ls1.css" rel="stylesheet" />
+    <script src="livesearch/js1/jquery-2.1.3.min.js"></script>
+    <script src="livesearch/js1/ls2.js"></script>
+    <link href="livesearch/css/ls2.css" rel="stylesheet" />
 </head>
 <body>
 <div class="brk">
@@ -27,7 +19,6 @@
         <div>
             <?php include("header.php") ?>
             <div class="wea">
-            <a class="asdt" href="addemployee.php" >add device</a>
     <button class="asdt"  onclick="exportTableToExcel('ls_table', 'employees')">Export Excel</button>
     <button class="asdt" onclick="ImportTableToDb()">Import CSV</button>
     <button class="asdt" onclick="exportTableToCSV()">Export CSV</button>
@@ -39,7 +30,7 @@
     class="form-control" />  
                 </div>
                 <br />
-                <div id="ls_result" style="overflow-x:scroll;border-top: 5px solid #ddd;overflow-y:scroll;height:550px"></div>
+                <div id="ls_result2" style="overflow-x:scroll;border-top: 5px solid #ddd;overflow-y:scroll;height:550px"></div>
             </div>
         </div>
     </div>

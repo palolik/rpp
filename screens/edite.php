@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl48.css">
+    <link rel="stylesheet" type="text/css" href="../styl50.css">
 
     <title>Sidebars · Bootstrap v5.3</title>
 
@@ -57,7 +57,7 @@
             $conn = new mysqli($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 
 
-            $id = $_GET['ds'];
+            $id = $_GET['id'];
         
 
             $sql = "SELECT * FROM employees where id=$id";
@@ -71,7 +71,7 @@
                  
      
                     
-        <form action='editemployee.php' method='post'>
+        <form action=controller.php?id=".$row['id'] ." method='post'>
         <div class='box1'>
             <div class='bol'>
                 <p>Existing Employee Details</p>
@@ -80,14 +80,14 @@
             <div class='box111'>
                                    
             <div class='f2'>
-                <label for='fname'>Employee is:</label>
-                <input class='form-control' type='text' name='employeeid'  value=' ".$row['employeeid']." '
-                aria-label='Disabled input example' disabled readonly >
-
+                <label for='fname'>Password:</label>
+                <input class='form-control' type='text' name='password'  value=' ".$row['password']." '
+                >
+<input style='display:none;' name='employeeid' value='". $row['employeeid'] ."' >
                   
             </div>             
             <div class='f2'>
-                <label for='fname'>Employee Name:</label>
+                <label for='fname'>Password:</label>
                 <input class='form-control' type='text' name='employeename'  value=' ".$row['employeename']." '
                 >
 
@@ -127,6 +127,7 @@
                     <input class='form-control' type='text' name='contactno' value=' ". $row['contactno'] ." '
                     >
                 </div>
+
              
             </div> 
                        

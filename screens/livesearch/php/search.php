@@ -63,7 +63,7 @@
 				if(in_array($col_name_row['COLUMN_NAME'],$output_columns))
 				{
 					
-						$output .= "<th>id</th><th>employeeid</th><th>employeecode</th><th>employeename</th><th>officename</th><th>designation</th><th>contact no.</th><th>email</th><th>status</th>";
+						$output .= "<th>id</th><th>employeeid</th><th>employeecode</th><th>employeename</th><th>officename</th><th>designation</th><th>contact no.</th><th>email</th><th>password</th><th>status</th>";
 				
 				}
 			}
@@ -72,7 +72,7 @@
 		else
 		{
 			
-				$output .= "<th>id</th><th>employeeid</th><th>employeecode</th><th>employeename</th><th>officename</th><th>designation</th><th>contact no.</th><th>email</th><th>status</th>";
+				$output .= "<th>id</th><th>employeeid</th><th>employeecode</th><th>employeename</th><th>officename</th><th>designation</th><th>contact no.</th><th>email</th><th>password</th><th>status</th>";
 				
 		
 			$output.="</thead><tbody>";
@@ -90,6 +90,8 @@
 				 <td>".$row['designation']."</td>
 				 <td>".$row['contactno']."</td>
 				 <td>".$row['email']."</td>
+				 <td>".$row['password']."</td>
+
 				 <td>".$row['status']."</td></tr>";
 		}
 		echo $output;

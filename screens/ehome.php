@@ -16,10 +16,8 @@ $eid=$_SESSION['eid'] ;
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl48.css">
+
+    <link rel="stylesheet" type="text/css" href="../styl50.css">
     <style>
 
 .form-popup {
@@ -45,7 +43,7 @@ $eid=$_SESSION['eid'] ;
   opacity: 1;
 }
 </style>
-    <title>Sidebars · Bootstrap v5.3</title>
+    <title>Home</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
 
@@ -167,8 +165,8 @@ $eid=$_SESSION['eid'] ;
 
 
                 <div class='box9'>
-                <div class='bol' style="margin-bottom:25px;">
-                <p>PC Configurations</p>
+                <div class='bol' style="margin-bottom:5px;">
+                <span style="font-size:30px;">PC Configurations</span>
             </div>
                 <div>
                 <div>
@@ -184,7 +182,8 @@ $eid=$_SESSION['eid'] ;
                     echo 
                     "
                 <table style='margin:10px'>
-                <tr><th style='text-align: left;width:200px'>Ip Address</th><td>". $row['pcip'] ."</td></tr>
+                <tr><th style='text-align: left;width:200px'>Pc Name</th><td>". $row['pcname'] ."</td></tr>
+                <tr><th style='text-align: left;'>Ip Address</th><td>". $row['pcip'] ."</td></tr>
                 <tr><th style='text-align: left;'>PC/Laptop</th><td>". $row['pclap'] ."</td></tr>
                 <tr><th style='text-align: left;'>Processor</th><td>". $row['processor'] ."</td></tr>
                 <tr><th style='text-align: left;'>RAM</th><td>". $row['ram'] ."</td></tr>
@@ -196,8 +195,8 @@ $eid=$_SESSION['eid'] ;
         }
         
         ?>
-  <div class='bol' style="margin-bottom:25px;">
-                <p>Extra Device Details</p>
+        <div class='bol' style="margin-bottom:5px;">
+                <span style="font-size:30px;">Extra Devices</span>
             </div>
                 <table  class="aer">
                <tr style='text-align: center;'>
@@ -223,7 +222,9 @@ $eid=$_SESSION['eid'] ;
                     <td><div class='adt'>". $row['pdate'] ."</div></td>
                     <td><div class='adt'>". $row['warranty'] ."</div></td>
                     <td><div class='adt'>". $row['comments'] ."</div></td>
-                    <td><a class='asd' href=\"log.php?sid=$row[sid]\">view</a></td>
+                    <td><a href='log.php?sid=". $row['sid'] ."& eid=".$eid ." ' class='asd'  onclick='openForm8()'>Log</button>
+                    </td>
+
                 </tr>
                 ";
               }
@@ -257,5 +258,69 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+function openForm8() {
+  document.getElementById("myForms8").style.display = "block";
+ 
+
+
+}
+
+function closeForm8() {
+  document.getElementById("myForms8").style.display = "none";
+}
 </script>
 </html>
+
+
+<div class="tamoto" id="myForms8">
+<div style="display: flex;justify-content: space-between;font-size: 20px;margin: 10px;">
+    <div>Maintenence History</div>       
+    <div>
+    <button style=" background-color:white;border: none;padding:1px;cursor: pointer;"  onclick="closeForm8()"><img style="height:20px" src="../clo.png"></button> 
+    </div> 
+</div>
+    <div style="width:90%">
+<table class="table table-striped table-bordered table-sm" 
+                        cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="th-sm">Mainteinence</th>
+                                <th class="th-sm">Feedback</th>
+                           
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                                       include '../config/database.php';
+                                        $serial = 2 ;
+                                        
+                                        $query = "SELECT * FROM log WHERE did=$serial";
+                                        $query_run = mysqli_query($conn, $query);
+
+                                        if(mysqli_num_rows($query_run) > 0)
+                                        {
+                                            foreach($query_run as $res)
+                                            {                                            
+                                                echo "<tr>";
+                                                echo "<td>".$res['mainteinence']."</td>";
+                                                echo "<td>".$res['feedback']."</td>";
+                                              
+                                       
+                                             
+                                                echo "</tr>";
+                                            }
+                                                
+                                            }else{
+                                                echo "<tr>
+                                                <td colspan='3'>No Record Found</td>
+                                            </tr>" ;
+                                            }
+                                        
+                               
+                                    
+                                ?>
+
+                        </tbody>
+
+                    </table></div>
+                                        </div>

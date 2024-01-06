@@ -16,6 +16,11 @@
 	overflow-x:none;
 	overflow-y:none;
 }
+#ls_result2
+{
+	overflow-x:none;
+	overflow-y:none;
+}
 #ls_table table,#ls_table td,#ls_table th
 {
 	border:1px solid black;

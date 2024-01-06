@@ -5,7 +5,9 @@
         $request = mysqli_real_escape_string($mysqli, $_POST['request']);
         $employeeid = mysqli_real_escape_string($mysqli, $_POST['employeeid']);
         $date = mysqli_real_escape_string($mysqli, $_POST['date']);
-        $result = mysqli_query($mysqli, "INSERT INTO mreq (`request`, `employeeid`, `date`) VALUES ('$request', '$employeeid', '$date') ");
+        $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+        $status = "pending";
+        $result = mysqli_query($mysqli, "INSERT INTO mreq (`request`, `employeeid`,`email`, `date`, `status`) VALUES ('$request', '$employeeid','$email', '$date', '$status') ");
 
         header("location:ehome.php");
 

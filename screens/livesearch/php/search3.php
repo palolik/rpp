@@ -1,11 +1,12 @@
 <?php
 
+
 $servername="localhost";      
 $username="root";	        
 $password="";				
 $db_name="rpp";             
 
-$table_name="devices"; 
+$table_name="alldevice"; 
 
 
 $search_columns=array(); 
@@ -14,16 +15,15 @@ $output_columns_name=array();
 $use_sno=true;
 
 
-	$conn_var = mysqli_connect($servername,$username,$password,$db_name);
+
+	$conn_var = mysqli_connect($servername,$username,$password,$db_name); 
 
 	$output = '';  
-
 
 	$col_name_query="SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='".$db_name."' AND `TABLE_NAME`='".$table_name."'";
 	$col_name_query_result=$conn_var->query($col_name_query);
 	$col_name_row_count = $col_name_query_result->num_rows;
 
-	
 	if(isset($_POST["query"]))
 	{
 		$search = mysqli_real_escape_string($conn_var, $_POST["query"]);
@@ -62,33 +62,28 @@ $use_sno=true;
 	$op=array();
 	
 	
+	
 	if($row_cnt>0)  
 	{
-		$output.="
-		<div><table id='ls_table' class='tab3'><thead><tr>";
 		
 		
+		$output.="<table id='ls_table' class='itemtable'><thead><tr>";
+	
 		if(count($output_columns)!=0)
 		{
 			while($col_name_row = $col_name_query_result->fetch_assoc())
 			{
 				if(in_array($col_name_row['COLUMN_NAME'],$output_columns))
 				{
-					
-						$output .= "<th>si</th>
-                        <th>employeeid</th>
-                        <th>pc/laptop</th>
-                        <th>pc name</th>
-                        <th>processor</th>
-                        <th>motherboard</th>
-                        <th>ram</th>
-                        <th>hdd</th>
-                        <th>ssd</th>
-                        <th>cdrom</th>
-                        <th>os</th>
-                        <th>pcip</th>
-                        <th>pdate</th>
-                        <th>warrenty</th>";
+						
+					$output .= "<th>device name</th>
+								<th>entry date</th>
+								<th>quantity</th>
+								<th>Edit</th>
+								<th>Delete</th>
+								
+								
+								";
 				}
 			}
 			$output.="</thead><tbody>";
@@ -96,49 +91,29 @@ $use_sno=true;
 		else
 		{
 			
-            $output .= "<th>si</th>
-            <th>employeeid</th>
-            <th>pc/laptop</th>
-            <th>pc name</th>
-            <th>processor</th>
-            <th>motherboard</th>
-            <th>ram</th>
-            <th>hdd</th>
-            <th>ssd</th>
-            <th>cdrom</th>
-            <th>os</th>
-            <th>pcip</th>
-            <th>pdate</th>
-            <th>warrenty</th>";
-				
-		
+			$output .= "<th>device name</th>
+								<th>entry date</th>
+								<th>quantity</th>
+								<th>Edit</th>
+								<th>Delete</th>"
+								
+								;
 			$output.="</thead><tbody>";
 		}
 		while($row = $user_query_result->fetch_assoc())
 		{
-		
-				$output .= "<tr>
-                <td>".$row['si']."</td>
-                <td>".$row['employeeid']."</td>
-                <td>".$row['pc/laptop']."</td>
-			    <td>".$row['pcname']."</td>
-				 <td>".$row['processor']."</td>
-				 <td>".$row['motherboard']."</td>
-				 <td>".$row['ram']."</td>
-                 <td>".$row['hdd']."</td>
-				 <td>".$row['ssd']."</td>
-				 <td>".$row['cdrom']."</td>
-				 <td>".$row['os']."</td>
-                 <td>".$row['pcip']."</td>
-				 <td>".$row['pdate']."</td>
-				 <td>".$row['warrenty']."</td>
+			$output .= "<tr><td>".$row['devicen']."</td>
+					            <td>".$row['q']."</td>
+								<td>".$row['adddate']."</td>
+								<td><a href=\"edit.php?si=$row[si]\">Edit</a></td>
+								<td><a href=\"deleteitem.php?si=$row[si]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
 
-                 </tr>";
+								
 		}
 		echo $output;
 	}
 	else
 	{
-		echo '<b>No Data Found</b>';
+		echo '<b>No Datad Found</b>';
 	}
 ?>

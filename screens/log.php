@@ -10,9 +10,9 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl48.css">
+    <link rel="stylesheet" type="text/css" href="../styl50.css">
 
-    <title>Sidebars · Bootstrap v5.3</title>
+    <title>log book</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
 
@@ -33,7 +33,7 @@
 
 <div class="brk">
 
-<?php include("sidebar2.php") ?>
+<?php include("sidebar3.php") ?>
 <div>
 
     <?php include("header.php") ?>

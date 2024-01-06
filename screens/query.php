@@ -19,7 +19,7 @@ if (isset($_POST['ds'])) {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl48.css">
+    <link rel="stylesheet" type="text/css" href="../styl50.css">
     <style>
 
 .form-popup {
@@ -154,7 +154,7 @@ if (isset($_POST['ds'])) {
                             
                         </div>
                         <div class='aew'> <a class='asd' href=\"deleteemployee.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
-                        <a class='asd' href=\"edite.php?ds=$row[id]\">Edit</a>
+                        <a class='asd' href=\"edite.php?id=$row[id]\">Edit</a>
                         </div>
 
                     </div>
@@ -212,7 +212,7 @@ if (isset($_POST['ds'])) {
             </div>
                 <table  class="aer">
                <tr style='text-align: center;'>
-                <th>Device</th><th>Item code</th> <th>Quantity</th> <th>Price</th> <th>Specifications</th> <th>Purchase_Date</th> <th>Warrenty_Info</th><th>Comments</th> <th>Delate</th> <th>Custom</th><th>Log</th>
+                <th>Device</th><th>Item code</th> <th>Quantity</th> <th>Price</th> <th>Specifications</th> <th>Purchase_Date</th> <th>Warrenty_Info</th><th>Comments</th> <th>Delete</th><th>Log</th>
                 </tr>
                
                 <?php   
@@ -242,8 +242,8 @@ if (isset($_POST['ds'])) {
                     <td><div class='adt'>". $row['pdate'] ."</div></td> 
                     <td><div class='adt'>". $row['warranty'] ."</div></td>
                     <td><div class='adt'>". $row['comments'] ."</div></td>
-                    <td><a class='asd' href=\"deleteemployee.php?id=$row[sid]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>
-                    <td><a class='asd' href=\"edite.php?ds=$row[sid]\">custom</a></td>
+                    <td><a class='asd' href=\"ded.php?sid=$row[sid]&id=$id\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>
+                 
                     <td><a class='asd' href=\"log2.php?sid=$row[sid]\">view</a></td>
                 </tr>
                 ";
@@ -278,11 +278,16 @@ if (isset($_POST['ds'])) {
 
                                              <label class="form-label">Device :</label>
                                             <select name="device"class="form-control" >
-                                                <option selected></option>
-                                                <option value="one">one</option>
-                                                <option value="two">Two</option>
-                                                <option value="three">Three</option>
-                                            </select>
+                                            <?php 
+                                             $sql = "SELECT * FROM alldevice";
+                                             $result = $conn->query($sql);
+                                             if ($result->num_rows > 0) {
+                                                 while ($row = $result->fetch_assoc()) {
+                                                     echo  "<option value=" .$row['devicen']. ">" .$row['devicen']. "</option>";
+                                                 }
+                                                }
+                                            ?>   
+                                              </select>
                           </div> 
                           <div class="mb-3">
                             <label class="form-label">Quantity:</label>
@@ -297,7 +302,7 @@ if (isset($_POST['ds'])) {
                             <input name="modspec" class="form-control" type="text" >
                              </div> 
                         </div>
-      <div  style='margin:10px'>
+                            <div  style='margin:10px'>
                              <div class="mb-3">
                             <label class="form-label">Purchase_Date:</label>
                             <input name="pdate" class="form-control" type="date" >
