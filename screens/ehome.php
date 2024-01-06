@@ -17,7 +17,7 @@ $eid=$_SESSION['eid'] ;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="../styl50.css">
+    <link rel="stylesheet" type="text/css" href="../styl51.css">
     <style>
 
 .form-popup {

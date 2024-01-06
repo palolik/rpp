@@ -6,7 +6,12 @@ body{
   box-sizing: content-box !important;
 
 }
-
+.contain{
+  margin:50px;
+}
+.contain label{
+  font-size: 20px;
+}
 .tits {
   text-align: center;
   margin-bottom: 30px;

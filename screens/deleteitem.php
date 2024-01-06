@@ -1,8 +1,8 @@
 <?php
     require_once("../config/database.php");
 
-    $serial = $_GET['serial'];
-    $result = mysqli_query($mysqli, "DELETE FROM itemlist WHERE serial=$serial");
+    $si = $_GET['si'];
+    $result = mysqli_query($mysqli, "DELETE alldevice WHERE si = $si");
 
     header("location:itemlist.php");
 ?>
