@@ -19,7 +19,7 @@
 
         $result = mysqli_query($mysqli, "INSERT INTO devices (`employeeid`, `pclap`, `pcname`, `pcip`, `os`, `motherboard`, `processor`, `ram`, `hdd`, `ssd`, `cdrom`, `pdate`, `warrenty`)VALUES('$employeeid', '$pclaptop', '$pcname', '$pcip', '$os', '$motherboard', '$processor', '$ram', '$hdd', '$ssd', '$cdrom', '$pdate', '$warrenty')");
 
-        header("Location:query.php?ds=$employeeid"); 
+        header("Location:emdetails.php?ds=$employeeid"); 
         exit;
 
     }

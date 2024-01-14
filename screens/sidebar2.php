@@ -41,19 +41,25 @@
             <?php 
             require_once("../config/database.php");
 
-            $result = mysqli_query($mysqli, "SELECT * FROM mreq where employeeid=$eid ORDER BY si DESC");
-            while($res = mysqli_fetch_assoc($result))
-
+            $result = "SELECT * FROM mreq where employeeid=$eid ORDER BY si DESC";
+            $query_run = mysqli_query($conn, $result);
+            if(mysqli_num_rows($query_run) > 0)
             {
-                
+              foreach($query_run as $res)
+              {
+           
                 echo "<div class='mr2'>";
-
                 echo "<p>".$res['request']."</p>";
                 echo "<div>"  . $res['status']  , "</div>";
-
-                
                 echo "</div>";
+              }
+            }else{
+
+                echo "<div class='mr2'> <p>No Record Found</p>
+                      </div>" ;
             }
+          
+
             ?> 
         
         </div>
@@ -112,7 +118,7 @@ function closeForm8() {
          <div>
          <form  action="mreq.php" method="POST">
                          <input style="display:none" value="<?php echo $eid ?>" name="employeeid">
-                         <input style="display:block" value="<?php require_once("../config/database.php");$resultw = mysqli_query($mysqli, "SELECT * FROM employees where employeeid=$eid"); while($res = mysqli_fetch_assoc($resultw)) { echo $res['email'] ;} ?>" name="email">
+                         <input style="display:none" value="<?php require_once("../config/database.php");$resultw = mysqli_query($mysqli, "SELECT * FROM employees where employeeid=$eid"); while($res = mysqli_fetch_assoc($resultw)) { echo $res['email'] ;} ?>" name="email">
 
 
       <input style="display:none" name="date"  value="<?php echo date("F jS, Y, h:i A");  ?>" >

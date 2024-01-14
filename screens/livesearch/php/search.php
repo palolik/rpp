@@ -55,7 +55,8 @@
 		$output.="
 		<div><table id='ls_table' class='tab3'><thead><tr>";
 		
-		
+		if($use_sno==true)
+			$output.="<th>S.No</th>";
 		if(count($output_columns)!=0)
 		{
 			while($col_name_row = $col_name_query_result->fetch_assoc())
@@ -63,7 +64,7 @@
 				if(in_array($col_name_row['COLUMN_NAME'],$output_columns))
 				{
 					
-						$output .= "<th>id</th><th>employeeid</th><th>employeecode</th><th>employeename</th><th>officename</th><th>designation</th><th>contact no.</th><th>email</th><th>password</th><th>status</th>";
+						$output .= "<th>employeeid</th><th>employeecode</th><th>employeename</th><th>officename</th><th>designation</th><th>contact no.</th><th>email</th><th>password</th><th>status</th>";
 				
 				}
 			}
@@ -72,16 +73,19 @@
 		else
 		{
 			
-				$output .= "<th>id</th><th>employeeid</th><th>employeecode</th><th>employeename</th><th>officename</th><th>designation</th><th>contact no.</th><th>email</th><th>password</th><th>status</th>";
+				$output .= "<th>employeeid</th><th>employeecode</th><th>employeename</th><th>officename</th><th>designation</th><th>contact no.</th><th>email</th><th>password</th><th>status</th>";
 				
 		
 			$output.="</thead><tbody>";
 		}
 		while($row = $user_query_result->fetch_assoc())
 		{
-		
-				$output .= "<tr><td>".$row['id']."</td><td>".$row['employeeid']."</td><td>".$row['employeecode']."</td>
-				<td><form action='query.php' method='post'><input class='trm' type='submit' value=' ".$row['employeename']." ' >
+			$j=$j+1;
+			$output.="<tr>";
+			if($use_sno==true)
+				$output.="<td>".$j."</td>";
+				$output .= "<td>".$row['employeeid']."</td><td>".$row['employeecode']."</td>
+				<td><form action='emdetails.php' method='post'><input class='trm' type='submit' value=' ".$row['employeename']." ' >
 				<input type='hidden' name='ds' value=".$row['employeeid'].">                
 			</form></td>
 			

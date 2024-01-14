@@ -3,7 +3,7 @@
 <head>
     <script src="../assets/js/color-modes.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../styl51.css">
+    <link rel="stylesheet" type="text/css" href="../styl52.css">
     <title>PC distributions</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">

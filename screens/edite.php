@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl51.css">
+    <link rel="stylesheet" type="text/css" href="../styl52.css">
 
     <title>Sidebars · Bootstrap v5.3</title>
 
@@ -94,8 +94,20 @@
             </div>
             <div class='f2'>
                 <label for='fname'>Designation:</label>
-                <input class='form-control' type='text' name='designation' value=' ". $row['designation'] ." '
-                >
+                
+                <select name='designation' class='form-select form-select mb-3' aria-label='Large select example'>
+                <option value=". $row['designation'] .">". $row['designation'] ."</option>"
+                ;
+
+                $sql = "SELECT * FROM designations";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($ron = $result->fetch_assoc()) {
+                        echo  "<option value=" .$ron['designations']. ">" .$ron['designations']. "</option>";
+                    }
+                   }
+               
+                  echo " </select>
             </div>
             <div class='f2'>
                 <label for='fname'>Employee Code:</label>
@@ -109,8 +121,19 @@
 
                 <div class='f2'>
                     <label for='fname'>Office :</label>
-                    <input class='form-control' type='text' name='officename' value=' ". $row['officename'] ." '
-                    >
+                    <select name='officename' class='form-select form-select mb-3' aria-label='Large select example'>
+                    <option value=" .$row['officename']. ">" .$row['officename']. "</option>"
+                    ;
+
+                    $sql = "SELECT * FROM offices";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($ron = $result->fetch_assoc()) {
+                            echo  "<option value=" .$ron['office']. ">" .$ron['office']. "</option>";
+                        }
+                       }
+                   
+                      echo " </select>
                 </div>
                 <div class='f2'>
                     <label for='fname'>Email Address :</label>
@@ -131,17 +154,20 @@
              
             </div> 
                        
-                        <div>  
-                        <input type='submit' name='pass' value='pass'>
-                        </div>
+                       
 
 
                  
                             
                         </div>
                      
-
+                        <div style='display: flex;
+                        width: -webkit-fill-available;
+                        justify-content: center;'>  
+                    <input class='nm3' type='submit' name='pass' value='Edit'>
                     </div>
+                    </div>
+                   
                 </form>
 
 

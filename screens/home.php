@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl51.css">
+    <link rel="stylesheet" type="text/css" href="../styl52.css">
     <title>Admin home</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -50,10 +50,9 @@
                 
                 echo "<div class='mr1'>";
                 echo "<a style='margin-left:400px;' href=\"dmreq.php?si=$res[si]\" onClick=\"return confirm('Are you sure you want to delete?')\"><img style='height:10px' src='../clo.png'></a>";
-
-                echo "<div>".$res['employeeid'] . $res['email'] ."</div >";
-                echo "<p>".$res['request']."</p>";
-                echo "<div>"  . $res['date']  , "</div>";
+                echo "<div style='margin-bottom:10px;' ><b>Employee id: </b>".$res['employeeid'] ."</div >";
+                echo "<div style='margin:10px;'>".$res['request']."</div>";
+                echo "<div style='font-size:12px;text-align: end;'>"  . $res['date']  , "</div>";
 
                 
                 echo "</div>";
@@ -156,26 +155,21 @@
     </div>
          <div>
          <form  action="notice.php" method="POST">
-         <select name="getters" style="margin:5px 20px;padding:2px;color:black;font-size:20px;width:-webkit-fill-available;height:30px;background-color:white;">
+         <!-- <select name="getters" style="margin:5px 20px;padding:2px;color:black;font-size:20px;width:-webkit-fill-available;height:30px;background-color:white;">
                        <option value="all">All</option>
                        <option value="menegers">menegers</option>
                        <option value="ceo">ceo</option>
                        <option value="director">director</option>
-        </select>
-                      <textarea name="notice" style="margin:20px;padding:10px;resize:none;color:black;font-size:20px;width:-webkit-fill-available;height:300px;background-color:white;"
-                      placeholder="Please add Device name and the problem you are facing in brief"></textarea>
+        </select> -->
+        <input name="getters" style="display:none">
 
-             
- 
-                      
-                        
-     
-                                             
+<textarea name="notice" style="margin:20px;padding:10px;resize:none;color:black;font-size:20px;width:-webkit-fill-available;height:300px;background-color:white;" placeholder="write notice here..."></textarea>
+                                 
           </div>
 
                     
         
-          <button class='nm3' name="submit">Submit Request</button>
+          <button class='nm3' name="submit">Send Notice</button>
      
     </form>
   

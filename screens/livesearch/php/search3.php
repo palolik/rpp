@@ -68,6 +68,8 @@ $use_sno=true;
 		
 		
 		$output.="<table id='ls_table' class='itemtable'><thead><tr>";
+		if($use_sno==true)
+			$output.="<th>S.No</th>";
 	
 		if(count($output_columns)!=0)
 		{
@@ -102,9 +104,14 @@ $use_sno=true;
 		}
 		while($row = $user_query_result->fetch_assoc())
 		{
-			$output .= "<tr><td>".$row['devicen']."</td>
+			$j=$j+1;
+			$output.="<tr>";
+			if($use_sno==true)
+				$output.="<td>".$j."</td>";
+			$output .= "<td>".$row['devicen']."</td>
+			<td>".$row['adddate']."</td>
 					            <td>".$row['q']."</td>
-								<td>".$row['adddate']."</td>
+								
 								<td><a href=\"edit.php?si=$row[si]\">Edit</a></td>
 								<td><a href=\"deleteitem.php?si=$row[si]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
 

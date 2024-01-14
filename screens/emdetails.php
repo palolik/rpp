@@ -19,7 +19,7 @@ if (isset($_POST['ds'])) {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl51.css">
+    <link rel="stylesheet" type="text/css" href="../styl52.css">
     <style>
 
 .form-popup {

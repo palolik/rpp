@@ -15,7 +15,7 @@
 
         $result = mysqli_query($mysqli, "INSERT INTO extradevices (`employeeid`, `device`, `itemcode`, `q`, `price`, `modspec`, `pdate`, `warranty`, `comments`)VALUES('$employeeid', '$device', '$itemcode', '$q', '$price', '$modspec', '$pdate', '$warranty', '$comments')");
 
-        header("Location:query.php?ds=$employeeid"); 
+        header("Location:emdetails.php?ds=$employeeid"); 
         exit;
     }
 
