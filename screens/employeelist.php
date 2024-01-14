@@ -38,4 +38,6 @@
 </body>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 <script src="sidebars.js"></script>
+<script src="exportxl.js"></script>
+<script src="exporcsv.js"></script>
 </html>

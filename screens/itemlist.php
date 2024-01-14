@@ -34,8 +34,8 @@ require_once("../config/database.php");
                 <div class="wea">
                 <button class="asdt" onclick="openForm()">add item</button>
 
-        <button class="asdt"  onclick="exportTableToExcel('ls_table', 'employees')">Export Excel</button>
-        <button class="asdt" onclick="ImportTableToDb()">Import CSV</button>
+        <button class="asdt"  onclick="exportTableToExcel('ls_table', 'items')">Export Excel</button>
+        <!-- <button class="asdt" onclick="ImportTableToDb()">Import CSV</button> -->
         <button class="asdt" onclick="exportTableToCSV()">Export CSV</button>
     <div>
             <div class="container"> 
@@ -61,6 +61,8 @@ require_once("../config/database.php");
     document.getElementById("myForms2").style.display = "none";
     }
 </script>
+<script src="exportxl.js"></script>
+<script src="exporcsv.js"></script>
 </html>
 
 

@@ -1,3 +1,7 @@
+
+
+
+
 <!doctype html>
 <html style="
     height: -webkit-fill-available;">
@@ -136,7 +140,7 @@ function closeForm4() {
 <div id="myForms4" class="tamoro2">
     <div style=" margin:10px;display: flex;justify-content: flex-start;flex-direction: column;align-items: center;;">
         <div class="top">
-            <p style="font-size:20px;">ADD NEW DEVICE</p>
+            <p style="font-size:20px;">Record</p>
             <button style="align-self: baseline;background-color: white;border: none;padding: 3px;cursor: pointer;"  onclick="closeForm4()"><img style="height:15px" src="../clo.png"></button> 
         </div>
         <form action="addm.php" method="POST">

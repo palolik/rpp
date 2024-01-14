@@ -365,7 +365,7 @@ padding: 5px 10px;
   }
 
 .tamo{
-  height: 450px;
+  height:  500px;
   background-color: white;
   display: none;
   position: fixed;
@@ -380,7 +380,7 @@ padding: 5px 10px;
   z-index: 9;
 }
 .tamoro{
-  height: 560px;
+  height: 680px;
   background-color: white;
   display: none;
   position: fixed;
@@ -395,7 +395,7 @@ padding: 5px 10px;
   z-index: 9;
 }
 .tamoro2{
-  height: 360px;
+  height: 400px;
   background-color: white;
   display: none;
   position: fixed;

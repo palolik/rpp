@@ -5,7 +5,8 @@ if (isset($_POST['ds'])) {
     $id = $_GET['ds'];
 } else { 
     $id = ""; 
-}         
+}  
+       
 ?>
 <!doctype html>
 <html style="
@@ -399,7 +400,7 @@ function closeForm1() {
                 <input name="ram" class="form-control" type="text" >
                 </div> 
                 <div class="mb-3">
-                <label class="form-label">Harddisk:</label>
+                <label class="form-label">Hard disk:</label>
                 <input name="hdd" class="form-control" type="text" >
                 </div> 
                 <div class="mb-3">
