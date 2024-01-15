@@ -27,14 +27,14 @@ if (isset($_POST["send"])) {
     $mail->Port       = 465;                                    
  
    
-    $mail->setFrom( $_POST["email"], $_POST["name"]); 
-    $mail->addAddress($_POST["email"]);    
-    $mail->addReplyTo($_POST["email"], $_POST["name"]); 
+    $mail->setFrom( $_POST["emai"], $_POST["name"]); 
+    $mail->addAddress($_POST["emai"]);    
+    $mail->addReplyTo($_POST["emai"], $_POST["name"]); 
  
    
     $mail->isHTML(true);             
     $mail->Subject = $_POST["subject"];   
-    $mail->Body    = $_POST["message"];
+    $mail->Body    = $_POST["request"];
    
     $mail->send();
     echo
@@ -44,4 +44,19 @@ if (isset($_POST["send"])) {
      document.location.href = 'test3.php';
     </script>
     ";
-}
+    require_once("../config/database.php");
+    
+        
+        $request = mysqli_real_escape_string($mysqli, $_POST['request']);
+        $employeeid = mysqli_real_escape_string($mysqli, $_POST['employeeid']);
+        $date = mysqli_real_escape_string($mysqli, $_POST['date']);
+        $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+        $status = "pending";
+        $result = mysqli_query($mysqli, "INSERT INTO mreq (`request`, `employeeid`,`email`, `date`, `status`) VALUES ('$request', '$employeeid','$email', '$date', '$status') ");
+
+        header("location:ehome.php?eid=$employeeid");
+
+    }
+    
+
+  

@@ -99,7 +99,7 @@ if (isset($_POST['ds'])) {
                         <div class='box11'>
                             <div class='box111'>
                             <div class='f2'>
-                            <label for='fname'>Employee Name:</label>
+                            <label for='fname'>Employee id:</label>
                             <input class='form-control' type='text' name='employeename'  value=' ".$row['employeeid']." '
                             aria-label='Disabled input example' disabled readonly>
 
