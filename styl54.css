@@ -552,8 +552,9 @@ scrollbar-width: none;
   border-radius: 5px;
 }
 
-.ho2{
+.ho2 {
   font-size: 15px;
+  margin-bottom: 0px;
 }
 .ho3{
   font-size: 25px;

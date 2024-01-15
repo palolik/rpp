@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl52.css">
+    <link rel="stylesheet" type="text/css" href="../styl54.css">
     <title>Admin home</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -94,43 +94,55 @@
 </div>
 <div style="font-size:40px">Devices</div>
     <div class="hh1">
+    <?php
+$result = mysqli_query($conn, "SELECT device, COUNT(*) AS count FROM extradevices GROUP BY device ORDER BY count DESC");
 
-<div class="ho1">
-    <img style="height:150px;width:150px;" src="https://www.complink.com.ph/cdn/shop/products/000002_28388_52d1b479-0980-4413-bfa1-84771ff8e9e7_500x500.jpg?v=1646107166">
-    <p class="ho2">Total No.</p>
-    <p class="ho3">30 pcs</p>
-</div>
-<div class="ho1">
-    <img style="height:150px;width:150px;" src="https://itechstore.com.np/_ipx/f_webp/img/product/65db108f-9f88-4add-a252-273f84854ccb/acer-acer-hd-led-backlit-monitor-2.png">
-    <p class="ho2">Total No.</p>
-    <p class="ho3">30 pcs</p>
-</div>
-<div class="ho1">
-    <img style="height:150px;width:150px;" src="https://www.pondicherryshopping.com/image/cache/catalog/goldkeyboard-600x600.jpg">
-    <p class="ho2">Total No.</p>
-    <p class="ho3">30 pcs</p>
-</div>
-<div class="ho1">
-    <img style="height:150px;width:150px;" src="https://cdn-media.deus.com.gh/media/magefan_blog/scanner_for_your_business.png">
-    <p class="ho2">Total No.</p>
-    <p class="ho3">30 pcs</p>
-</div>
-<div class="ho1">
-    <img style="height:150px;width:150px;" src="https://www.swiftermall.com/748-large_default/blue-gate-1200va-ups-bg1200.jpg">
-    <p class="ho2">Total No.</p>
-    <p class="ho3">30 pcs</p>
-</div>
-<div class="ho1">
-    <img style="height:150px;width:150px;" src="https://images.summitmedia-digital.com/spotph/images/2021/06/10/logitech-m100-m100r-1-1623336038.png">
-    <p class="ho2">Total No.</p>
-    <p class="ho3">30 pcs</p>
-</div>
-<div class="ho1">
-    <img style="height:150px;width:150px;" src="https://smartdeal.com.bd/public/uploads/all/oUmJKcdIwJXqhsqdMwmJdAKgu4KrMxWxunHPdNgI.jpg
-">
-    <p class="ho2">Total No.</p>
-    <p class="ho3">30 pcs</p>
-</div>
+// Display the results in a table
+if (mysqli_num_rows($result) > 0) {
+    
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<div class='ho1'> ";
+        if($row["device"]=='monitor'){
+         echo " <img style='height:150px;width:150px;' src='https://itechstore.com.np/_ipx/f_webp/img/product/65db108f-9f88-4add-a252-273f84854ccb/acer-acer-hd-led-backlit-monitor-2.png'>" ;
+        }
+        else if($row["device"]=='scanner'){
+          echo " <img style='height:150px;width:150px;' src='https://cdn-media.deus.com.gh/media/magefan_blog/scanner_for_your_business.png'>" ;
+        }
+        else if($row["device"]=='ups'){
+          echo " <img style='height:150px;width:150px;' src='https://www.swiftermall.com/748-large_default/blue-gate-1200va-ups-bg1200.jpg'>" ;
+        }
+        else if($row["device"]=='mouse'){
+          echo " <img style='height:150px;width:150px;' src='https://images.summitmedia-digital.com/spotph/images/2021/06/10/logitech-m100-m100r-1-1623336038.png'>" ;
+        }
+        else if($row["device"]=='speaker'){
+          echo " <img style='height:150px;width:150px;' src='https://smartdeal.com.bd/public/uploads/all/oUmJKcdIwJXqhsqdMwmJdAKgu4KrMxWxunHPdNgI.jpg'>" ;
+        }
+        else if($row["device"]=='keyboard'){
+          echo " <img style='height:150px;width:150px;' src='https://www.pondicherryshopping.com/image/cache/catalog/goldkeyboard-600x600.jpg'>" ;
+        }
+        else if($row["device"]=='scanner'){
+          echo " <img style='height:150px;width:150px;' src='https://cdn-media.deus.com.gh/media/magefan_blog/scanner_for_your_business.png'>" ;
+        }
+        
+       echo "
+       
+        <p class='ho2'>" . $row["device"] . "</p>
+        <p class='ho3'>" . $row["count"] . "pcs</p>
+              </div>";
+    }
+   
+} else {
+    echo "No results found.";
+}
+
+?>
+
+
+
+
+
+
+
     </div>
 </div>
 

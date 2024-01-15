@@ -20,7 +20,7 @@ if (isset($_POST['ds'])) {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <link rel="stylesheet" type="text/css" href="../styl52.css">
+    <link rel="stylesheet" type="text/css" href="../styl54.css">
     <style>
 
 .form-popup {
@@ -170,11 +170,7 @@ if (isset($_POST['ds'])) {
 
                 <div class='box9'>
                 <div class='bol' style="margin-bottom:5px;">
-                <p>Device Details</p>     <button style=" margin-left:40px;background-color:white;border: none;padding:1px;cursor: pointer;"  onclick="openForm1()"><img style="height:20px" src="../add.png"></button> 
-
-            </div>
-                <div>
-                <div>
+              
             <?php   
               
               if (isset($_POST['ds'])) {
@@ -194,7 +190,12 @@ if (isset($_POST['ds'])) {
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo 
-                    "
+                  "
+                    <p>Device Details</p>   <a style=' margin-left:40px;background-color:white;border: none;padding:1px;cursor: pointer;' href=\"editpc.php?si=$row[si]&id=$id\"><img style='height:20px' src='../edit.png'></a>
+
+                    </div>
+                        <div>
+                        <div>
                 <table style='margin:10px'>
                 <tr><th style='text-align: left;width:200px'>Ip Address</th><td>". $row['pcip'] ."</td></tr>
                 <tr><th style='text-align: left;'>PC/Laptop</th><td>". $row['pclap'] ."</td></tr>
@@ -205,6 +206,23 @@ if (isset($_POST['ds'])) {
         </table>
                 </div>";
             }
+        }else {
+            echo 
+            "
+            <p>Device Details</p>     <button style=' margin-left:40px;background-color:white;border: none;padding:1px;cursor: pointer;'  onclick='openForm1()'><img style='height:20px' src='../add.png'></button> 
+
+            </div>
+                <div>
+                <div>
+        <table style='margin:10px'>
+        <tr><th style='text-align: left;width:200px'>Ip Address</th><td>not added</td></tr>
+        <tr><th style='text-align: left;'>PC/Laptop</th><td>not added</td></tr>
+        <tr><th style='text-align: left;'>Processor</th><td>not added</td></tr>
+        <tr><th style='text-align: left;'>RAM</th><td>not added</td></tr>
+        <tr><th style='text-align: left;'>HDD</th><td>not added</td></tr>
+        <tr><th style='text-align: left;'>SSD</th><td>not added</td></tr>
+</table>
+        </div>";
         }
         
         ?>
@@ -270,25 +288,23 @@ if (isset($_POST['ds'])) {
     <form  action="addexde.php" method="POST">
     <div class='st'>
 
- 
-                      
-                           <div style='margin:10px'>
-                        
-                          <div class="mb-3">
-                          <input name="employeeid" style="display:none;" value="<?php echo $id; ?>" type="text">
+         <div style='margin:10px'>
+                    
+            <div class="mb-3">
+                <input name="employeeid" style="display:none;" value="<?php echo $id; ?>" type="text">
 
-                                             <label class="form-label">Device :</label>
-                                            <select name="device"class="form-control" >
-                                            <?php 
-                                             $sql = "SELECT * FROM alldevice";
-                                             $result = $conn->query($sql);
-                                             if ($result->num_rows > 0) {
-                                                 while ($row = $result->fetch_assoc()) {
-                                                     echo  "<option value=" .$row['devicen']. ">" .$row['devicen']. "</option>";
-                                                 }
-                                                }
-                                            ?>   
-                                              </select>
+                    <label class="form-label">Device :</label>
+                  <select name="device"class="form-control" >
+                  <?php 
+                    $sql = "SELECT * FROM alldevice";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo  "<option value=" .$row['devicen']. ">" .$row['devicen']. "</option>";
+                        }
+                    }
+                  ?>   
+                     </select>
                           </div> 
                           <div class="mb-3">
                             <label class="form-label">Quantity:</label>
@@ -350,6 +366,13 @@ function openForm1() {
 
 function closeForm1() {
   document.getElementById("myForms3").style.display = "none";
+}
+function openForm3() {
+  document.getElementById("myForms7").style.display = "block";
+}
+
+function closeForm3() {
+  document.getElementById("myForms7").style.display = "none";
 }
 
 </script>
@@ -419,10 +442,14 @@ function closeForm1() {
                 <label class="form-label">warranty date:</label>
                 <input name="warrenty" class="form-control" type="date" >
                 </div> 
-</div>
+    </div>
         </div>
                 <div style="display:flex;justify-content:center"><button type="submit" name="submitd" class='nm2' >Add Device</button></div>
             </form>
     </div>
 
 </div>
+
+
+
+
