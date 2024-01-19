@@ -156,8 +156,10 @@ if (isset($_POST['ds'])) {
                         </div>
                         <div class='aew'> <a class='asd' href=\"deleteemployee.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
                         <a class='asd' href=\"edite.php?id=$row[id]\">Edit</a>
-                        </div>
+                        <a class='asd' href=\"pdfdownloadb.php?id=$row[employeeid]\">Download</a>
 
+                        </div>
+git 
                     </div>
                 </form>
                 ";
