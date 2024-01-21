@@ -1,4 +1,9 @@
+
+
+
 <?php
+
+// this page controlls all the editing section of the website
 include '../config/database.php';
 
 if ( isset( $_POST[ 'update1' ] ) ) {
